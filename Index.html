@@ -1,196 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - NovaNext</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.8;
-            color: #2c3e50;
-            background: #ffffff;
-            padding: 60px 40px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sammy — iOS Apps</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;               /* FIX 1: Prevent text touching edges */
-            overflow-wrap: break-word;      /* FIX 2: Prevent cut text */
-        }
-        
-        h1 {
-            font-size: 2.8em;
-            color: #2c3e50;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-        
-        h2 {
-            font-size: 2.2em;
-            color: #2c3e50;
-            margin-top: 50px;
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
-        
-        h3 {
-            font-size: 1.6em;
-            color: #f47629;
-            margin-top: 35px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        p {
-            font-size: 1.1em;
-            color: #5a6c7d;
-            margin-bottom: 20px;
-            line-height: 1.8;
-            overflow-wrap: break-word;     /* FIX 3: Ensure wrapping */
-        }
-        
-        .highlight {
-            font-style: italic;
-            color: #5a6c7d;
-            font-size: 1.15em;
-            padding-left: 20px;
-            border-left: 3px solid #f47629;
-            margin: 30px 0;
-            overflow-wrap: break-word;
-        }
-        
-        .stats {
-            display: flex;
-            gap: 40px;
-            margin: 40px 0;
-            flex-wrap: wrap; /* FIX 4: Allow wrapping on mobile */
-        }
-        
-        .stat-item {
-            flex: 1;
-            min-width: 140px;
-        }
-        
-        .stat-number {
-            font-size: 3em;
-            font-weight: 700;
-            color: #f47629;
-            margin-bottom: 5px;
-        }
-        
-        .stat-label {
-            font-size: 1.1em;
-            color: #5a6c7d;
-        }
-        
-        .team-member {
-            margin-bottom: 25px;
-        }
-        
-        .team-member h4 {
-            font-size: 1.3em;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        
-        .team-role {
-            color: #f47629;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        a {
-            color: #f47629;
-            text-decoration: none;
-            font-weight: 600;
-            overflow-wrap: break-word;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 40px 20px;
-            }
-            
-            h1 {
-                font-size: 2.2em;
-            }
-            
-            h2 {
-                font-size: 1.8em;
-            }
-            
-            .stats {
-                flex-direction: column;
-                gap: 25px;
-            }
-        }
-    </style>
+  :root{
+    --paper:#FAFAF8;
+    --paper-raised:#FFFFFF;
+    --ink:#1A1D21;
+    --ink-soft:#6B7280;
+    --ink-faint:#9CA3AF;
+    --border:#E5E3DE;
+    --accent:#E8703A;
+    --accent-soft:#FCE8DC;
+    --accent-deep:#B8531F;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,250,248,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:64px;
+  }
+  .logo{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;
+    letter-spacing:-0.01em;
+    display:flex;align-items:center;gap:8px;
+  }
+  .logo-mark{
+    width:22px;height:22px;border-radius:6px;
+    background:var(--accent);
+    display:inline-block;
+  }
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{
+    color:var(--ink-soft);text-decoration:none;font-size:14px;font-weight:500;
+    transition:color .15s;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{
+    background:var(--ink);color:var(--paper);
+    padding:9px 18px;border-radius:8px;font-size:14px;font-weight:500;
+    text-decoration:none;
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:88px 0 64px;border-bottom:1px solid var(--border);}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;
+    color:var(--accent-deep);background:var(--accent-soft);
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 12px;border-radius:20px;margin-bottom:28px;
+    letter-spacing:0.02em;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+
+  h1{
+    font-family:'Archivo',sans-serif;font-weight:700;
+    font-size:clamp(40px,6vw,64px);
+    line-height:1.04;letter-spacing:-0.025em;
+    max-width:780px;
+  }
+  h1 .accent{color:var(--accent);}
+
+  .hero-sub{
+    margin-top:24px;font-size:18px;color:var(--ink-soft);
+    max-width:560px;line-height:1.6;
+  }
+
+  .hero-actions{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--ink);color:var(--paper);
+    padding:13px 24px;border-radius:9px;font-size:15px;font-weight:500;
+    text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    transition:transform .15s, background .15s;
+  }
+  .btn-primary:hover{background:var(--accent-deep);transform:translateY(-1px);}
+  .btn-secondary{
+    border:1px solid var(--border);color:var(--ink);
+    padding:13px 24px;border-radius:9px;font-size:15px;font-weight:500;
+    text-decoration:none;background:var(--paper-raised);
+    transition:border-color .15s;
+  }
+  .btn-secondary:hover{border-color:var(--ink-faint);}
+
+  /* ---------- STAT STRIP ---------- */
+  .stat-strip{
+    display:flex;gap:0;margin-top:56px;
+    border-top:1px solid var(--border);
+  }
+  .stat{
+    flex:1;padding:20px 0 0;border-right:1px solid var(--border);
+  }
+  .stat:last-child{border-right:none;}
+  .stat-num{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:30px;
+    letter-spacing:-0.02em;
+  }
+  .stat-label{
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-faint);
+    margin-top:4px;letter-spacing:0.01em;
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{padding:80px 0;}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:40px;flex-wrap:wrap;gap:12px;
+  }
+  .section-title{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:30px;
+    letter-spacing:-0.02em;
+  }
+  .section-desc{color:var(--ink-soft);font-size:15px;max-width:420px;}
+
+  /* ---------- FEATURED APPS ---------- */
+  .app-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .app-card{
+    background:var(--paper-raised);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:24px;
+    display:flex;flex-direction:column;gap:16px;
+    transition:border-color .15s, transform .15s;
+  }
+  .app-card:hover{border-color:var(--ink-faint);transform:translateY(-2px);}
+
+  .app-icon{
+    width:60px;height:60px;border-radius:14px;
+    background:linear-gradient(145deg,#EFEDE7,#E2DFD7);
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--border);
+  }
+  .app-icon svg{width:28px;height:28px;stroke:var(--ink-soft);}
+
+  .app-name{font-family:'Archivo',sans-serif;font-weight:600;font-size:17px;}
+  .app-tagline{font-size:14px;color:var(--ink-soft);line-height:1.5;flex:1;}
+
+  .app-meta{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:14px;border-top:1px solid var(--border);
+  }
+  .app-category{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    color:var(--accent-deep);background:var(--accent-soft);
+    padding:4px 9px;border-radius:6px;letter-spacing:0.02em;
+  }
+  .app-link{
+    font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;
+    display:flex;align-items:center;gap:4px;
+  }
+  .app-link svg{width:13px;height:13px;}
+
+  /* ---------- ALL APPS LINK-OUT ---------- */
+  .catalog-band{
+    background:var(--ink);
+    border-radius:20px;
+    padding:48px 56px;
+    display:flex;justify-content:space-between;align-items:center;
+    gap:32px;flex-wrap:wrap;
+  }
+  .catalog-band h3{
+    font-family:'Archivo',sans-serif;font-weight:700;color:var(--paper);
+    font-size:26px;letter-spacing:-0.015em;max-width:380px;
+  }
+  .catalog-band p{color:#9AA0A8;font-size:14.5px;margin-top:8px;max-width:380px;}
+  .catalog-count{
+    font-family:'JetBrains Mono',monospace;color:var(--accent);
+  }
+  .btn-light{
+    background:var(--paper);color:var(--ink);
+    padding:14px 26px;border-radius:9px;font-size:15px;font-weight:500;
+    text-decoration:none;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:background .15s;
+  }
+  .btn-light:hover{background:var(--accent-soft);}
+
+  /* ---------- ABOUT / PROCESS ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about-text p{color:var(--ink-soft);font-size:15.5px;line-height:1.75;margin-top:14px;}
+  .stack-list{display:flex;flex-direction:column;gap:0;}
+  .stack-row{
+    display:flex;justify-content:space-between;padding:16px 0;
+    border-bottom:1px solid var(--border);font-size:14.5px;
+  }
+  .stack-row:first-child{border-top:1px solid var(--border);}
+  .stack-key{color:var(--ink-soft);}
+  .stack-val{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:13.5px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--border);padding:40px 0;}
+  footer .wrap{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  }
+  .footer-links{display:flex;gap:24px;}
+  .footer-links a{color:var(--ink-soft);text-decoration:none;font-size:14px;}
+  .footer-links a:hover{color:var(--ink);}
+  .copyright{color:var(--ink-faint);font-size:13.5px;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .app-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .stat-strip{flex-wrap:wrap;}
+    .stat{flex:1 1 50%;border-right:none;border-bottom:1px solid var(--border);padding-bottom:16px;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .nav-links{display:none;}
+    .app-grid{grid-template-columns:1fr;}
+    .section{padding:56px 0;}
+    .catalog-band{padding:36px 28px;flex-direction:column;align-items:flex-start;}
+    header.hero{padding:56px 0 40px;}
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Our Story</h1>
-        
-        <p>It all started with one simple problem: tracking shared expenses with friends during camping trips and events.</p>
-        
-        <p>We began with a single app: <strong>Group Expenses Light</strong>. The idea was born during my graduate school years<br> when I organized camping trips, picnics, and shared birthday gifts with friends.</p>
-        
-        <p>The challenge was always the same: at the end of each event, someone had to figure out the complicated math<br>of who owes whom and how much. It was time-consuming and often led to confusion.</p>
-        
-        <p>We thought: why not let our phones do the hard work while we enjoy the event? That's where the brainstorming began.</p>
-        
-        <h3>From One App to Many</h3>
-        
-        <p>After launching Group Expenses Light, we listened to our users and created <strong>Group Expenses Plus</strong> with enhanced<br>features like unequal splits, custom currencies, and advanced visibility controls.</p>
-        
-        <p>The success of these apps inspired us to keep creating. Today, we offer a diverse portfolio of apps<br>spanning entertainment, puzzles, productivity tools, and educational games.</p>
-        
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-number">16+</div>
-                <div class="stat-label">Apps Published</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">iOS Native</div>
-            </div>
-        </div>
-        
-        <h2>Special Thanks</h2>
-        
-        <div class="team-member">
-           <div class="team-role">Development & Website Design</div>
-            <h4>Razmin Soltani</h4> 
-            <p>Endless help and efforts to support our vision and bring it to life. Razmin designed the entire website from the ground up. <a href="http://linkedin.com/in/razmin" target="_blank">Connect on LinkedIn</a></p>
-        </div>
-        
-        <div class="team-member">
-            <div class="team-role">Development Support</div>
-            <h4>James Steele</h4>
 
-            <p>Provided invaluable guidance and support during the development phase. <a href="http://11thhourindustries.ca" target="_blank">Visit Website</a></p>
-        </div>
-        
-        <div class="team-member">
-            <div class="team-role">UI/UX Design</div>
-            <h4>Alfonso Verlezza</h4>
-            <p>Created beautiful, intuitive interfaces that make our apps a joy to use. <a href="https://www.behance.net/AlfonsoVerlezza" target="_blank">View Portfolio</a></p>
-        </div>
-        
-        <h2>Why NovaNext?</h2>
-        
-        <p>We named our company after one of the most beautiful places on the east coast of Canada: <a href="https://en.wikipedia.org/wiki/Nova_Scotia" target="_blank">Nova Scotia</a>. The name represents our roots and our commitment to creating beautiful, innovative solutions.</p>
+<nav>
+  <div class="wrap">
+    <div class="logo"><span class="logo-mark"></span>Sammy</div>
+    <div class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span>independent iOS developer</div>
+    <h1>16 apps shipped.<br>Every one built <span class="accent">solo</span>, in Swift.</h1>
+    <p class="hero-sub">
+      Puzzle games, learning tools, and everyday utilities — designed, coded, and maintained by one person. No team, no outsourcing, just UIKit and a lot of late nights.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#apps">Browse the apps
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn-secondary" href="#contact">Say hello</a>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat"><div class="stat-num">16</div><div class="stat-label">APPS LIVE</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">SWIFT / UIKIT</div></div>
+      <div class="stat"><div class="stat-num">1</div><div class="stat-label">DEVELOPER</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">CATEGORIES</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="apps">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-title">Featured apps</div>
+        <div class="section-desc">A few favorites to start with — the rest are one click away.</div>
+      </div>
+    </div>
+
+    <div class="app-grid">
+
+      <div class="app-card">
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        </div>
+        <div>
+          <div class="app-name">NumberMove</div>
+          <div class="app-tagline">A sliding-number puzzle that gets sharper the further you go. Simple to learn, hard to put down.</div>
+        </div>
+        <div class="app-meta">
+          <span class="app-category">PUZZLE</span>
+          <a class="app-link" href="#">View on App Store
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
+        </div>
+        <div>
+          <div class="app-name">Daylight Atlas</div>
+          <div class="app-tagline">An interactive geography and astronomy guide that explains daylight hours, seasons, and the Earth's tilt — built for landscape on iPad.</div>
+        </div>
+        <div class="app-meta">
+          <span class="app-category">EDUCATION</span>
+          <a class="app-link" href="#">View on App Store
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2v20M5 7h7a3 3 0 0 1 0 6H7a3 3 0 0 0 0 6h7"/></svg>
+        </div>
+        <div>
+          <div class="app-name">SplitFair</div>
+          <div class="app-tagline">Split bills, trips, and shared expenses without the spreadsheet. Built for groups who actually want to settle up.</div>
+        </div>
+        <div class="app-meta">
+          <span class="app-category">UTILITY</span>
+          <a class="app-link" href="#">View on App Store
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2M9 7h6M9 11h6"/></svg>
+        </div>
+        <div>
+          <div class="app-name">Balance Beam</div>
+          <div class="app-tagline">A scale-and-equation puzzle game that teaches algebra intuitively — built around weight, not just numbers.</div>
+        </div>
+        <div class="app-meta">
+          <span class="app-category">PUZZLE</span>
+          <a class="app-link" href="#">View on App Store
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h.01M15 9h.01M9 15h.01M15 15h.01"/></svg>
+        </div>
+        <div>
+          <div class="app-name">Hanoi</div>
+          <div class="app-tagline">The classic tower puzzle, rebuilt with real depth and weight — disks that look and feel physical.</div>
+        </div>
+        <div class="app-meta">
+          <span class="app-category">PUZZLE</span>
+          <a class="app-link" href="#">View on App Store
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <div class="app-name">Number Guess</div>
+          <div class="app-tagline">A quick daily number-logic game with a balance-scale twist — guess, weigh, and narrow it down.</div>
+        </div>
+        <div class="app-meta">
+          <span class="app-category">PUZZLE</span>
+          <a class="app-link" href="#">View on App Store
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="catalog-band">
+      <div>
+        <h3>See the other <span class="catalog-count">10</span> apps</h3>
+        <p>Everything from quick utilities to deeper puzzle games — the full catalog lives on the App Store.</p>
+      </div>
+      <a class="btn-light" href="#">View full catalog
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-title">About</div>
+        <p>I build iOS apps end to end — design, code, App Store listing, support, all of it. Everything is written in Swift, mostly with programmatic UIKit, because I like having full control over how a screen behaves and feels.</p>
+        <p>Most of my apps share a small set of building blocks I've refined across all 16: card-based layouts with real depth instead of flat drop shadows, consistent onboarding flows, and a design language that holds up whether the app is a puzzle game or a budgeting tool.</p>
+      </div>
+      <div class="stack-list">
+        <div class="stack-row"><span class="stack-key">Language</span><span class="stack-val">Swift</span></div>
+        <div class="stack-row"><span class="stack-key">Framework</span><span class="stack-val">UIKit (programmatic)</span></div>
+        <div class="stack-row"><span class="stack-key">Platforms</span><span class="stack-val">iPhone, iPad</span></div>
+        <div class="stack-row"><span class="stack-key">Categories</span><span class="stack-val">Puzzle, Education, Utility</span></div>
+        <div class="stack-row"><span class="stack-key">Team size</span><span class="stack-val">1</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="catalog-band" style="background:var(--paper-raised);border:1px solid var(--border);">
+      <div>
+        <h3 style="color:var(--ink);">Got feedback, a bug report, or just want to say hi?</h3>
+        <p style="color:var(--ink-soft);">I read every email myself.</p>
+      </div>
+      <a class="btn-primary" href="mailto:hello@example.com">Email me
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><span class="logo-mark"></span>Sammy</div>
+    <div class="footer-links">
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a href="mailto:hello@example.com">Contact</a>
+    </div>
+    <div class="copyright">© 2026 Sammy. All apps trademarks of their respective owners.</div>
+  </div>
+</footer>
+
 </body>
 </html>
