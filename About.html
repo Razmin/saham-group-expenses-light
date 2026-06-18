@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NovaNext</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 60px 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;               /* FIX 1: Prevent text touching edges */
+            overflow-wrap: break-word;      /* FIX 2: Prevent cut text */
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        h3 {
+            font-size: 1.6em;
+            color: #f47629;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: 1.1em;
+            color: #5a6c7d;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            overflow-wrap: break-word;     /* FIX 3: Ensure wrapping */
+        }
+        
+        .highlight {
+            font-style: italic;
+            color: #5a6c7d;
+            font-size: 1.15em;
+            padding-left: 20px;
+            border-left: 3px solid #f47629;
+            margin: 30px 0;
+            overflow-wrap: break-word;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap; /* FIX 4: Allow wrapping on mobile */
+        }
+        
+        .stat-item {
+            flex: 1;
+            min-width: 140px;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            color: #f47629;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 1.1em;
+            color: #5a6c7d;
+        }
+        
+        .team-member {
+            margin-bottom: 25px;
+        }
+        
+        .team-member h4 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: #f47629;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #f47629;
+            text-decoration: none;
+            font-weight: 600;
+            overflow-wrap: break-word;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Story</h1>
+        
+        <p>It all started with one simple problem: tracking shared expenses with friends during camping trips and events.</p>
+        
+        <p>We began with a single app: <strong>Group Expenses Light</strong>. The idea was born during my graduate school years<br> when I organized camping trips, picnics, and shared birthday gifts with friends.</p>
+        
+        <p>The challenge was always the same: at the end of each event, someone had to figure out the complicated math<br>of who owes whom and how much. It was time-consuming and often led to confusion.</p>
+        
+        <p>We thought: why not let our phones do the hard work while we enjoy the event? That's where the brainstorming began.</p>
+        
+        <h3>From One App to Many</h3>
+        
+        <p>After launching Group Expenses Light, we listened to our users and created <strong>Group Expenses Plus</strong> with enhanced<br>features like unequal splits, custom currencies, and advanced visibility controls.</p>
+        
+        <p>The success of these apps inspired us to keep creating. Today, we offer a diverse portfolio of apps<br>spanning entertainment, puzzles, productivity tools, and educational games.</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">16+</div>
+                <div class="stat-label">Apps Published</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">iOS Native</div>
+            </div>
+        </div>
+        
+        <h2>Special Thanks</h2>
+        
+        <div class="team-member">
+           <div class="team-role">Development & Website Design</div>
+            <h4>Razmin Soltani</h4> 
+            <p>Endless help and efforts to support our vision and bring it to life. Razmin designed the entire website from the ground up. <a href="http://linkedin.com/in/razmin" target="_blank">Connect on LinkedIn</a></p>
+        </div>
+        
+        <div class="team-member">
+            <div class="team-role">Development Support</div>
+            <h4>James Steele</h4>
+
+            <p>Provided invaluable guidance and support during the development phase. <a href="http://11thhourindustries.ca" target="_blank">Visit Website</a></p>
+        </div>
+        
+        <div class="team-member">
+            <div class="team-role">UI/UX Design</div>
+            <h4>Alfonso Verlezza</h4>
+            <p>Created beautiful, intuitive interfaces that make our apps a joy to use. <a href="https://www.behance.net/AlfonsoVerlezza" target="_blank">View Portfolio</a></p>
+        </div>
+        
+        <h2>Why NovaNext?</h2>
+        
+        <p>We named our company after one of the most beautiful places on the east coast of Canada: <a href="https://en.wikipedia.org/wiki/Nova_Scotia" target="_blank">Nova Scotia</a>. The name represents our roots and our commitment to creating beautiful, innovative solutions.</p>
+    </div>
+</body>
+</html>

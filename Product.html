@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - NovaNext</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .header h1 {
+            font-size: 3.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            color: #5a6c7d;
+        }
+        
+        .product {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+            padding: 0 20px;
+        }
+        
+        .product:nth-child(even) .product-image {
+            order: 2;
+        }
+        
+        .product:nth-child(even) .product-content {
+            order: 1;
+        }
+        
+        .product-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .product-icon {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .product:hover .product-icon {
+            transform: scale(1.05);
+        }
+        
+        .product-content h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .product-category {
+            display: inline-block;
+            font-size: 0.9em;
+            color: #f47629;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background: rgba(244, 118, 41, 0.1);
+            border-radius: 20px;
+        }
+        
+        .product-description {
+            color: #5a6c7d;
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .product-features li {
+            color: #5a6c7d;
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05em;
+        }
+        
+        .product-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f47629;
+            font-weight: bold;
+            width: 26px;
+            height: 26px;
+            background: rgba(244, 118, 41, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+        }
+        
+        .download-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #f47629 0%, #ff9a56 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 6px 20px rgba(244, 118, 41, 0.4);
+        }
+        
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 118, 41, 0.5);
+        }
+        
+        @media (max-width: 968px) {
+            .product {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+            
+            .product:nth-child(even) .product-image {
+                order: 1;
+            }
+            
+            .product:nth-child(even) .product-content {
+                order: 2;
+            }
+            
+            .product-icon {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .product-content h2 {
+                font-size: 2em;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .product-icon {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .product-content h2 {
+                font-size: 1.8em;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Our Products</h1>
+            <p>Innovative apps designed to make your life easier and more fun</p>
+        </div>
+        
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Icon-1.png" alt="Cast Connect">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Entertainment</span>
+                <h2>Cast Connect</h2>
+                <p class="product-description">Find hidden links in film & TV – discover which actors, directors & crew worked together across your favourite movies. Connections revealed in seconds!</p>
+                <ul class="product-features">
+                    <li>Search by People: Find all movies/shows featuring multiple actors or crew</li>
+                    <li>Search by Movies: Discover shared cast and crew across productions</li>
+                    <li>Perfect for film buffs and trivia lovers</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/cast-connect/id6751820156" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/08/Icon.png" alt="Hanoi Towers">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Puzzle</span>
+                <h2>Hanoi Towers</h2>
+                <p class="product-description">The classic puzzle game. Move all disks from one tower to another following simple but challenging rules.</p>
+                <ul class="product-features">
+                    <li>Move one disk at a time</li>
+                    <li>Only move the top disk from each tower</li>
+                    <li>Larger disks cannot go on smaller ones</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/hanoi-towers-puzzle/id6680199841" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Icon-4.png" alt="Flip Match">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Memory Game</span>
+                <h2>Flip Match</h2>
+                <p class="product-description">Find all matching pairs by flipping cards. If they match, they stay face-up. If not, they flip back down.</p>
+                <ul class="product-features">
+                    <li>Progressive difficulty levels</li>
+                    <li>Challenge your friends</li>
+                    <li>Train your memory skills</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/flip-match/id6478814519" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Icon-3.png" alt="Number Moves">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Puzzle</span>
+                <h2>Number Moves</h2>
+                <p class="product-description">Arrange numbers in ascending order from left to right and bottom to top. Tap blocks to move them into empty spaces.</p>
+                <ul class="product-features">
+                    <li>Classic sliding puzzle mechanics</li>
+                    <li>Play with numbers or custom images</li>
+                    <li>Challenging and addictive</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/number-moves/id6476934781" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/08/Light-1.png" alt="Puzzly Photo">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Photo Puzzle</span>
+                <h2>Puzzly Photo</h2>
+                <p class="product-description">Turn any image from your gallery or camera into an instant puzzle to solve. A classic game with your personal touch.</p>
+                <ul class="product-features">
+                    <li>Use any photo from your gallery</li>
+                    <li>Take photos directly with your camera</li>
+                    <li>Instant puzzle generation</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/puzzly-photo/id6476255688" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Shadow.png" alt="Peg Elimination">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Strategy</span>
+                <h2>Peg Elimination</h2>
+                <p class="product-description">Remove all pegs until only one remains. Jump over adjacent pegs into empty spots. Harder than it looks!</p>
+                <ul class="product-features">
+                    <li>Classic strategy game</li>
+                    <li>Simple rules, challenging gameplay</li>
+                    <li>Test your planning skills</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/peg-elimination/id6474193810" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/08/Light.png" alt="Color Logic">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Logic Puzzle</span>
+                <h2>Color Logic</h2>
+                <p class="product-description">Find all colors in the right order. Black dots show correct color and position. White dots show correct color but wrong position.</p>
+                <ul class="product-features">
+                    <li>Classic code-breaking game</li>
+                    <li>Logic and deduction challenges</li>
+                    <li>Multiple difficulty levels</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/color-logic/id6471006415" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Icon.png" alt="Number Guess">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Educational</span>
+                <h2>Number Guess</h2>
+                <p class="product-description">Learn to solve systems of equations in a fun way.<br>Match numbers and letters on both sides to find<br>equations and solve for unknowns.</p>
+                <ul class="product-features">
+                    <li>Educational math game</li>
+                    <li>Solve systems of equations</li>
+                    <li>Interactive learning experience</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/number-guess/id6466263744" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Icon.jpg" alt="Dates">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Utility</span>
+                <h2>Dates</h2>
+                <p class="product-description">Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.</p>
+                <ul class="product-features">
+                    <li>Supports Gregorian, Persian, Islamic, Hebrew, Japanese, and Indian calendars</li>
+                    <li>Calculate date differences</li>
+                    <li>Simple and intuitive interface</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/dates-convert/id6459511463" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2026/01/Icon.png" alt="Statistics Formula">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Productivity</span>
+                <h2>Statistics Formula</h2>
+                <p class="product-description">Open CSV files and instantly calculate statistical formulas including mean, standard deviation, and more.</p>
+                <ul class="product-features">
+                    <li>Import CSV files directly</li>
+                    <li>Common statistical calculations</li>
+                    <li>Fast and accurate results</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/statistics-formulas/id6447047160" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Dark-1.png" alt="Large Math">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Educational</span>
+                <h2>Large Math</h2>
+                <p class="product-description">Calculate Factorial, Power, Permutation, Combination, and Pascal Triangle for very large numbers. Try 200! and be amazed by the speed.</p>
+                <ul class="product-features">
+                    <li>Handle extremely large numbers</li>
+                    <li>Lightning-fast calculations</li>
+                    <li>Multiple mathematical operations</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/large-math/id1628885815" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Light-2.png" alt="GE Light">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Finance</span>
+                <h2>GE Light</h2>
+                <p class="product-description">Designed for people with shared expenses. Track who owes whom<br>and how much with ease.</p>
+                <ul class="product-features">
+                    <li>Manage group expenses</li>
+                    <li>Clear debt tracking</li>
+                    <li>Perfect for roommates and friends</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/group-expenses-light/id1285557503" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Light-1.png" alt="GE Plus">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Finance Pro</span>
+                <h2>GE Plus</h2>
+                <p class="product-description">Designed for people with shared expenses. Track who owes whom and how much with ease.</p>
+                <ul class="product-features">
+                    <li>Everything that GE Light has</li>
+                    <li>Receipts can split unequally</li>
+                    <li>Each receipt can have its own currency</li>
+                    <li>Define your own currency</li>
+                    <li>You can hide or show receipts, groups and more</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/group-expenses/id1443950401" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Dark2.png" alt="Earth & Sun">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Educational</span>
+                <h2>Earth & Sun</h2>
+                <p class="product-description">View daylight hours at any latitude on any given day. Explore information about planets in our solar system.</p>
+                <ul class="product-features">
+                    <li>Daylight calculation for any location</li>
+                    <li>Solar system planet information</li>
+                    <li>Educational and practical</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/sun-light-hours/id6499107039" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Icon-2.png" alt="FastCam">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Entertainment</span>
+                <h2>FastCam</h2>
+                <p class="product-description">Instant photo and video capture. The moment you open the app, it captures and saves to your gallery.</p>
+                <ul class="product-features">
+                    <li>Instant capture on app launch</li>
+                    <li>Auto-save to gallery</li>
+                    <li>Configurable in settings</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/fast-cam/id6449002428" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img class="product-icon" src="https://novanext.ca/wp-content/uploads/2025/11/Light-3.png" alt="Nova Ads">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Marketing</span>
+                <h2>Nova Ads</h2>
+                <p class="product-description">Advertise your business across all NovaNext apps in one place.<br>Upload your banner, add your website, and purchase a time slot.</p>
+                <ul class="product-features">
+                    <li>Reach users across multiple apps</li>
+                    <li>Easy banner upload</li>
+                    <li>Flexible time slot purchases</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/nova-ads/id6743174733" class="download-button">Download on App Store</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
