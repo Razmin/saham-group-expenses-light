@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - NovaNext</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#fafaf8;
+    --surface:#ffffff;
+    --text:#111827;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+
+    --blue:#2563eb;
+    --purple:#7c3aed;
+    --green:#10b981;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+/* ---------------- NAV ---------------- */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(12px);
+    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
+}
+
+.nav-inner{
+    height:72px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:-0.03em;
+    text-decoration:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--muted);
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:var(--text);
+}
+
+.nav-links a.active{
+    color:var(--text);
+}
+
+.nav-cta{
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:white !important;
+    padding:10px 20px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:14px;
+    transition:.2s;
+}
+
+.nav-cta:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+}
+
+/* ---------------- PAGE HERO ---------------- */
+
+.page-hero{
+    padding:80px 0 50px;
+    text-align:center;
+
+    background:
+        radial-gradient(circle at top left, rgba(124,58,237,.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 30%);
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:white;
+    border:1px solid var(--border);
+    padding:7px 16px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    margin-bottom:26px;
+}
+
+.eyebrow .dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+}
+
+.page-hero h1{
+    font-size:clamp(36px,6vw,56px);
+    font-weight:800;
+    line-height:1.07;
+    letter-spacing:-0.04em;
+    max-width:760px;
+    margin:0 auto;
+}
+
+.page-hero h1 .accent{
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.page-hero p{
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.7;
+    max-width:600px;
+    margin:22px auto 0;
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+.section{
+    padding:64px 0;
+}
+
+.section-narrow{
+    width:min(760px,92%);
+    margin:auto;
+}
+
+.section h2{
+    font-size:clamp(26px,4vw,34px);
+    font-weight:800;
+    letter-spacing:-0.03em;
+    margin-bottom:22px;
+}
+
+.section h3{
+    font-size:1.4em;
+    font-weight:700;
+    letter-spacing:-0.02em;
+    color:var(--text);
+    margin-top:8px;
+    margin-bottom:18px;
+}
+
+.section p{
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.75;
+    margin-bottom:18px;
+}
+
+.section p strong{
+    color:var(--text);
+    font-weight:700;
+}
+
+.section p a,
+.section .pull-quote a{
+    color:var(--blue);
+    font-weight:600;
+    text-decoration:none;
+}
+
+.section p a:hover,
+.section .pull-quote a:hover{
+    text-decoration:underline;
+}
+
+.pull-quote{
+    font-style:italic;
+    color:var(--muted);
+    font-size:17px;
+    padding-left:20px;
+    border-left:3px solid var(--blue);
+    margin:32px 0;
+}
+
+/* ---------------- STATS ---------------- */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    max-width:380px;
+    margin:40px auto 0;
+}
+
+.stat{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:20px 12px;
+    text-align:center;
+}
+
+.stat-num{
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.stat-label{
+    font-size:12px;
+    color:var(--muted);
+    font-weight:600;
+    margin-top:4px;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+}
+
+/* ---------------- TEAM ---------------- */
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.team-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:.2s;
+}
+
+.team-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 36px rgba(17,24,39,.07);
+}
+
+.team-role{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--blue);
+    background:rgba(37,99,235,.08);
+    border-radius:20px;
+    padding:5px 12px;
+    width:fit-content;
+}
+
+.team-name{
+    font-size:19px;
+    font-weight:800;
+    letter-spacing:-0.02em;
+}
+
+.team-desc{
+    color:var(--muted);
+    font-size:14.5px;
+    line-height:1.65;
+    flex:1;
+}
+
+.team-link{
+    font-size:14px;
+    font-weight:600;
+    color:var(--blue);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+}
+
+.team-link svg{width:13px;height:13px;}
+
+/* ---------------- BOTTOM CTA ---------------- */
+
+.cta-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:48px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:32px;
+    flex-wrap:wrap;
+    box-shadow:0 10px 40px rgba(0,0,0,.04);
+}
+
+.cta-card h3{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    margin:0;
+}
+
+.cta-card p{
+    color:var(--muted);
+    font-size:15px;
+    margin-top:6px;
+    margin-bottom:0;
+}
+
+.btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:white;
+    text-decoration:none;
+    padding:13px 26px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:15px;
+    transition:.2s;
+    white-space:nowrap;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(37,99,235,.28);
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+    border-top:1px solid var(--border);
+    background:white;
+}
+
+.footer-inner{
+    height:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:var(--muted);
+}
+
+.footer-links a:hover{
+    color:var(--text);
+}
+
+.copyright{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:860px){
+    .team-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:600px){
+    .nav-links a:not(.nav-cta){display:none;}
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .team-grid{grid-template-columns:1fr;}
+    .section{padding:48px 0;}
+    .page-hero{padding:56px 0 40px;}
+    .cta-card{padding:32px 24px;flex-direction:column;align-items:flex-start;}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="index.html" class="logo">NovaNext</a>
+
+        <div class="nav-links">
+            <a href="product.html">Products</a>
+            <a href="about.html" class="active">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="contact.html" class="nav-cta">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+<header class="page-hero">
+    <div class="container">
+
+        <div class="eyebrow"><span class="dot"></span>How it all began</div>
+
+        <h1>Our <span class="accent">story</span>.</h1>
+
+        <p>
+            From one app built to solve a real problem, to a growing portfolio
+            of native iOS apps people use every day.
+        </p>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-num">16+</div>
+                <div class="stat-label">Apps Published</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">iOS Native</div>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<section class="section">
+    <div class="container section-narrow">
+
+        <p>It all started with one simple problem: tracking shared expenses with friends during camping trips and events.</p>
+
+        <p>We began with a single app: <strong>Group Expenses Light</strong>. The idea was born during my graduate school years, when I organized camping trips, picnics, and shared birthday gifts with friends.</p>
+
+        <p>The challenge was always the same: at the end of each event, someone had to figure out the complicated math of who owes whom and how much. It was time-consuming and often led to confusion.</p>
+
+        <div class="pull-quote">We thought: why not let our phones do the hard work while we enjoy the event? That's where the brainstorming began.</div>
+
+        <h3>From One App to Many</h3>
+
+        <p>After launching Group Expenses Light, we listened to our users and created <strong>Group Expenses Plus</strong> with enhanced features like unequal splits, custom currencies, and advanced visibility controls.</p>
+
+        <p>The success of these apps inspired us to keep creating. Today, we offer a diverse portfolio of apps spanning entertainment, puzzles, productivity tools, and educational games.</p>
+
+    </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+    <div class="container">
+
+        <div style="text-align:center;margin-bottom:48px;">
+            <h2>Special Thanks</h2>
+        </div>
+
+        <div class="team-grid">
+
+            <div class="team-card">
+                <span class="team-role">Development &amp; Website Design</span>
+                <div class="team-name">Razmin Soltani</div>
+                <p class="team-desc">Endless help and effort to support our vision and bring it to life. Razmin designed the entire website from the ground up.</p>
+                <a class="team-link" href="http://linkedin.com/in/razmin" target="_blank">
+                    Connect on LinkedIn
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+            </div>
+
+            <div class="team-card">
+                <span class="team-role">Development Support</span>
+                <div class="team-name">James Steele</div>
+                <p class="team-desc">Provided invaluable guidance and support during the development phase.</p>
+                <a class="team-link" href="http://11thhourindustries.ca" target="_blank">
+                    Visit Website
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+            </div>
+
+            <div class="team-card">
+                <span class="team-role">UI/UX Design</span>
+                <div class="team-name">Alfonso Verlezza</div>
+                <p class="team-desc">Created beautiful, intuitive interfaces that make our apps a joy to use.</p>
+                <a class="team-link" href="https://www.behance.net/AlfonsoVerlezza" target="_blank">
+                    View Portfolio
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+    <div class="container section-narrow">
+
+        <h2>Why NovaNext?</h2>
+
+        <p>We named our company after one of the most beautiful places on the east coast of Canada: <a href="https://en.wikipedia.org/wiki/Nova_Scotia" target="_blank">Nova Scotia</a>. The name represents our roots and our commitment to creating beautiful, innovative solutions.</p>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="cta-card">
+            <div>
+                <h3>Got feedback, a bug report, or just want to say hi?</h3>
+                <p>Every message gets read and answered.</p>
+            </div>
+            <a class="btn-primary" href="contact.html">
+                Get in touch
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-inner">
+
+        <div class="copyright">© 2026 NovaNext</div>
+
+        <div class="footer-links">
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
