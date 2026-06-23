@@ -350,6 +350,7 @@ footer{
         <div class="nav-links">
             <a href="product.html">Products</a>
             <a href="about.html">About</a>
+            <a href="support.html">Support</a>
             <a href="privacy.html">Privacy</a>
             <a href="contact.html" class="nav-cta active">Contact</a>
         </div>
@@ -383,6 +384,8 @@ footer{
             <form id="contact-form" data-endpoint="https://formspree.io/f/xpqqpgnl">
 
                 <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+
+                <input type="hidden" name="_subject" id="subject-field" value="New message from NovaNext contact form">
 
                 <div class="field">
                     <label for="name">Name</label>
@@ -419,6 +422,7 @@ footer{
         <div class="footer-links">
             <a href="product.html">Products</a>
             <a href="about.html">About</a>
+            <a href="support.html">Support</a>
             <a href="contact.html">Contact</a>
             <a href="privacy.html">Privacy</a>
         </div>
@@ -431,6 +435,18 @@ footer{
     const form = document.getElementById('contact-form');
     const status = document.getElementById('status');
     const btn = document.getElementById('submit-btn');
+    const message = document.getElementById('message');
+    const subjectField = document.getElementById('subject-field');
+
+    // If arriving from support.html?app=AppName, route the subject + prefill the message.
+    // If there's no app param (regular contact visit), this block is skipped entirely
+    // and the form behaves exactly as before, with the default subject above.
+    const appParam = new URLSearchParams(window.location.search).get('app');
+    if (appParam) {
+        subjectField.value = `Support request: ${appParam}`;
+        message.value = `Regarding: ${appParam}\n\n`;
+        message.focus();
+    }
 
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
