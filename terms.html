@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Terms and Conditions - NovaNext</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#fafaf8;
+    --surface:#ffffff;
+    --text:#111827;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+
+    --blue:#2563eb;
+    --purple:#7c3aed;
+    --green:#10b981;
+    --red:#dc2626;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+}
+
+.container{
+    width:min(900px,92%);
+    margin:auto;
+}
+
+/* ---------------- NAV ---------------- */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(12px);
+    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
+}
+
+.nav-inner{
+    width:min(1120px,92%);
+    margin:auto;
+    height:72px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:-0.03em;
+    text-decoration:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--muted);
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:var(--text);
+}
+
+.nav-links a.active{
+    color:var(--text);
+}
+
+.nav-cta{
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:white !important;
+    padding:10px 20px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:14px;
+    transition:.2s;
+}
+
+.nav-cta:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+}
+
+/* ---------------- HEADER ---------------- */
+
+.page-header{
+    padding:80px 0 50px;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(124,58,237,.10),
+        transparent 30%),
+
+        radial-gradient(circle at top right,
+        rgba(37,99,235,.10),
+        transparent 30%);
+}
+
+.page-header h1{
+    font-size:clamp(42px,6vw,64px);
+    line-height:1;
+    letter-spacing:-0.04em;
+    margin-bottom:18px;
+}
+
+.page-header p{
+    color:var(--muted);
+    font-size:18px;
+}
+
+/* ---------------- CONTENT ---------------- */
+
+.content{
+    padding:20px 0 80px;
+}
+
+.policy-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:50px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.04);
+}
+
+section{
+    margin-bottom:50px;
+}
+
+section:last-child{
+    margin-bottom:0;
+}
+
+section:not(:last-child){
+    padding-bottom:35px;
+    border-bottom:1px solid #f1f5f9;
+}
+
+h2{
+    font-size:26px;
+    font-weight:800;
+    margin-bottom:18px;
+    letter-spacing:-0.02em;
+}
+
+h3{
+    font-size:19px;
+    font-weight:700;
+    margin-top:24px;
+    margin-bottom:12px;
+    color:#374151;
+}
+
+p{
+    color:#374151;
+    margin-bottom:16px;
+}
+
+ul{
+    margin-top:10px;
+    margin-bottom:16px;
+    padding-left:24px;
+}
+
+li{
+    margin-bottom:12px;
+    color:#374151;
+}
+
+/* ---------------- INFO BOX ---------------- */
+
+.info-box{
+    margin-top:24px;
+
+    background:
+        linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe
+    );
+
+    border:1px solid #bfdbfe;
+
+    border-radius:18px;
+    padding:22px;
+}
+
+.info-box p:last-child{
+    margin-bottom:0;
+}
+
+/* ---------------- WARNING BOX ---------------- */
+
+.warning-box{
+    background:
+        linear-gradient(
+        135deg,
+        #fef2f2,
+        #fee2e2
+    );
+
+    border:1px solid #fecaca;
+
+    border-radius:18px;
+    padding:22px;
+    margin-top:20px;
+}
+
+.warning-box p:last-child,
+.warning-box li:last-child{
+    margin-bottom:0;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+    border-top:1px solid var(--border);
+    background:white;
+}
+
+.footer-inner{
+    width:min(1120px,92%);
+    margin:auto;
+    height:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:var(--muted);
+}
+
+.footer-links a:hover{
+    color:var(--text);
+}
+
+.copyright{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:768px){
+
+    .policy-card{
+        padding:30px 24px;
+        border-radius:22px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        height:auto;
+        gap:12px;
+        padding:24px 0;
+    }
+
+    .nav-links{
+        gap:16px;
+        font-size:14px;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    h3{
+        font-size:17px;
+    }
+}
+
+
+/* ---------------- BMC BUTTON ---------------- */
+
+.bmc-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:#FFDD00;
+    color:#000000 !important;
+    padding:10px 20px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:14px;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.bmc-link:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px rgba(255,221,0,.35);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-inner">
+
+        <a href="index.html" class="logo">NovaNext</a>
+
+        <div class="nav-links">
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html" class="active">Terms</a>
+            <a href="contact.html" class="nav-cta">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+<header class="page-header">
+
+    <div class="container">
+
+        <h1>Terms and Conditions</h1>
+
+        <p>
+            These terms govern all advertisements accepted for publication
+            by NovaNext across its apps and products.
+        </p>
+
+    </div>
+
+</header>
+
+<main class="content">
+
+<div class="container">
+
+<div class="policy-card">
+
+<section>
+
+<h2>General</h2>
+
+<p>
+All advertisements accepted for publication by NovaNext in any of its
+online products are accepted subject to these terms and conditions.
+Any other conditions proposed by the Customer shall be void unless
+accepted by NovaNext in writing.
+</p>
+
+<p>
+These terms and conditions comprise the agreement between NovaNext
+and the Customer ("Agreement").
+</p>
+
+</section>
+
+<section>
+
+<h2>Definitions</h2>
+
+<p><strong>3rd Party Ad Server</strong> means a third party providing advertising of the Advertiser's products and services that are identical or similar to those that are subject to these Terms and Conditions.</p>
+<p><strong>Ads</strong> means advertising communicated to end users by electronic distribution systems.</p>
+<p><strong>Advertiser</strong> means the party whose products and/or services are to be advertised.</p>
+<p><strong>Advertising Materials</strong> means advertising copy, including, without limitation, artwork, text and active URLs.</p>
+<p><strong>URL</strong> means an address to a website.</p>
+<p><strong>Affiliate</strong> means, in respect of any person to whom the term Affiliate refers, a company, corporation, partnership, or other business entity ("entity") which is directly or indirectly controlled by, or under substantially common control with, or controls (as the case may be) the person so referred to, where "control" means the power of an entity to secure — whether by the holding of shares, possession of voting rights, or by virtue of any powers conferred by articles of association, constitution, partnership agreement, or other governing document — that the entity's affairs are conducted in accordance with its wishes.</p>
+<p><strong>Agency</strong> means an advertising agency representing the Advertiser. Also known as NovaNext.</p>
+<p><strong>Campaign Period</strong> means the period of time during which the campaign is to be operative.</p>
+<p><strong>Customer</strong> means the party purchasing the right to advertise.</p>
+<p><strong>Total Cost</strong> means the amount paid by the user for their selected duration of ads.</p>
+<p>You may use our Services only as permitted by these Terms and any applicable laws.</p>
+
+</section>
+
+<section>
+
+<h2>1. Orders</h2>
+
+<p>1.1. In each case, the following information should be visible to the customer and taken as "as-is":</p>
+<ul>
+  <li>(a) An approximate date the ad goes live. It is not guaranteed that your ad goes live on a given date.</li>
+  <li>(b) The price is set and visible at the time of purchase.</li>
+  <li>(c) Prices are tax included.</li>
+  <li>(d) The start date and the duration for which the ad is displayed.</li>
+</ul>
+
+<p>1.2. The user agrees that any photo and URL submitted to NovaNext are subject to approval, and if they are rejected, NovaNext shall provide a reason.</p>
+
+<p>1.3. The user can upload new photos or URLs at any time, but new photos and URLs are subject to approval before the user can make any purchase.</p>
+
+<p>1.4. Photos and URLs are visible to the owner of this app and the user who uploads them before the purchased time slot begins, and visible to everyone once payment is completed.</p>
+
+<p>1.5. Once the ad is live, the user cannot take it down or make the URL and photos hidden.</p>
+
+</section>
+
+<section>
+
+<h2>2. Ad Placement and Sizing</h2>
+
+<p>2.1. NovaNext will use reasonable endeavours to display the image uploaded by you during the selected period of time.</p>
+
+<p>2.2. NovaNext takes no liability if your ad is not displayed for the entire purchased period or a portion of it.</p>
+
+<p>2.3. Every ad is displayed towards the bottom of each page.</p>
+
+<p>2.4. The user agrees that they had a chance to see their image before purchasing.</p>
+
+<div class="info-box">
+<p>2.5. Only certain size photos are supplied, with a fixed width and height, and the image may shrink or stretch when displayed on different phones.</p>
+<p>2.6. Only certain size photos are supplied, with a fixed width and height, and the image may be cut from the left, right, top, or bottom.</p>
+<p>2.7. Only certain size photos are supplied, with a fixed width and height, and the entire image may not be visible.</p>
+</div>
+
+</section>
+
+<section>
+
+<h2>3. Payment and Payment Liability</h2>
+
+<p>3.1. Payment is made via the In-App Purchase service operated by Apple.</p>
+
+<p>3.2. NovaNext has no control over or visibility into your payment information, including your credit card number, CVV, name, credit card expiration date, and billing address.</p>
+
+</section>
+
+<section>
+
+<h2>4. Cancellation and Revision</h2>
+
+<p>4.1. Once payment has gone through, you cannot request a refund from NovaNext.</p>
+
+<p>4.2. All payments are made via the in-app purchase network operated by Apple, Inc. You can request a refund directly from Apple, Inc.</p>
+
+</section>
+
+<section>
+
+<h2>5. Advertising Materials</h2>
+
+<p>5.1. The Customer shall submit Advertising Materials only via this application.</p>
+
+<p>5.2. Advertising Materials are images of the customer's choice and a URL to the customer's webpage.</p>
+
+<p>5.3. Images and websites must not:</p>
+<ul>
+  <li>(a) Contain or represent drugs, racism, adult content, alcohol, violence, or guns in any form.</li>
+  <li>(b) Be exempt from removal — NovaNext reserves the right to remove the ad before or during the agreed and paid number of days without notice.</li>
+  <li>(c) Be eligible for a refund, in full or in part, as a result of removal under (a) or (b).</li>
+</ul>
+
+<h3>5.3.1 Adult themes in family content</h3>
+<p>Material that appears appropriate for a general audience but contains adult themes — including sex, violence, vulgarity, or other distasteful depictions of children or popular children's characters — that are unsuitable for a general audience is not permitted.</p>
+
+<h3>5.3.2 Dangerous or derogatory content</h3>
+<p>Content is not permitted that:</p>
+<p>Threatens or advocates for physical or mental harm to oneself or others;</p>
+<p>Harasses, intimidates, or bullies an individual or group of individuals;</p>
+<p>Incites hatred against, promotes discrimination of, or disparages an individual or group on the basis of race or ethnic origin, religion, disability, age, nationality, veteran status, sexual orientation, gender, gender identity, or other characteristic associated with systemic discrimination or marginalization.</p>
+
+<p>Examples include:</p>
+<ul>
+  <li>Threatening someone with real-life harm or calling for the attack of another person</li>
+  <li>Advocating suicide, anorexia, or other self-harm</li>
+  <li>Content that promotes or advocates for harmful health or medical claims or practices</li>
+  <li>Content that singles out someone for abuse or harassment</li>
+  <li>Content promoting, glorifying, or condoning violence against others on the basis of a protected characteristic</li>
+  <li>Content that encourages others to believe that a person or group is inhuman, inferior, or worthy of being hated on the basis of a protected characteristic</li>
+  <li>Content promoting hate groups or hate group paraphernalia</li>
+  <li>Content that suggests a tragic event did not happen, or that victims or their families are actors or complicit in a cover-up of the event</li>
+  <li>Content made by or in support of terrorist groups, or content that promotes terrorist acts, including recruitment, or that celebrates terrorist attacks</li>
+</ul>
+
+<h3>5.3.4 Recreational drugs and drug-related content</h3>
+<p>NovaNext does not accept a URL or image for pages that sell or promote recreational drugs and drug-related content, including:</p>
+
+<p>Promotion of substances that alter mental state for the purpose of recreation or otherwise induce "highs." Examples:</p>
+<ul>
+  <li>Cocaine, crystal meth, heroin, marijuana, cocaine substitutes, mephedrone, "legal highs"</li>
+</ul>
+
+<p>Products or services marketed as facilitating recreational drug use. Examples:</p>
+<ul>
+  <li>Pipes, bongs, cannabis coffee shops</li>
+</ul>
+
+<p>Instructional content about producing, purchasing, or using recreational drugs. Examples:</p>
+<ul>
+  <li>Forums to exchange tips or recommendations on drug use</li>
+</ul>
+
+<h3>5.3.5 Alcohol-related content</h3>
+<p>NovaNext does not accept any URL or image for:</p>
+<ul>
+  <li>Online sale of alcoholic beverages.</li>
+  <li>Promotion of irresponsible alcohol consumption, including the favourable portrayal of excessive, binge, or competition drinking.</li>
+</ul>
+<p>Publishers may opt in to receiving alcohol ads through the category filtering feature. If you don't wish to receive alcohol ads on your pages, no action is required.</p>
+
+<h3>5.3.6 Tobacco-related content</h3>
+<p>NovaNext does not accept any URL or image that promotes tobacco and tobacco-related products, including cigarettes, cigars, tobacco pipes, and rolling papers.</p>
+
+<h3>5.3.7 Gambling and games-related content</h3>
+<p>NovaNext does not accept any URL or image that promotes online, real-money gambling or any internet-based game where money or other items of value are paid or wagered for the opportunity to win real money or prizes based on the outcome of the game.</p>
+<p>Examples include:</p>
+<ul>
+  <li>Online casinos or bookmakers</li>
+  <li>Online lottery ticket or scratch card purchases</li>
+  <li>Online sports betting</li>
+  <li>Aggregator or affiliate sites that promote online gambling pages</li>
+</ul>
+
+<h3>5.3.8 Healthcare-related content</h3>
+<p>To comply with local laws and regulations related to the promotion of healthcare and medicines, NovaNext does not accept any URL or image that contains certain healthcare-related content, including:</p>
+
+<p>Online sale of prescription medication. Examples:</p>
+<ul>
+  <li>Sales of prescription drugs, even through an affiliate program</li>
+  <li>Online pharmacies</li>
+  <li>Pages that primarily drive traffic to online drugstores/pharmacies</li>
+</ul>
+
+<p>Sale of unapproved pharmaceuticals and supplements. Examples:</p>
+<ul>
+  <li>Prohibited pharmaceuticals and supplements (e.g., products that contain Ephedra)</li>
+  <li>Herbal and dietary supplements with active pharmaceutical or dangerous ingredients</li>
+  <li>Products with names confusingly similar to an unapproved pharmaceutical, supplement, or controlled substance</li>
+</ul>
+
+<h3>5.3.9 Hacking and cracking content</h3>
+<p>NovaNext does not accept any URL or image that promotes any form of hacking or cracking — content that provides instructions or equipment that tampers with or provides unauthorized access to software, servers, or websites.</p>
+
+<h3>5.3.10 Compensation programs</h3>
+<p>NovaNext does not accept any URL or image that promises payment or incentives to users who click on ads, surf the web, read emails, or perform similar tasks. This includes pages that primarily drive traffic to, promote, or provide instructional materials on how to implement such services.</p>
+
+<h3>5.3.11 Misrepresentative content</h3>
+<p>NovaNext does not accept any URL or image that misrepresents, misstates, or conceals information about you, your content, or the primary purpose of your web property.</p>
+
+<h3>5.3.12 Shocking content</h3>
+<p>NovaNext does not accept any URL or image displaying shocking content. Examples include but are not limited to:</p>
+<ul>
+  <li>Gruesome, graphic, or disgusting accounts or imagery (e.g., blood, gore, sexual fluids, human or animal waste, crime scene or accident photos)</li>
+  <li>Content depicting acts of violence (e.g., shootings, explosions, bombings, execution videos, violent acts against animals)</li>
+  <li>Content with significant obscene or profane language</li>
+</ul>
+
+<h3>5.3.13 Weapon-related content</h3>
+<p>NovaNext does not accept any URL or image containing the following weapons-related content:</p>
+<ul>
+  <li>Promotion of the sale of firearms, including handguns, rifles, shotguns, hunting guns, functioning antique guns, airsoft guns, paintball guns, BB guns, and 3D printed guns</li>
+  <li>Promotion of the sale of firearm-related parts or components, including 80% finished gun parts, ammunition, clips, silencers, ammunition belts, stocks, conversion kits, grips, scopes, and sights</li>
+  <li>Instructions about the assembly, enhancement, or acquisition of firearms or their components, including guides and equipment for 3D printing of guns or gun parts</li>
+  <li>Promotion of the sale of products designed to explode or damage nearby people or property, including explosives, nail bombs, chemical bombs, exploding fireworks, firecrackers, and grenades</li>
+  <li>Instructional content about the assembly, enhancement, or acquisition of explosive items</li>
+  <li>Promotion of the sale of other weapons designed to injure in sport, self-defense, or combat, including throwing stars, brass knuckles, and pepper spray</li>
+  <li>Promotion of the sale of knives designed to provide a confrontational advantage, including switchblades, fighting knives, sword-canes, balisongs, military knives, push daggers, and throwing axes</li>
+  <li>Promotion of the use of weapons to inflict harm on others</li>
+</ul>
+
+<h3>5.3.14 Misleading others</h3>
+<p>NovaNext does not accept any URL or image that helps users mislead others. Examples:</p>
+<ul>
+  <li>Content that promotes creating fake or false documents such as passports, diplomas, or accreditation</li>
+  <li>Content that promotes the creation of fake or false identities</li>
+  <li>Sale or distribution of term papers, paper-writing, or exam-taking services</li>
+  <li>Information or products for passing drug tests</li>
+  <li>Content that promotes fraudulent activity</li>
+</ul>
+<p>Please note that these are examples and are not intended to be complete or comprehensive.</p>
+
+<h3>5.3.15 Illegal content</h3>
+<p>NovaNext does not accept any URL or image containing content that is illegal, promotes illegal activity, or infringes on the legal rights of others.</p>
+
+<p><strong>Counterfeit goods</strong><br>
+NovaNext does not accept any URL or image that offers for sale or promotes the sale of counterfeit goods — goods bearing a trademark or logo identical to or substantially indistinguishable from that of another, mimicking a brand's features to pass as a genuine product.</p>
+
+<div class="warning-box">
+<p><strong>Underage, non-consensual, or illegal sex acts</strong></p>
+<p>NovaNext absolutely prohibits monetization of content related to child sexual abuse imagery or pedophilia. Under United States federal law, child sexual abuse imagery is defined as visual depictions of minors (i.e., under 18) engaged in a sexual act such as intercourse, oral sex, or masturbation, as well as lascivious depictions of the genitals (covered or uncovered). This definition extends to photographs, videos, cartoons, drawings, paintings, and sculptures, and applies whether the image involves a real child or a computer-generated, morphed, composite, or otherwise altered image that appears to be a child. This also includes soliciting minors for sexual acts, also known as "enticement."</p>
+<p>Pedophilia is any content or behavior — images, text, videos, and so on — that depicts, encourages, or promotes sexual attraction by adults toward minors (i.e., under 18).</p>
+</div>
+
+<p>5.4. NovaNext will not alter the image submitted by the customer.</p>
+
+<p>5.5. The parties will not use the other's trade name, trademarks, logos, or ads in a public announcement — including, but not limited to, a press release — regarding the existence or content of these Terms and Conditions without the other's prior written approval.</p>
+
+<p>5.6. You cannot advertise any service similar to what NovaNext offers, in any form, on any platform. Similarity is determined by NovaNext and cannot be disputed.</p>
+
+</section>
+
+<section>
+
+<h2>6. Warranties</h2>
+
+<p>6.1. No warranty is provided by NovaNext.</p>
+
+<p>6.2. The Customer has taken, or will take, all necessary steps to ensure that all advertising it provides for display on the NovaNext app is not illegal or actionable for any reason in any country or territory, and complies with all applicable legislation, rules, and regulations — including any applicable advertising and financial services standards and codes.</p>
+
+<p>6.3. If any customer image or URL contains the name or pictorial representation of any living person, or copy by which any living person can be readily identified, the customer must provide evidence that the customer and/or the Advertiser has obtained that person's authority to make use of such name, representation, and/or copy.</p>
+
+<p>6.4. The Advertising Image and the website contain no viruses or other computer programming routines intended to damage, detrimentally interfere with, surreptitiously intercept, or expropriate any system, data, or personal information.</p>
+
+<p>6.5. The Customer is solely responsible for fulfilling and dealing with any orders or enquiries relating to the goods, services, or promotion to which the Advertising Copy relates, and will indemnify and hold NovaNext harmless accordingly.</p>
+
+</section>
+
+<section>
+
+<h2>7. Indemnities</h2>
+
+<p>7.1. The Customer will fully indemnify and keep NovaNext, and its directors, officers, and employees, fully indemnified against all actions, proceedings, costs (including legal fees), damages, expenses, fines, losses (including loss of profits), penalties, claims, demands, and liabilities arising from any breach of the Customer's warranties, obligations, or agreements contained herein.</p>
+
+<p>7.2. If the customer takes NovaNext to court, all court expenses are paid by the customer, not NovaNext.</p>
+
+<p>7.3. The Customer will provide NovaNext with full co-operation in defending any claim or complaint concerning the Advertising Copy, including providing evidence in support of advertising claims and documentation evidencing clearance of relevant third-party proprietary rights.</p>
+
+<p>7.4. The Customer acknowledges that NovaNext has not provided any guarantees concerning reach of the site or target audience. Any statistics provided to the Customer are estimates based on available research only and may not be relied on as a representation.</p>
+
+</section>
+
+<section>
+
+<h2>8. Limitation of Liability</h2>
+
+<p>8.1. NovaNext shall not be liable to the Customer or the Advertiser, under or in connection with this Agreement — whether in contract, tort (including negligence), or otherwise — for any loss of profit, goodwill, business opportunity, anticipated saving, or any special, indirect, or consequential loss or damage.</p>
+
+<p>8.2. Neither party's liability to the other shall be excluded or limited by this Agreement, except to the extent permitted by law in respect of:</p>
+<ul>
+  <li>(a) Death or personal injury resulting from the negligence of itself, its servants, or agents.</li>
+  <li>(b) Fraud.</li>
+  <li>(c) Any other liability the exclusion of which is prohibited or limited by law.</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>9. Miscellaneous</h2>
+
+<p>9.1. The Customer may not resell, assign, or transfer any of its rights or obligations under this Agreement.</p>
+
+<p>9.2. In the event of any inconsistency between these Terms and Conditions and the customer's own terms and conditions, these Terms and Conditions shall prevail.</p>
+
+<p>9.3. No modification of these Terms and Conditions shall be binding unless made in writing by both parties.</p>
+
+<p>9.4. If any provision of these Terms and Conditions is held by a court of competent jurisdiction to be unenforceable, the remaining provisions shall remain in full force and effect.</p>
+
+<p>9.5. All rights and remedies under this Agreement are cumulative.</p>
+
+</section>
+
+<section>
+
+<h2>10. Termination</h2>
+
+<p>NovaNext reserves the right to remove your ad without refund for any matter mentioned or not mentioned in these terms and conditions.</p>
+
+</section>
+
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="copyright">
+© 2026 NovaNext
+</div>
+
+<div class="footer-links">
+<a href="product.html">Products</a>
+<a href="about.html">About</a>
+<a href="support.html">Support</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
+<a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
