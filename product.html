@@ -44,6 +44,17 @@
             align-items: center;
         }
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 34px;
+            width: auto;
+            display: block;
+        }
+        .logo span {
             font-size: 22px;
             font-weight: 800;
             letter-spacing: -0.03em;
@@ -51,7 +62,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-decoration: none;
         }
         .nav-links { display: flex; align-items: center; gap: 28px; }
         .nav-links a { text-decoration: none; color: var(--muted); font-weight: 500; }
@@ -250,7 +260,7 @@
 
 <nav>
     <div class="nav-inner">
-        <a href="index.html" class="logo">NovaNext</a>
+        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
         <div class="nav-links">
             <a href="product.html" class="active">Products</a>
             <a href="about.html">About</a>

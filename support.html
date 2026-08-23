@@ -61,10 +61,22 @@ nav{
 }
 
 .logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    text-decoration:none;
+}
+
+.logo img{
+    height:34px;
+    width:auto;
+    display:block;
+}
+
+.logo span{
     font-size:22px;
     font-weight:800;
     letter-spacing:-0.03em;
-    text-decoration:none;
     background:linear-gradient(135deg,var(--blue),var(--purple));
     -webkit-background-clip:text;
     background-clip:text;
@@ -422,7 +434,7 @@ footer{
 <nav>
     <div class="container nav-inner">
 
-        <a href="index.html" class="logo">NovaNext</a>
+        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
 
         <div class="nav-links">
             <a href="product.html">Products</a>
