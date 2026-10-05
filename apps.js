@@ -309,17 +309,39 @@ function renderFeaturedApps(containerId) {
     </div>`).join('');
 }
 
-/* product.html: the full alternating product list.
-   Inserted right after the .header block so the page's
-   even/odd layout styling keeps working exactly as before. */
-function renderProductList() {
-  const html = APPS.map(app => {
-    const replacement = app.replacedBy ? findApp(app.replacedBy) : null;
-    const categoryText = app.legacy ? `${app.category} · No longer maintained` : app.category;
-    const legacyNote = app.legacy && replacement
-      ? `<p class="legacy-note">${app.name} is no longer updated. Try <a href="${replacement.url}">${replacement.name}</a> instead.</p>`
-      : '';
-    return `
+/* product.html: the full alternating product list, with an iOS-style
+   segmented control (All + one segment per category) inside the .header block.
+   Products are removed and re-inserted right after .header on every change,
+   so the page's even/odd layout styling keeps working exactly as before.
+   The control brings its own CSS, so product.html needs no changes. */
+
+const SEGMENTED_CONTROL_CSS = `
+.segmented-wrap{display:flex;justify-content:center;margin-top:28px;}
+.segmented{
+    display:inline-flex;gap:2px;padding:3px;max-width:100%;
+    background:rgba(118,118,128,.12);border-radius:10px;
+    overflow-x:auto;scrollbar-width:none;
+}
+.segmented::-webkit-scrollbar{display:none;}
+.segment{
+    appearance:none;-webkit-appearance:none;border:0;background:transparent;
+    font:inherit;font-size:13px;font-weight:500;color:#111827;
+    padding:7px 16px;border-radius:8px;cursor:pointer;white-space:nowrap;
+    transition:background .2s ease, box-shadow .2s ease;
+}
+.segment.active{
+    background:#ffffff;font-weight:600;
+    box-shadow:0 3px 8px rgba(0,0,0,.12), 0 3px 1px rgba(0,0,0,.04);
+}
+`;
+
+function buildProductHtml(app) {
+  const replacement = app.replacedBy ? findApp(app.replacedBy) : null;
+  const categoryText = app.legacy ? `${app.category} · No longer maintained` : app.category;
+  const legacyNote = app.legacy && replacement
+    ? `<p class="legacy-note">${app.name} is no longer updated. Try <a href="${replacement.url}">${replacement.name}</a> instead.</p>`
+    : '';
+  return `
 <div class="product${app.legacy ? ' legacy' : ''}">
     <div class="product-image">
         <img class="product-icon" src="${app.icon}" alt="${app.name}">
@@ -335,7 +357,49 @@ function renderProductList() {
         <a href="${app.url}" class="download-button">Download on App Store</a>
     </div>
 </div>`;
-  }).join('');
+}
 
-  document.querySelector('.header').insertAdjacentHTML('afterend', html);
+function renderProductList() {
+  const header = document.querySelector('.header');
+  const ALL_LABEL = 'All';
+  const categories = [...new Set(APPS.map(app => app.category))];
+
+  const styleElement = document.createElement('style');
+  styleElement.textContent = SEGMENTED_CONTROL_CSS;
+  document.head.appendChild(styleElement);
+
+  function showProducts(selectedCategory) {
+    document.querySelectorAll('.product').forEach(productElement => productElement.remove());
+    const visibleApps = selectedCategory === ALL_LABEL
+      ? APPS
+      : APPS.filter(app => app.category === selectedCategory);
+    header.insertAdjacentHTML('afterend', visibleApps.map(buildProductHtml).join(''));
+  }
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'segmented-wrap';
+  const control = document.createElement('div');
+  control.className = 'segmented';
+  control.setAttribute('role', 'group');
+  control.setAttribute('aria-label', 'Filter apps by category');
+
+  [ALL_LABEL, ...categories].forEach(label => {
+    const segment = document.createElement('button');
+    segment.type = 'button';
+    segment.className = 'segment' + (label === ALL_LABEL ? ' active' : '');
+    segment.textContent = label;
+    segment.setAttribute('aria-pressed', label === ALL_LABEL ? 'true' : 'false');
+    segment.addEventListener('click', () => {
+      control.querySelectorAll('.segment').forEach(other => {
+        other.classList.toggle('active', other === segment);
+        other.setAttribute('aria-pressed', other === segment ? 'true' : 'false');
+      });
+      showProducts(label);
+    });
+    control.appendChild(segment);
+  });
+
+  wrapper.appendChild(control);
+  header.appendChild(wrapper);
+  showProducts(ALL_LABEL);
 }
