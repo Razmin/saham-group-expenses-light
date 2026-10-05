@@ -254,6 +254,41 @@
     box-shadow:0 8px 20px rgba(255,221,0,.35);
 }
 
+/* ---------------- DEPRECATED PRODUCT ---------------- */
+
+.product.legacy{
+    background:#f9fafb;
+    border-style:dashed;
+}
+.product.legacy .product-icon{
+    filter:grayscale(1);
+    opacity:.6;
+    box-shadow:none;
+}
+.product.legacy .product-category{
+    color:var(--muted);
+    background:rgba(107,114,128,.12);
+}
+.product.legacy .download-button{
+    background:#e5e7eb;
+    color:var(--muted) !important;
+}
+.product.legacy .download-button:hover{
+    transform:none;
+    box-shadow:none !important;
+}
+.legacy-note{
+    font-size:14px;
+    color:var(--muted);
+    background:rgba(107,114,128,.1);
+    border-radius:10px;
+    padding:10px 14px;
+    margin-bottom:18px;
+    line-height:1.5;
+}
+.legacy-note a{ color:var(--blue); font-weight:600; text-decoration:none; }
+.legacy-note a:hover{ text-decoration:underline; }
+
 </style>
 </head>
 <body>
@@ -487,22 +522,6 @@
         </div>
 <div class="product">
             <div class="product-image">
-                <img class="product-icon" src="images/icon/light.png" alt="GE Light">
-            </div>
-            <div class="product-content">
-                <span class="product-category">Finance</span>
-                <h2>GE Light</h2>
-                <p class="product-description">Designed for people with shared expenses. Track who owes whom<br>and how much with ease.</p>
-                <ul class="product-features">
-                    <li>Manage group expenses</li>
-                    <li>Clear debt tracking</li>
-                    <li>Perfect for roommates and friends</li>
-                </ul>
-                <a href="https://apps.apple.com/us/app/group-expenses-light/id1285557503" class="download-button">Download on App Store</a>
-            </div>
-        </div>
-<div class="product">
-            <div class="product-image">
                 <img class="product-icon" src="images/icon/plus.png" alt="GE Plus">
             </div>
             <div class="product-content">
@@ -568,6 +587,23 @@
             </div>
         </div>
 
+<div class="product legacy">
+            <div class="product-image">
+                <img class="product-icon" src="images/icon/light.png" alt="GE Light">
+            </div>
+            <div class="product-content">
+                <span class="product-category">Finance · No longer maintained</span>
+                <h2>GE Light</h2>
+                <p class="legacy-note">GE Light is no longer updated. Try <a href="https://apps.apple.com/us/app/group-expenses/id1443950401">GE Plus</a> instead.</p>
+                <p class="product-description">Designed for people with shared expenses. Track who owes whom<br>and how much with ease.</p>
+                <ul class="product-features">
+                    <li>Manage group expenses</li>
+                    <li>Clear debt tracking</li>
+                    <li>Perfect for roommates and friends</li>
+                </ul>
+                <a href="https://apps.apple.com/us/app/group-expenses-light/id1285557503" class="download-button">Download on App Store</a>
+            </div>
+        </div>
 </div>
 
 <footer>
