@@ -7,13 +7,13 @@
    ------
    name         App name (shown everywhere)
    icon         Icon path
-   category     Category shown on product.html
+   category     Category label (product page and home page cards)
    description  Product page description (HTML like <br> is allowed)
    features     Bullet list on product.html
    url          App Store link
    supportName  (optional) Name sent to the contact form if different from name
    featured     (optional) Position on the home page. Leave out to hide it there
-   homeCategory / homeDescription
+   homeDescription
                 (optional) Home page card text, if different from product page
    legacy       (optional) true = no longer maintained, grayed out
    replacedBy   (optional) name of the app that replaces a legacy app
@@ -25,7 +25,7 @@ const APPS = [
   {
     name: "Aiden Connects",
     icon: "images/icon/aiden.png",
-    category: "Entertainment",
+    category: "Puzzle",
     description: "Drop, Connect, Win.",
     features: [
       "Smart AI, Real Challenge",
@@ -34,13 +34,12 @@ const APPS = [
     ],
     url: "https://apps.apple.com/us/app/aiden-connects/id6798768340",
     featured: 1,
-    homeCategory: "Puzzle",
     homeDescription: "Try to connect 4 in any direction. Kids get their own Kids Mode, which makes the game a little easier. You can set the difficulty, and play with a friend on the same device or online."
   },
   {
     name: "Emma Slides",
     icon: "images/icon/emma.png",
-    category: "Entertainment",
+    category: "Puzzle",
     description: "Slide colorful pegs into place to match the goal",
     features: [
       "Simple drag-and-slide controls, no timers or pressure",
@@ -49,13 +48,12 @@ const APPS = [
     ],
     url: "https://apps.apple.com/us/app/emma-slides/id6793634660",
     featured: 4,
-    homeCategory: "Board Game",
     homeDescription: "Match the pattern with the goal card. Slide, Drop until the goal is reached."
   },
   {
     name: "Cast Connect",
     icon: "images/icon/film.png",
-    category: "Entertainment",
+    category: "Movies & TV",
     description: "Find hidden links in film & TV – discover which actors, directors & crew worked together across your favourite movies. Connections revealed in seconds!",
     features: [
       "Search by People: Find all movies/shows featuring multiple actors or crew",
@@ -81,7 +79,7 @@ const APPS = [
   {
     name: "Flip Match",
     icon: "images/icon/flip.png",
-    category: "Memory Game",
+    category: "Puzzle",
     description: "Find all matching pairs by flipping cards. If they match, they stay face-up. If not, they flip back down.",
     features: [
       "Progressive difficulty levels",
@@ -107,7 +105,7 @@ const APPS = [
   {
     name: "Puzzly Photo",
     icon: "images/icon/puzzle.png",
-    category: "Photo Puzzle",
+    category: "Puzzle",
     description: "Turn any image from your gallery or camera into an instant puzzle to solve. A classic game with your personal touch.",
     features: [
       "Use any photo from your gallery",
@@ -131,7 +129,7 @@ const APPS = [
   {
     name: "Color Logic",
     icon: "images/icon/master.png",
-    category: "Logic Puzzle",
+    category: "Strategy",
     description: "Find all colors in the right order. Black dots show correct color and position. White dots show correct color but wrong position.",
     features: [
       "Classic code-breaking game",
@@ -168,7 +166,7 @@ const APPS = [
   {
     name: "Statistics Formula",
     icon: "images/icon/stat.png",
-    category: "Productivity",
+    category: "Utility",
     description: "Open CSV files and instantly calculate statistical formulas including mean, standard deviation, and more.",
     features: [
       "Import CSV files directly",
@@ -192,7 +190,7 @@ const APPS = [
   {
     name: "GE Plus",
     icon: "images/icon/plus.png",
-    category: "Finance Pro",
+    category: "Finance",
     description: "Designed for people with shared expenses. Track who owes whom and how much with ease.",
     features: [
       "Full group expense tracking",
@@ -221,7 +219,7 @@ const APPS = [
     name: "FastCam",
     supportName: "Fast Camera",
     icon: "images/icon/cam.png",
-    category: "Entertainment",
+    category: "Utility",
     description: "Instant photo and video capture. The moment you open the app, it captures and saves to your gallery.",
     features: [
       "Instant capture on app launch",
@@ -301,7 +299,7 @@ function renderFeaturedApps(containerId) {
   container.innerHTML = featuredApps.map(app => `
     <div class="app-card">
         <img class="app-icon" src="${app.icon}" alt="${app.name} icon">
-        <span class="app-category">${app.homeCategory || app.category}</span>
+        <span class="app-category">${app.category}</span>
         <div class="app-name">${app.name}</div>
         <p class="app-description">${app.homeDescription || app.description}</p>
         <a class="app-link" href="${app.url}">
