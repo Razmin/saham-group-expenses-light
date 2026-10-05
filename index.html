@@ -559,7 +559,7 @@ footer{
 
         <div class="stats">
             <div class="stat">
-                <div class="stat-num">18</div>
+                <div class="stat-num" data-app-count>18</div>
                 <div class="stat-label">Apps Live</div>
             </div>
             <div class="stat">
@@ -579,78 +579,12 @@ footer{
             <p>A few favorites to start with — the rest are one click away.</p>
         </div>
 
-        <div class="app-grid">
-            <div class="app-card">
-                <img class="app-icon" src="images/icon/aiden.png" alt="Aiden Connects Icon">
-                <span class="app-category">Puzzle</span>
-                <div class="app-name">Aiden Connects</div>
-                <p class="app-description">Try to connect 4 in any direction. Kids get their own Kids Mode, which makes the game a little easier. You can set the difficulty, and play with a friend on the same device or online.</p>
-                <a class="app-link" href="https://apps.apple.com/us/app/aiden-connects/id6798768340">
-                    View on App Store
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                </a>
-            </div>
-
-            <div class="app-card">
-                <img class="app-icon" src="images/icon/hanoi.png" alt="Hanoi Towers icon">
-                <span class="app-category">Puzzle</span>
-                <div class="app-name">Hanoi Towers</div>
-                <p class="app-description">The classic puzzle game, rebuilt with real depth and weight. Move all disks from one tower to another following simple but challenging rules.</p>
-                <a class="app-link" href="https://apps.apple.com/us/app/hanoi-towers-puzzle/id6680199841">
-                    View on App Store
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                </a>
-            </div>
-
-            <div class="app-card">
-                <img class="app-icon" src="images/icon/flip.png" alt="Flip Match icon">
-                <span class="app-category">Memory Game</span>
-                <div class="app-name">Flip Match</div>
-                <p class="app-description">Find all matching pairs by flipping cards. If they match, they stay face-up. A polished, tactile take on a classic format.</p>
-                <a class="app-link" href="https://apps.apple.com/us/app/flip-match/id6478814519">
-                    View on App Store
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                </a>
-            </div>
-
-            <div class="app-card">
-                <img class="app-icon" src="images/icon/emma.png" alt="Emma icon">
-                <span class="app-category">Board Game</span>
-                <div class="app-name">Emma Slides</div>
-                <p class="app-description">Match the pattern with the goal card. Slide, Drop until the goal is reached.</p>
-                <a class="app-link" href="https://apps.apple.com/us/app/emma-slides/id6793634660">
-                    View on App Store
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                </a>
-            </div>
-
-            <div class="app-card">
-                <img class="app-icon" src="images/icon/date.png" alt="Dates icon">
-                <span class="app-category">Utility</span>
-                <div class="app-name">Dates</div>
-                <p class="app-description">Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.</p>
-                <a class="app-link" href="https://apps.apple.com/us/app/dates-convert/id6459511463">
-                    View on App Store
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                </a>
-            </div>
-
-            <div class="app-card">
-                <img class="app-icon" src="images/icon/earth.png" alt="Sunlight Hours icon">
-                <span class="app-category">Educational</span>
-                <div class="app-name">Sunlight Hours</div>
-                <p class="app-description">View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape on iPad.</p>
-                <a class="app-link" href="https://apps.apple.com/us/app/sun-light-hours/id6499107039">
-                    View on App Store
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                </a>
-            </div>
-
+        <div class="app-grid" id="featured-apps">
         </div>
 
         <div class="view-all">
             <a class="btn-secondary" href="product.html">
-                See all 18 apps
+                See all <span data-app-count>18</span> apps
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
         </div>
@@ -673,7 +607,7 @@ footer{
             <div class="craft-list">
                 <div class="craft-row"><span class="craft-key">Platform</span><span class="craft-val">iOS, native</span></div>
                 <div class="craft-row"><span class="craft-key">Templates</span><span class="craft-val">None used</span></div>
-                <div class="craft-row"><span class="craft-key">Apps shipped</span><span class="craft-val">18</span></div>
+                <div class="craft-row"><span class="craft-key">Apps shipped</span><span class="craft-val" data-app-count>18</span></div>
             </div>
         </div>
 
@@ -714,6 +648,12 @@ footer{
 
     </div>
 </footer>
+
+<script src="apps.js"></script>
+<script>
+    renderFeaturedApps('featured-apps');
+    renderAppCounts();
+</script>
 
 </body>
 </html>

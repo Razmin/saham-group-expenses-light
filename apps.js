@@ -1,0 +1,343 @@
+/* =====================================================================
+   NovaNext apps - SINGLE SOURCE OF TRUTH
+   Edit apps here only. index.html, product.html, support.html and
+   about.html all read from this file.
+
+   Fields
+   ------
+   name         App name (shown everywhere)
+   icon         Icon path
+   category     Category shown on product.html
+   description  Product page description (HTML like <br> is allowed)
+   features     Bullet list on product.html
+   url          App Store link
+   supportName  (optional) Name sent to the contact form if different from name
+   featured     (optional) Position on the home page. Leave out to hide it there
+   homeCategory / homeDescription
+                (optional) Home page card text, if different from product page
+   legacy       (optional) true = no longer maintained, grayed out
+   replacedBy   (optional) name of the app that replaces a legacy app
+
+   Order in this list = order on product.html and support.html.
+   ===================================================================== */
+
+const APPS = [
+  {
+    name: "Aiden Connects",
+    icon: "images/icon/aiden.png",
+    category: "Entertainment",
+    description: "Drop, Connect, Win.",
+    features: [
+      "Smart AI, Real Challenge",
+      "Kids Mode: A gentler mode designed for younger players",
+      "Two-Player Mode: Play with a friend on the same device or online"
+    ],
+    url: "https://apps.apple.com/us/app/aiden-connects/id6798768340",
+    featured: 1,
+    homeCategory: "Puzzle",
+    homeDescription: "Try to connect 4 in any direction. Kids get their own Kids Mode, which makes the game a little easier. You can set the difficulty, and play with a friend on the same device or online."
+  },
+  {
+    name: "Emma Slides",
+    icon: "images/icon/emma.png",
+    category: "Entertainment",
+    description: "Slide colorful pegs into place to match the goal",
+    features: [
+      "Simple drag-and-slide controls, no timers or pressure",
+      "A relaxing puzzle for quiet moments",
+      "Colorful, calming design great for all ages"
+    ],
+    url: "https://apps.apple.com/us/app/emma-slides/id6793634660",
+    featured: 4,
+    homeCategory: "Board Game",
+    homeDescription: "Match the pattern with the goal card. Slide, Drop until the goal is reached."
+  },
+  {
+    name: "Cast Connect",
+    icon: "images/icon/film.png",
+    category: "Entertainment",
+    description: "Find hidden links in film & TV – discover which actors, directors & crew worked together across your favourite movies. Connections revealed in seconds!",
+    features: [
+      "Search by People: Find all movies/shows featuring multiple actors or crew",
+      "Search by Movies: Discover shared cast and crew across productions",
+      "Perfect for film buffs and trivia lovers"
+    ],
+    url: "https://apps.apple.com/us/app/cast-connect/id6751820156"
+  },
+  {
+    name: "Hanoi Towers",
+    icon: "images/icon/hanoi.png",
+    category: "Puzzle",
+    description: "The classic puzzle game. Move all disks from one tower to another following simple but challenging rules.",
+    features: [
+      "Move one disk at a time",
+      "Only move the top disk from each tower",
+      "Larger disks cannot go on smaller ones"
+    ],
+    url: "https://apps.apple.com/us/app/hanoi-towers-puzzle/id6680199841",
+    featured: 2,
+    homeDescription: "The classic puzzle game, rebuilt with real depth and weight. Move all disks from one tower to another following simple but challenging rules."
+  },
+  {
+    name: "Flip Match",
+    icon: "images/icon/flip.png",
+    category: "Memory Game",
+    description: "Find all matching pairs by flipping cards. If they match, they stay face-up. If not, they flip back down.",
+    features: [
+      "Progressive difficulty levels",
+      "Challenge your friends",
+      "Train your memory skills"
+    ],
+    url: "https://apps.apple.com/us/app/flip-match/id6478814519",
+    featured: 3,
+    homeDescription: "Find all matching pairs by flipping cards. If they match, they stay face-up. A polished, tactile take on a classic format."
+  },
+  {
+    name: "Number Moves",
+    icon: "images/icon/move.png",
+    category: "Puzzle",
+    description: "Arrange numbers in ascending order from left to right and bottom to top. Tap blocks to move them into empty spaces.",
+    features: [
+      "Classic sliding puzzle mechanics",
+      "Play with numbers or custom images",
+      "Challenging and addictive"
+    ],
+    url: "https://apps.apple.com/us/app/number-moves/id6476934781"
+  },
+  {
+    name: "Puzzly Photo",
+    icon: "images/icon/puzzle.png",
+    category: "Photo Puzzle",
+    description: "Turn any image from your gallery or camera into an instant puzzle to solve. A classic game with your personal touch.",
+    features: [
+      "Use any photo from your gallery",
+      "Take photos directly with your camera",
+      "Instant puzzle generation"
+    ],
+    url: "https://apps.apple.com/us/app/puzzly-photo/id6476255688"
+  },
+  {
+    name: "Peg Elimination",
+    icon: "images/icon/peg.png",
+    category: "Strategy",
+    description: "Remove all pegs until only one remains. Jump over adjacent pegs into empty spots. Harder than it looks!",
+    features: [
+      "Classic strategy game",
+      "Simple rules, challenging gameplay",
+      "Test your planning skills"
+    ],
+    url: "https://apps.apple.com/us/app/peg-elimination/id6474193810"
+  },
+  {
+    name: "Color Logic",
+    icon: "images/icon/master.png",
+    category: "Logic Puzzle",
+    description: "Find all colors in the right order. Black dots show correct color and position. White dots show correct color but wrong position.",
+    features: [
+      "Classic code-breaking game",
+      "Logic and deduction challenges",
+      "Multiple difficulty levels"
+    ],
+    url: "https://apps.apple.com/us/app/color-logic/id6471006415"
+  },
+  {
+    name: "Number Guess",
+    icon: "images/icon/guess.png",
+    category: "Educational",
+    description: "Learn to solve systems of equations in a fun way.<br>Match numbers and letters on both sides to find<br>equations and solve for unknowns.",
+    features: [
+      "Educational math game",
+      "Solve systems of equations",
+      "Interactive learning experience"
+    ],
+    url: "https://apps.apple.com/us/app/number-guess/id6466263744"
+  },
+  {
+    name: "Dates",
+    icon: "images/icon/date.png",
+    category: "Utility",
+    description: "Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.",
+    features: [
+      "Supports Gregorian, Persian, Islamic, Hebrew, Japanese, and Indian calendars",
+      "Calculate date differences",
+      "Simple and intuitive interface"
+    ],
+    url: "https://apps.apple.com/us/app/dates-convert/id6459511463",
+    featured: 5
+  },
+  {
+    name: "Statistics Formula",
+    icon: "images/icon/stat.png",
+    category: "Productivity",
+    description: "Open CSV files and instantly calculate statistical formulas including mean, standard deviation, and more.",
+    features: [
+      "Import CSV files directly",
+      "Common statistical calculations",
+      "Fast and accurate results"
+    ],
+    url: "https://apps.apple.com/us/app/statistics-formulas/id6447047160"
+  },
+  {
+    name: "Large Math",
+    icon: "images/icon/math.png",
+    category: "Educational",
+    description: "Calculate Factorial, Power, Permutation, Combination, and Pascal Triangle for very large numbers. Try 200! and be amazed by the speed.",
+    features: [
+      "Handle extremely large numbers",
+      "Lightning-fast calculations",
+      "Multiple mathematical operations"
+    ],
+    url: "https://apps.apple.com/us/app/large-math/id1628885815"
+  },
+  {
+    name: "GE Plus",
+    icon: "images/icon/plus.png",
+    category: "Finance Pro",
+    description: "Designed for people with shared expenses. Track who owes whom and how much with ease.",
+    features: [
+      "Full group expense tracking",
+      "Receipts can split unequally",
+      "Each receipt can have its own currency",
+      "Define your own currency",
+      "You can hide or show receipts, groups and more"
+    ],
+    url: "https://apps.apple.com/us/app/group-expenses/id1443950401"
+  },
+  {
+    name: "Sunlight Hours",
+    icon: "images/icon/earth.png",
+    category: "Educational",
+    description: "View daylight hours at any latitude on any given day. Explore information about planets in our solar system.",
+    features: [
+      "Daylight calculation for any location",
+      "Solar system planet information",
+      "Educational and practical"
+    ],
+    url: "https://apps.apple.com/us/app/sun-light-hours/id6499107039",
+    featured: 6,
+    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape on iPad."
+  },
+  {
+    name: "FastCam",
+    supportName: "Fast Camera",
+    icon: "images/icon/cam.png",
+    category: "Entertainment",
+    description: "Instant photo and video capture. The moment you open the app, it captures and saves to your gallery.",
+    features: [
+      "Instant capture on app launch",
+      "Auto-save to gallery",
+      "Configurable in settings"
+    ],
+    url: "https://apps.apple.com/us/app/fast-cam/id6449002428"
+  },
+  {
+    name: "Nova Ads",
+    icon: "images/icon/ads.png",
+    category: "Marketing",
+    description: "Advertise your business across all NovaNext apps in one place.<br>Upload your banner, add your website, and purchase a time slot.",
+    features: [
+      "Reach users across multiple apps",
+      "Easy banner upload",
+      "Flexible time slot purchases"
+    ],
+    url: "https://apps.apple.com/us/app/nova-ads/id6743174733"
+  },
+
+  /* Legacy apps go LAST so they appear at the end of every list */
+  {
+    name: "GE Light",
+    icon: "images/icon/light.png",
+    category: "Finance",
+    description: "Designed for people with shared expenses. Track who owes whom<br>and how much with ease.",
+    features: [
+      "Manage group expenses",
+      "Clear debt tracking",
+      "Perfect for roommates and friends"
+    ],
+    url: "https://apps.apple.com/us/app/group-expenses-light/id1285557503",
+    legacy: true,
+    replacedBy: "GE Plus"
+  }
+];
+
+
+/* =====================================================================
+   Render helpers - you normally never need to edit below this line
+   ===================================================================== */
+
+const ARROW_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>';
+
+function findApp(appName) {
+  return APPS.find(app => app.name === appName);
+}
+
+/* Fills any <span data-app-count></span> with the number of apps */
+function renderAppCounts() {
+  document.querySelectorAll('[data-app-count]').forEach(element => {
+    element.textContent = APPS.length;
+  });
+}
+
+/* support.html: the "Need help with a specific app?" pills */
+function renderSupportPills(containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = APPS.map(app => {
+    const contactName = encodeURIComponent(app.supportName || app.name);
+    const label = app.legacy
+      ? `<span>${app.name}<small>No longer maintained</small></span>`
+      : app.name;
+    return `<a class="app-pill${app.legacy ? ' legacy' : ''}" href="contact.html?app=${contactName}">` +
+           `<img class="swatch" src="${app.icon}" alt="">${label}</a>`;
+  }).join('');
+}
+
+/* index.html: the "Featured apps" cards */
+function renderFeaturedApps(containerId) {
+  const container = document.getElementById(containerId);
+  const featuredApps = APPS
+    .filter(app => app.featured)
+    .sort((first, second) => first.featured - second.featured);
+
+  container.innerHTML = featuredApps.map(app => `
+    <div class="app-card">
+        <img class="app-icon" src="${app.icon}" alt="${app.name} icon">
+        <span class="app-category">${app.homeCategory || app.category}</span>
+        <div class="app-name">${app.name}</div>
+        <p class="app-description">${app.homeDescription || app.description}</p>
+        <a class="app-link" href="${app.url}">
+            View on App Store
+            ${ARROW_ICON}
+        </a>
+    </div>`).join('');
+}
+
+/* product.html: the full alternating product list.
+   Inserted right after the .header block so the page's
+   even/odd layout styling keeps working exactly as before. */
+function renderProductList() {
+  const html = APPS.map(app => {
+    const replacement = app.replacedBy ? findApp(app.replacedBy) : null;
+    const categoryText = app.legacy ? `${app.category} · No longer maintained` : app.category;
+    const legacyNote = app.legacy && replacement
+      ? `<p class="legacy-note">${app.name} is no longer updated. Try <a href="${replacement.url}">${replacement.name}</a> instead.</p>`
+      : '';
+    return `
+<div class="product${app.legacy ? ' legacy' : ''}">
+    <div class="product-image">
+        <img class="product-icon" src="${app.icon}" alt="${app.name}">
+    </div>
+    <div class="product-content">
+        <span class="product-category">${categoryText}</span>
+        <h2>${app.name}</h2>
+        ${legacyNote}
+        <p class="product-description">${app.description}</p>
+        <ul class="product-features">
+            ${app.features.map(feature => `<li>${feature}</li>`).join('\n            ')}
+        </ul>
+        <a href="${app.url}" class="download-button">Download on App Store</a>
+    </div>
+</div>`;
+  }).join('');
+
+  document.querySelector('.header').insertAdjacentHTML('afterend', html);
+}
