@@ -42,7 +42,7 @@ const APPS = [
     name: "Aiden Connects",
     icon: "images/icon/aiden.png",
     screenshots: "aidenconnects",
-    screenshotCount: 3,
+    screenshotCount: 1,
     howItWorks: [
       "Choose a difficulty, or turn on Kids Mode for a gentler game.",
       "Take turns dropping a piece into a column.",
@@ -65,7 +65,7 @@ const APPS = [
     name: "Emma Slides",
     icon: "images/icon/emma.png",
     screenshots: "emmaslides",
-    screenshotCount: 2,
+    screenshotCount: 1,
     howItWorks: [
       "Look at the goal card to see the pattern you need to make.",
       "Slide the colorful pegs horizontally or vertically.",
@@ -102,7 +102,7 @@ const APPS = [
     name: "Hanoi Towers",
     icon: "images/icon/hanoi.png",
     screenshots: "hanoitowers",
-    screenshotCount: 4,
+    screenshotCount: 1,
     howItWorks: [
       "Move all the disks from one tower to another.",
       "Move only one disk at a time.",
@@ -124,7 +124,7 @@ const APPS = [
     name: "Flip Match",
     icon: "images/icon/flip.png",
     screenshots: "flipmatch",
-    screenshotCount: 4,
+    screenshotCount: 1,
     howItWorks: [
       "Tap two cards to flip them over.",
       "If they match, they stay face up.",
@@ -146,7 +146,7 @@ const APPS = [
     name: "Number Moves",
     icon: "images/icon/move.png",
     screenshots: "numbermoves",
-    screenshotCount: 5,
+    screenshotCount: 1,
     howItWorks: [
       "Tap a block next to the empty space to move it there.",
       "Keep moving blocks to put the numbers in ascending order.",
@@ -165,7 +165,7 @@ const APPS = [
     name: "Puzzly Photo",
     icon: "images/icon/puzzle.png",
     screenshots: "puzzlyphoto",
-    screenshotCount: 5,
+    screenshotCount: 1,
     howItWorks: [
       "Pick a photo from your gallery, or take one with your camera.",
       "The app turns it into a jigsaw puzzle right away.",
@@ -184,7 +184,7 @@ const APPS = [
     name: "Peg Elimination",
     icon: "images/icon/peg.png",
     screenshots: "pegelimination",
-    screenshotCount: 4,
+    screenshotCount: 1,
     howItWorks: [
       "Jump a peg over an adjacent peg into an empty spot.",
       "The peg you jumped over is removed.",
@@ -204,7 +204,7 @@ const APPS = [
     name: "Color Logic",
     icon: "images/icon/master.png",
     screenshots: "colorlogic",
-    screenshotCount: 4,
+    screenshotCount: 1,
     howItWorks: [
       "Guess the hidden colors and the order they go in.",
       "A black dot means a correct color in the correct position.",
@@ -224,7 +224,7 @@ const APPS = [
     name: "Number Guess",
     icon: "images/icon/guess.png",
     screenshots: "numberguess",
-    screenshotCount: 4,
+    screenshotCount: 1,
     howItWorks: [
       "Place numbers and letters on the two sides of the scale.",
       "When the scale shows equality, you have found an equation.",
@@ -244,7 +244,7 @@ const APPS = [
     name: "Dates",
     icon: "images/icon/date.png",
     screenshots: "dates",
-    screenshotCount: 3,
+    screenshotCount: 1,
     category: "Utility",
     description: "Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.",
     features: [
@@ -259,7 +259,7 @@ const APPS = [
     name: "Statistics Formula",
     icon: "images/icon/stat.png",
     screenshots: "statisticsformula",
-    screenshotCount: 3,
+    screenshotCount: 1,
     category: "Utility",
     description: "Open CSV files and instantly calculate statistical formulas including mean, standard deviation, and more.",
     features: [
@@ -273,7 +273,7 @@ const APPS = [
     name: "Large Math",
     icon: "images/icon/math.png",
     screenshots: "largemath",
-    screenshotCount: 4,
+    screenshotCount: 1,
     category: "Educational",
     description: "Calculate Factorial, Power, Permutation, Combination, and Pascal Triangle for very large numbers. Try 200! and be amazed by the speed.",
     features: [
@@ -287,7 +287,7 @@ const APPS = [
     name: "GE Plus",
     icon: "images/icon/plus.png",
     screenshots: "geplus",
-    screenshotCount: 5,
+    screenshotCount: 1,
     category: "Finance",
     description: "Designed for people with shared expenses. Track who owes whom and how much with ease.",
     features: [
@@ -303,7 +303,7 @@ const APPS = [
     name: "Sunlight Hours",
     icon: "images/icon/earth.png",
     screenshots: "sunlighthours",
-    screenshotCount: 3,
+    screenshotCount: 1,
     category: "Educational",
     description: "View daylight hours at any latitude on any given day. Explore information about planets in our solar system.",
     features: [
@@ -320,7 +320,7 @@ const APPS = [
     supportName: "Fast Camera",
     icon: "images/icon/cam.png",
     screenshots: "fastcam",
-    screenshotCount: 3,
+    screenshotCount: 1,
     category: "Utility",
     description: "Instant photo and video capture. The moment you open the app, it captures and saves to your gallery.",
     features: [
@@ -334,7 +334,7 @@ const APPS = [
     name: "Nova Ads",
     icon: "images/icon/ads.png",
     screenshots: "novaads",
-    screenshotCount: 3,
+    screenshotCount: 1,
     needsInternet: true,
     category: "Marketing",
     description: "Advertise your business across all NovaNext apps in one place.<br>Upload your banner, add your website, and purchase a time slot.",
