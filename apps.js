@@ -17,6 +17,13 @@
                 (optional) Home page card text, if different from product page
    legacy       (optional) true = no longer maintained, grayed out
    replacedBy   (optional) name of the app that replaces a legacy app
+   screenshots  (optional) folder name under images/screenshots/ , e.g. "aidenconnect".
+                Also used as the landing page id: app.html?id=aidenconnect
+                Leave out to use the app name in lowercase letters and digits
+                only ("Aiden Connects" -> "aidenconnects").
+   screenshotCount
+                (optional) how many ipad_01.jpg, ipad_02.jpg ... to show.
+                Leave out to try the first 5; missing files are skipped.
 
    Order in this list = order on product.html and support.html.
    ===================================================================== */
@@ -25,6 +32,8 @@ const APPS = [
   {
     name: "Aiden Connects",
     icon: "images/icon/aiden.png",
+    screenshots: "aidenconnects",
+    screenshotCount: 5,
     category: "Puzzle",
     description: "Drop, Connect, Win.",
     features: [
@@ -39,6 +48,8 @@ const APPS = [
   {
     name: "Emma Slides",
     icon: "images/icon/emma.png",
+    screenshots: "emmaslides",
+    screenshotCount: 5,
     category: "Puzzle",
     description: "Slide colorful pegs into place to match the goal",
     features: [
@@ -53,6 +64,8 @@ const APPS = [
   {
     name: "Cast Connect",
     icon: "images/icon/film.png",
+    screenshots: "castconnect",
+    screenshotCount: 5,
     category: "Movies & TV",
     description: "Find hidden links in film & TV – discover which actors, directors & crew worked together across your favourite movies. Connections revealed in seconds!",
     features: [
@@ -65,6 +78,8 @@ const APPS = [
   {
     name: "Hanoi Towers",
     icon: "images/icon/hanoi.png",
+    screenshots: "hanoitowers",
+    screenshotCount: 5,
     category: "Puzzle",
     description: "The classic puzzle game. Move all disks from one tower to another following simple but challenging rules.",
     features: [
@@ -79,6 +94,8 @@ const APPS = [
   {
     name: "Flip Match",
     icon: "images/icon/flip.png",
+    screenshots: "flipmatch",
+    screenshotCount: 5,
     category: "Puzzle",
     description: "Find all matching pairs by flipping cards. If they match, they stay face-up. If not, they flip back down.",
     features: [
@@ -93,6 +110,8 @@ const APPS = [
   {
     name: "Number Moves",
     icon: "images/icon/move.png",
+    screenshots: "numbermoves",
+    screenshotCount: 5,
     category: "Puzzle",
     description: "Arrange numbers in ascending order from left to right and bottom to top. Tap blocks to move them into empty spaces.",
     features: [
@@ -105,6 +124,8 @@ const APPS = [
   {
     name: "Puzzly Photo",
     icon: "images/icon/puzzle.png",
+    screenshots: "puzzlyphoto",
+    screenshotCount: 5,
     category: "Puzzle",
     description: "Turn any image from your gallery or camera into an instant puzzle to solve. A classic game with your personal touch.",
     features: [
@@ -117,6 +138,8 @@ const APPS = [
   {
     name: "Peg Elimination",
     icon: "images/icon/peg.png",
+    screenshots: "pegelimination",
+    screenshotCount: 5,
     category: "Strategy",
     description: "Remove all pegs until only one remains. Jump over adjacent pegs into empty spots. Harder than it looks!",
     features: [
@@ -129,6 +152,8 @@ const APPS = [
   {
     name: "Color Logic",
     icon: "images/icon/master.png",
+    screenshots: "colorlogic",
+    screenshotCount: 5,
     category: "Strategy",
     description: "Find all colors in the right order. Black dots show correct color and position. White dots show correct color but wrong position.",
     features: [
@@ -141,6 +166,8 @@ const APPS = [
   {
     name: "Number Guess",
     icon: "images/icon/guess.png",
+    screenshots: "numberguess",
+    screenshotCount: 5,
     category: "Educational",
     description: "Learn to solve systems of equations in a fun way.<br>Match numbers and letters on both sides to find<br>equations and solve for unknowns.",
     features: [
@@ -153,6 +180,8 @@ const APPS = [
   {
     name: "Dates",
     icon: "images/icon/date.png",
+    screenshots: "dates",
+    screenshotCount: 5,
     category: "Utility",
     description: "Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.",
     features: [
@@ -166,6 +195,8 @@ const APPS = [
   {
     name: "Statistics Formula",
     icon: "images/icon/stat.png",
+    screenshots: "statisticsformula",
+    screenshotCount: 5,
     category: "Utility",
     description: "Open CSV files and instantly calculate statistical formulas including mean, standard deviation, and more.",
     features: [
@@ -178,6 +209,8 @@ const APPS = [
   {
     name: "Large Math",
     icon: "images/icon/math.png",
+    screenshots: "largemath",
+    screenshotCount: 5,
     category: "Educational",
     description: "Calculate Factorial, Power, Permutation, Combination, and Pascal Triangle for very large numbers. Try 200! and be amazed by the speed.",
     features: [
@@ -190,6 +223,8 @@ const APPS = [
   {
     name: "GE Plus",
     icon: "images/icon/plus.png",
+    screenshots: "geplus",
+    screenshotCount: 5,
     category: "Finance",
     description: "Designed for people with shared expenses. Track who owes whom and how much with ease.",
     features: [
@@ -204,6 +239,8 @@ const APPS = [
   {
     name: "Sunlight Hours",
     icon: "images/icon/earth.png",
+    screenshots: "sunlighthours",
+    screenshotCount: 5,
     category: "Educational",
     description: "View daylight hours at any latitude on any given day. Explore information about planets in our solar system.",
     features: [
@@ -219,6 +256,8 @@ const APPS = [
     name: "FastCam",
     supportName: "Fast Camera",
     icon: "images/icon/cam.png",
+    screenshots: "fastcam",
+    screenshotCount: 5,
     category: "Utility",
     description: "Instant photo and video capture. The moment you open the app, it captures and saves to your gallery.",
     features: [
@@ -231,6 +270,8 @@ const APPS = [
   {
     name: "Nova Ads",
     icon: "images/icon/ads.png",
+    screenshots: "novaads",
+    screenshotCount: 5,
     category: "Marketing",
     description: "Advertise your business across all NovaNext apps in one place.<br>Upload your banner, add your website, and purchase a time slot.",
     features: [
@@ -241,10 +282,11 @@ const APPS = [
     url: "https://apps.apple.com/us/app/nova-ads/id6743174733"
   },
 
-  /* Legacy apps go LAST so they appear at the end of every list */
   {
     name: "GE Light",
     icon: "images/icon/light.png",
+    screenshots: "gelight",
+    screenshotCount: 5,
     category: "Finance",
     description: "Designed for people with shared expenses. Track who owes whom<br>and how much with ease.",
     features: [
@@ -267,6 +309,14 @@ const ARROW_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 
 function findApp(appName) {
   return APPS.find(app => app.name === appName);
+}
+
+const SCREENSHOTS_FOLDER = 'images/screenshots/';
+const DEFAULT_MAX_SCREENSHOTS = 5;
+
+/* Folder name for screenshots, also used as the landing page id */
+function appKey(app) {
+  return app.screenshots || app.name.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
 /* Fills any <span data-app-count></span> with the number of apps */
@@ -333,6 +383,14 @@ const SEGMENTED_CONTROL_CSS = `
     background:#ffffff;font-weight:600;
     box-shadow:0 3px 8px rgba(0,0,0,.12), 0 3px 1px rgba(0,0,0,.04);
 }
+.product-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;}
+.learn-button{
+    display:inline-block;padding:11px 22px;border-radius:12px;
+    border:1px solid var(--border);background:#ffffff;
+    color:var(--text) !important;text-decoration:none;
+    font-weight:600;font-size:14px;transition:.2s;
+}
+.learn-button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(17,24,39,.08);}
 `;
 
 function buildProductHtml(app) {
@@ -354,7 +412,10 @@ function buildProductHtml(app) {
         <ul class="product-features">
             ${app.features.map(feature => `<li>${feature}</li>`).join('\n            ')}
         </ul>
-        <a href="${app.url}" class="download-button">Download on App Store</a>
+        <div class="product-actions">
+            <a href="${app.url}" class="download-button">Download on App Store</a>
+            <a href="app.html?id=${appKey(app)}" class="learn-button">Learn more</a>
+        </div>
     </div>
 </div>`;
 }
@@ -402,4 +463,88 @@ function renderProductList() {
   wrapper.appendChild(control);
   header.appendChild(wrapper);
   showProducts(ALL_LABEL);
+}
+
+
+/* app.html: one landing page for the app named in the URL (?id=aidenconnect).
+   Screenshots are loaded from images/screenshots/<key>/ipad_01.jpg, ipad_02.jpg ...
+   Files that do not exist are skipped, and the section hides if none load. */
+function renderAppPage(containerId) {
+  const container = document.getElementById(containerId);
+  const requestedKey = new URLSearchParams(window.location.search).get('id');
+  const app = APPS.find(candidate => appKey(candidate) === requestedKey);
+
+  if (!app) {
+    document.title = 'App not found - NovaNext';
+    container.innerHTML = `
+      <div class="app-missing">
+          <h1>App not found</h1>
+          <p>We could not find that app. <a href="product.html">See all products</a></p>
+      </div>`;
+    return;
+  }
+
+  const replacement = app.replacedBy ? findApp(app.replacedBy) : null;
+  const legacyNote = app.legacy && replacement
+    ? `<p class="legacy-note">${app.name} is no longer updated. Try <a href="${replacement.url}">${replacement.name}</a> instead.</p>`
+    : '';
+  const contactName = encodeURIComponent(app.supportName || app.name);
+
+  document.title = `${app.name} - NovaNext`;
+  const descriptionMeta = document.querySelector('meta[name="description"]');
+  if (descriptionMeta) {
+    descriptionMeta.content = app.description.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  container.innerHTML = `
+    <a class="back-link" href="product.html">&larr; All products</a>
+    <section class="app-hero">
+        <img class="app-hero-icon" src="${app.icon}" alt="${app.name} icon">
+        <div>
+            <span class="product-category">${app.category}</span>
+            <h1>${app.name}</h1>
+            ${legacyNote}
+            <p class="app-hero-description">${app.description}</p>
+            <a href="${app.url}" class="download-button">Download on App Store</a>
+        </div>
+    </section>
+    <section class="screenshots-section" hidden>
+        <div class="screenshots"></div>
+    </section>
+    <section class="app-features">
+        <h2>What it does</h2>
+        <ul class="product-features">
+            ${app.features.map(feature => `<li>${feature}</li>`).join('\n            ')}
+        </ul>
+    </section>
+    <section class="app-links">
+        <a href="contact.html?app=${contactName}">Get support</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="product.html">More apps</a>
+    </section>`;
+
+  const screenshotSection = container.querySelector('.screenshots-section');
+  const screenshotStrip = container.querySelector('.screenshots');
+  const maxScreenshots = app.screenshotCount || DEFAULT_MAX_SCREENSHOTS;
+  let screenshotsLeftToCheck = maxScreenshots;
+
+  function screenshotChecked() {
+    screenshotsLeftToCheck -= 1;
+    if (screenshotsLeftToCheck === 0 && screenshotStrip.children.length > 0) {
+      screenshotSection.hidden = false;
+    }
+  }
+
+  for (let screenshotNumber = 1; screenshotNumber <= maxScreenshots; screenshotNumber++) {
+    const paddedNumber = String(screenshotNumber).padStart(2, '0');
+    const screenshotImage = document.createElement('img');
+    screenshotImage.alt = `${app.name} screenshot ${screenshotNumber}`;
+    screenshotImage.addEventListener('load', screenshotChecked);
+    screenshotImage.addEventListener('error', () => {
+      screenshotImage.remove();
+      screenshotChecked();
+    });
+    screenshotImage.src = `${SCREENSHOTS_FOLDER}${appKey(app)}/ipad_${paddedNumber}.jpg`;
+    screenshotStrip.appendChild(screenshotImage);
+  }
 }
