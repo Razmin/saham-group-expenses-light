@@ -491,6 +491,9 @@ function buildProductHtml(app) {
         <h2>${app.name}</h2>
         ${legacyNote}
         <p class="product-description">${app.description}</p>
+        <ul class="product-features">
+            ${app.features.map(feature => `<li>${feature}</li>`).join('\n            ')}
+        </ul>
         <div class="product-actions">
             <a href="${app.url}" class="download-button">Download on App Store</a>
             <a href="app.html?id=${appKey(app)}" class="learn-button">Learn more</a>
