@@ -368,7 +368,7 @@ const APPS = [
     name: "GE Light",
     icon: "images/icon/light.png",
     screenshots: "gelight",
-    screenshotCount: 5,
+    screenshotCount: 1,
     category: "Finance",
     description: "Designed for people with shared expenses. Track who owes whom<br>and how much with ease.",
     features: [
