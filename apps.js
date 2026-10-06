@@ -33,7 +33,7 @@ const APPS = [
     name: "Aiden Connects",
     icon: "images/icon/aiden.png",
     screenshots: "aidenconnects",
-    screenshotCount: 4,
+    screenshotCount: 3,
     category: "Puzzle",
     description: "Drop, Connect, Win.",
     features: [
