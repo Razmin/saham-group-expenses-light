@@ -87,7 +87,7 @@ const APPS = [
     name: "Cast Connect",
     icon: "images/icon/film.png",
     screenshots: "castconnect",
-    screenshotCount: 4,
+    screenshotCount: 1,
     howItWorks: [
       "Search for one person to see their movies and TV series.",
       "Search for two or more people to see the movies and TV series they have in common.",
