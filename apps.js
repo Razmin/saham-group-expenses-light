@@ -88,6 +88,12 @@ const APPS = [
     icon: "images/icon/film.png",
     screenshots: "castconnect",
     screenshotCount: 4,
+      howItWorks: [
+        "Search one person to see his/her Movies/TV Seriece",
+        "Search two or more people to see Movies/TV Seriece they have in common"
+        "Search one Move or TV series its cast",
+        "Search two or more Movies/TV Seriece all cast have in common"
+      ]
     needsInternet: true,
     category: "Movies & TV",
     description: "Find hidden links in film & TV – discover which actors, directors & crew worked together across your favourite movies. Connections revealed in seconds!",
@@ -245,6 +251,11 @@ const APPS = [
     icon: "images/icon/date.png",
     screenshots: "dates",
     screenshotCount: 1,
+      howItWorks: [
+        "Convert dates in supported calendars",
+        "Find out the difference between two dates in any supported calendars",
+        "You can select how the difference is shown. Day, Month, Year or any combination of these"
+      ],
     category: "Utility",
     description: "Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.",
     features: [
