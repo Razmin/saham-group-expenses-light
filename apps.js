@@ -285,6 +285,12 @@ const APPS = [
     icon: "images/icon/math.png",
     screenshots: "largemath",
     screenshotCount: 1,
+    howItWorks: [
+        "Find factorial of large numbers in the fastest possible way",
+        "Find Combination an permutation of two number. This is fast too",
+        "Raise any number to any power and get the result almost instantly",
+        "Find Pascal numbers up to any row. Enter 100 to see the Pascal numbers for the first 100 rows of the pascal Traiangle"
+    ],
     category: "Educational",
     description: "Calculate Factorial, Power, Permutation, Combination, and Pascal Triangle for very large numbers. Try 200! and be amazed by the speed.",
     features: [
