@@ -33,7 +33,7 @@ const APPS = [
     name: "Aiden Connects",
     icon: "images/icon/aiden.png",
     screenshots: "aidenconnects",
-    screenshotCount: 5,
+    screenshotCount: 4,
     category: "Puzzle",
     description: "Drop, Connect, Win.",
     features: [
@@ -49,7 +49,7 @@ const APPS = [
     name: "Emma Slides",
     icon: "images/icon/emma.png",
     screenshots: "emmaslides",
-    screenshotCount: 5,
+    screenshotCount: 2,
     category: "Puzzle",
     description: "Slide colorful pegs into place to match the goal",
     features: [
@@ -65,7 +65,7 @@ const APPS = [
     name: "Cast Connect",
     icon: "images/icon/film.png",
     screenshots: "castconnect",
-    screenshotCount: 5,
+    screenshotCount: 4,
     category: "Movies & TV",
     description: "Find hidden links in film & TV – discover which actors, directors & crew worked together across your favourite movies. Connections revealed in seconds!",
     features: [
@@ -79,7 +79,7 @@ const APPS = [
     name: "Hanoi Towers",
     icon: "images/icon/hanoi.png",
     screenshots: "hanoitowers",
-    screenshotCount: 5,
+    screenshotCount: 4,
     category: "Puzzle",
     description: "The classic puzzle game. Move all disks from one tower to another following simple but challenging rules.",
     features: [
@@ -95,7 +95,7 @@ const APPS = [
     name: "Flip Match",
     icon: "images/icon/flip.png",
     screenshots: "flipmatch",
-    screenshotCount: 5,
+    screenshotCount: 4,
     category: "Puzzle",
     description: "Find all matching pairs by flipping cards. If they match, they stay face-up. If not, they flip back down.",
     features: [
@@ -139,7 +139,7 @@ const APPS = [
     name: "Peg Elimination",
     icon: "images/icon/peg.png",
     screenshots: "pegelimination",
-    screenshotCount: 5,
+    screenshotCount: 4,
     category: "Strategy",
     description: "Remove all pegs until only one remains. Jump over adjacent pegs into empty spots. Harder than it looks!",
     features: [
@@ -153,7 +153,7 @@ const APPS = [
     name: "Color Logic",
     icon: "images/icon/master.png",
     screenshots: "colorlogic",
-    screenshotCount: 5,
+    screenshotCount: 4,
     category: "Strategy",
     description: "Find all colors in the right order. Black dots show correct color and position. White dots show correct color but wrong position.",
     features: [
@@ -167,7 +167,7 @@ const APPS = [
     name: "Number Guess",
     icon: "images/icon/guess.png",
     screenshots: "numberguess",
-    screenshotCount: 5,
+    screenshotCount: 4,
     category: "Educational",
     description: "Learn to solve systems of equations in a fun way.<br>Match numbers and letters on both sides to find<br>equations and solve for unknowns.",
     features: [
@@ -181,7 +181,7 @@ const APPS = [
     name: "Dates",
     icon: "images/icon/date.png",
     screenshots: "dates",
-    screenshotCount: 5,
+    screenshotCount: 3,
     category: "Utility",
     description: "Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.",
     features: [
@@ -196,7 +196,7 @@ const APPS = [
     name: "Statistics Formula",
     icon: "images/icon/stat.png",
     screenshots: "statisticsformula",
-    screenshotCount: 5,
+    screenshotCount: 3,
     category: "Utility",
     description: "Open CSV files and instantly calculate statistical formulas including mean, standard deviation, and more.",
     features: [
@@ -210,7 +210,7 @@ const APPS = [
     name: "Large Math",
     icon: "images/icon/math.png",
     screenshots: "largemath",
-    screenshotCount: 5,
+    screenshotCount: 4,
     category: "Educational",
     description: "Calculate Factorial, Power, Permutation, Combination, and Pascal Triangle for very large numbers. Try 200! and be amazed by the speed.",
     features: [
@@ -240,7 +240,7 @@ const APPS = [
     name: "Sunlight Hours",
     icon: "images/icon/earth.png",
     screenshots: "sunlighthours",
-    screenshotCount: 5,
+    screenshotCount: 3,
     category: "Educational",
     description: "View daylight hours at any latitude on any given day. Explore information about planets in our solar system.",
     features: [
@@ -257,7 +257,7 @@ const APPS = [
     supportName: "Fast Camera",
     icon: "images/icon/cam.png",
     screenshots: "fastcam",
-    screenshotCount: 5,
+    screenshotCount: 3,
     category: "Utility",
     description: "Instant photo and video capture. The moment you open the app, it captures and saves to your gallery.",
     features: [
@@ -271,7 +271,7 @@ const APPS = [
     name: "Nova Ads",
     icon: "images/icon/ads.png",
     screenshots: "novaads",
-    screenshotCount: 5,
+    screenshotCount: 3,
     category: "Marketing",
     description: "Advertise your business across all NovaNext apps in one place.<br>Upload your banner, add your website, and purchase a time slot.",
     features: [
