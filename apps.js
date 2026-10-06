@@ -88,15 +88,15 @@ const APPS = [
     icon: "images/icon/film.png",
     screenshots: "castconnect",
     screenshotCount: 4,
-      howItWorks: [
-        "Search one person to see his/her Movies/TV Seriece",
-        "Search two or more people to see Movies/TV Seriece they have in common"
-        "Search one Move or TV series its cast",
-        "Search two or more Movies/TV Seriece all cast have in common"
-      ]
+    howItWorks: [
+      "Search for one person to see their movies and TV series.",
+      "Search for two or more people to see the movies and TV series they have in common.",
+      "Search for one movie or TV series to see its cast.",
+      "Search for two or more movies or TV series to see the cast they have in common."
+    ],
     needsInternet: true,
     category: "Movies & TV",
-    description: "Find hidden links in film & TV – discover which actors, directors & crew worked together across your favourite movies. Connections revealed in seconds!",
+    description: "Find hidden links in film & TV – discover which actors, directors & crew worked together across your favorite movies. Connections revealed in seconds!",
     features: [
       "Search by People: Find all movies/shows featuring multiple actors or crew",
       "Search by Movies: Discover shared cast and crew across productions",
@@ -251,11 +251,11 @@ const APPS = [
     icon: "images/icon/date.png",
     screenshots: "dates",
     screenshotCount: 1,
-      howItWorks: [
-        "Convert dates in supported calendars",
-        "Find out the difference between two dates in any supported calendars",
-        "You can select how the difference is shown. Day, Month, Year or any combination of these"
-      ],
+    howItWorks: [
+      "Convert dates between the supported calendars.",
+      "Find the difference between two dates in any supported calendar.",
+      "Choose how the difference is shown: days, months, years, or any combination of these."
+    ],
     category: "Utility",
     description: "Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.",
     features: [
@@ -286,10 +286,10 @@ const APPS = [
     screenshots: "largemath",
     screenshotCount: 1,
     howItWorks: [
-        "Find factorial of large numbers in the fastest possible way",
-        "Find Combination an permutation of two number. This is fast too",
-        "Raise any number to any power and get the result almost instantly",
-        "Find Pascal numbers up to any row. Enter 100 to see the Pascal numbers for the first 100 rows of the pascal Traiangle"
+      "Find the factorial of large numbers in the fastest possible way.",
+      "Find the combination and permutation of two numbers. This is fast too.",
+      "Raise any number to any power and get the result almost instantly.",
+      "Find Pascal numbers up to any row. Enter 100 to see the first 100 rows of Pascal's Triangle."
     ],
     category: "Educational",
     description: "Calculate Factorial, Power, Permutation, Combination, and Pascal Triangle for very large numbers. Try 200! and be amazed by the speed.",
