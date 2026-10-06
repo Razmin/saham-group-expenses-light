@@ -24,6 +24,15 @@
    screenshotCount
                 (optional) how many ipad_01.jpg, ipad_02.jpg ... to show.
                 Leave out to try the first 5; missing files are skipped.
+   longDescription
+                (optional) Landing page only. A paragraph or two about the app
+                (HTML like <br> is allowed). Section hides if left out.
+   howItWorks   (optional) Landing page only. Array of short steps, shown as a
+                numbered list. Section hides if left out.
+   needsInternet
+                (optional) true = landing page says it needs an internet connection.
+                Leave out and the page says "Works offline".
+   offlineNote  (optional) Extra sentence after "Works offline", e.g. for online play
 
    Order in this list = order on product.html and support.html.
    ===================================================================== */
@@ -34,6 +43,13 @@ const APPS = [
     icon: "images/icon/aiden.png",
     screenshots: "aidenconnects",
     screenshotCount: 3,
+    howItWorks: [
+      "Choose a difficulty, or turn on Kids Mode for a gentler game.",
+      "Take turns dropping a piece into a column.",
+      "Connect 4 of your pieces in a row, in any direction.",
+      "Play against the AI, or with a friend on the same device or online."
+    ],
+    offlineNote: "Online play needs an internet connection.",
     category: "Puzzle",
     description: "Drop, Connect, Win.",
     features: [
@@ -50,6 +66,12 @@ const APPS = [
     icon: "images/icon/emma.png",
     screenshots: "emmaslides",
     screenshotCount: 2,
+    howItWorks: [
+      "Look at the goal card to see the pattern you need to make.",
+      "Slide the colorful pegs horizontally or vertically.",
+      "Keep sliding until your pegs match the goal card.",
+      "There are no timers, so take your time."
+    ],
     category: "Puzzle",
     description: "Slide colorful pegs into place to match the goal",
     features: [
@@ -66,6 +88,7 @@ const APPS = [
     icon: "images/icon/film.png",
     screenshots: "castconnect",
     screenshotCount: 4,
+    needsInternet: true,
     category: "Movies & TV",
     description: "Find hidden links in film & TV – discover which actors, directors & crew worked together across your favourite movies. Connections revealed in seconds!",
     features: [
@@ -80,6 +103,12 @@ const APPS = [
     icon: "images/icon/hanoi.png",
     screenshots: "hanoitowers",
     screenshotCount: 4,
+    howItWorks: [
+      "Move all the disks from one tower to another.",
+      "Move only one disk at a time.",
+      "Only the top disk of a tower can be moved.",
+      "A larger disk can never go on top of a smaller one."
+    ],
     category: "Puzzle",
     description: "The classic puzzle game. Move all disks from one tower to another following simple but challenging rules.",
     features: [
@@ -96,6 +125,12 @@ const APPS = [
     icon: "images/icon/flip.png",
     screenshots: "flipmatch",
     screenshotCount: 4,
+    howItWorks: [
+      "Tap two cards to flip them over.",
+      "If they match, they stay face up.",
+      "If they don't match, they flip back down, so remember where they were.",
+      "Find all the pairs to finish the level."
+    ],
     category: "Puzzle",
     description: "Find all matching pairs by flipping cards. If they match, they stay face-up. If not, they flip back down.",
     features: [
@@ -112,6 +147,11 @@ const APPS = [
     icon: "images/icon/move.png",
     screenshots: "numbermoves",
     screenshotCount: 5,
+    howItWorks: [
+      "Tap a block next to the empty space to move it there.",
+      "Keep moving blocks to put the numbers in ascending order.",
+      "The order runs from left to right and from bottom to top."
+    ],
     category: "Puzzle",
     description: "Arrange numbers in ascending order from left to right and bottom to top. Tap blocks to move them into empty spaces.",
     features: [
@@ -126,6 +166,11 @@ const APPS = [
     icon: "images/icon/puzzle.png",
     screenshots: "puzzlyphoto",
     screenshotCount: 5,
+    howItWorks: [
+      "Pick a photo from your gallery, or take one with your camera.",
+      "The app turns it into a jigsaw puzzle right away.",
+      "Put the pieces together to complete your picture."
+    ],
     category: "Puzzle",
     description: "Turn any image from your gallery or camera into an instant puzzle to solve. A classic game with your personal touch.",
     features: [
@@ -140,6 +185,12 @@ const APPS = [
     icon: "images/icon/peg.png",
     screenshots: "pegelimination",
     screenshotCount: 4,
+    howItWorks: [
+      "Jump a peg over an adjacent peg into an empty spot.",
+      "The peg you jumped over is removed.",
+      "Keep jumping until only one peg remains.",
+      "Think ahead, because every jump changes what you can do next."
+    ],
     category: "Strategy",
     description: "Remove all pegs until only one remains. Jump over adjacent pegs into empty spots. Harder than it looks!",
     features: [
@@ -154,6 +205,12 @@ const APPS = [
     icon: "images/icon/master.png",
     screenshots: "colorlogic",
     screenshotCount: 4,
+    howItWorks: [
+      "Guess the hidden colors and the order they go in.",
+      "A black dot means a correct color in the correct position.",
+      "A white dot means a correct color in the wrong position.",
+      "Use the dots to improve each guess until you find all the colors in the right order."
+    ],
     category: "Strategy",
     description: "Find all colors in the right order. Black dots show correct color and position. White dots show correct color but wrong position.",
     features: [
@@ -168,6 +225,12 @@ const APPS = [
     icon: "images/icon/guess.png",
     screenshots: "numberguess",
     screenshotCount: 4,
+    howItWorks: [
+      "Place numbers and letters on the two sides of the scale.",
+      "When the scale shows equality, you have found an equation.",
+      "For example, A and B on one side and 2 and 1 on the other means A + B = 3.",
+      "Use the equations you find to solve for the unknown letters."
+    ],
     category: "Educational",
     description: "Learn to solve systems of equations in a fun way.<br>Match numbers and letters on both sides to find<br>equations and solve for unknowns.",
     features: [
@@ -272,6 +335,7 @@ const APPS = [
     icon: "images/icon/ads.png",
     screenshots: "novaads",
     screenshotCount: 3,
+    needsInternet: true,
     category: "Marketing",
     description: "Advertise your business across all NovaNext apps in one place.<br>Upload your banner, add your website, and purchase a time slot.",
     features: [
@@ -282,6 +346,7 @@ const APPS = [
     url: "https://apps.apple.com/us/app/nova-ads/id6743174733"
   },
 
+  /* Legacy apps go LAST so they appear at the end of every list */
   {
     name: "GE Light",
     icon: "images/icon/light.png",
@@ -409,9 +474,6 @@ function buildProductHtml(app) {
         <h2>${app.name}</h2>
         ${legacyNote}
         <p class="product-description">${app.description}</p>
-        <ul class="product-features">
-            ${app.features.map(feature => `<li>${feature}</li>`).join('\n            ')}
-        </ul>
         <div class="product-actions">
             <a href="${app.url}" class="download-button">Download on App Store</a>
             <a href="app.html?id=${appKey(app)}" class="learn-button">Learn more</a>
@@ -489,6 +551,9 @@ function renderAppPage(containerId) {
     ? `<p class="legacy-note">${app.name} is no longer updated. Try <a href="${replacement.url}">${replacement.name}</a> instead.</p>`
     : '';
   const contactName = encodeURIComponent(app.supportName || app.name);
+  const offlineText = app.needsInternet
+    ? 'Needs an internet connection.'
+    : `Works offline.${app.offlineNote ? ' ' + app.offlineNote : ''}`;
 
   document.title = `${app.name} - NovaNext`;
   const descriptionMeta = document.querySelector('meta[name="description"]');
@@ -506,17 +571,30 @@ function renderAppPage(containerId) {
             ${legacyNote}
             <p class="app-hero-description">${app.description}</p>
             <a href="${app.url}" class="download-button">Download on App Store</a>
+            <p class="app-offline">${offlineText}</p>
         </div>
     </section>
     <section class="screenshots-section" hidden>
         <div class="screenshots"></div>
     </section>
+    ${app.longDescription ? `
+    <section class="app-about">
+        <h2>About ${app.name}</h2>
+        <p>${app.longDescription}</p>
+    </section>` : ''}
     <section class="app-features">
         <h2>What it does</h2>
         <ul class="product-features">
             ${app.features.map(feature => `<li>${feature}</li>`).join('\n            ')}
         </ul>
     </section>
+    ${app.howItWorks && app.howItWorks.length ? `
+    <section class="app-how">
+        <h2>How it works</h2>
+        <ol>
+            ${app.howItWorks.map(step => `<li>${step}</li>`).join('\n            ')}
+        </ol>
+    </section>` : ''}
     <section class="app-links">
         <a href="contact.html?app=${contactName}">Get support</a>
         <a href="privacy.html">Privacy policy</a>
