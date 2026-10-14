@@ -633,21 +633,40 @@ function openVideo(app) {
 }
 
 function addDemoVideo(app, actions) {
-  // Invisible check: the button is added only if the video file exists.
-  const probe = document.createElement('video');
-  probe.preload = 'metadata';
-  probe.muted = true;
-  probe.addEventListener('loadedmetadata', () => {
+  const url = videoSrc(app);
+  let added = false;
+
+  function addButton() {
+    if (added) return;
+    added = true;
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'demo-button';
     button.innerHTML = '<span class="demo-play">\u25B6</span> Watch demo';
     button.addEventListener('click', () => openVideo(app));
     actions.appendChild(button);   // next to the Download button
+  }
+
+  // The button is added only if the video file exists.
+  // 1) Ask the server (works everywhere, including iPhone Safari).
+  fetch(url, { method: 'HEAD' })
+    .then(response => {
+      const type = response.headers.get('content-type') || '';
+      if (response.ok && !type.includes('text/html')) addButton();
+    })
+    .catch(() => {});
+
+  // 2) Fallback: let the browser try to read the video (e.g. when testing
+  //    from a local file where fetch is blocked).
+  const probe = document.createElement('video');
+  probe.preload = 'metadata';
+  probe.muted = true;
+  probe.addEventListener('loadedmetadata', () => {
+    addButton();
     probe.removeAttribute('src');
     probe.load();
   });
-  probe.src = videoSrc(app);       // a missing file fails silently: no button
+  probe.src = url;
 }
 
 
