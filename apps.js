@@ -6,7 +6,10 @@
    Fields
    ------
    name         App name (shown everywhere)
-   icon         Icon path
+   icon         Icon file name only, no folder or extension ("aiden" means
+                images/icon/aiden.png). The same name is used for the demo video:
+                videos/aiden.mp4.
+                Folders and extensions are set once in MEDIA below.
    category     Category label (product page and home page cards)
    description  Product page description (HTML like <br> is allowed)
    features     Bullet list on product.html
@@ -37,10 +40,23 @@
    Order in this list = order on product.html and support.html.
    ===================================================================== */
 
+/* ---------------------------------------------------------------------
+   MEDIA - change folders / extensions here, once
+   --------------------------------------------------------------------- */
+const MEDIA = {
+  iconDir:   'images/icon/',
+  iconExt:   '.png',
+  videoDir:  'videos/',
+  videoExt:  '.mp4'
+};
+
+const iconSrc   = app => MEDIA.iconDir  + app.icon + MEDIA.iconExt;
+const videoSrc  = app => MEDIA.videoDir + app.icon + MEDIA.videoExt;
+
 const APPS = [
   {
     name: "Aiden Connects",
-    icon: "images/icon/aiden.png",
+    icon: "aiden",
     screenshots: "aidenconnects",
     screenshotCount: 1,
     howItWorks: [
@@ -63,7 +79,7 @@ const APPS = [
   },
   {
     name: "Emma Slides",
-    icon: "images/icon/emma.png",
+    icon: "emma",
     screenshots: "emmaslides",
     screenshotCount: 1,
     howItWorks: [
@@ -85,7 +101,7 @@ const APPS = [
   },
   {
     name: "Cast Connect",
-    icon: "images/icon/film.png",
+    icon: "film",
     screenshots: "castconnect",
     screenshotCount: 1,
     howItWorks: [
@@ -106,7 +122,7 @@ const APPS = [
   },
   {
     name: "Hanoi Towers",
-    icon: "images/icon/hanoi.png",
+    icon: "hanoi",
     screenshots: "hanoitowers",
     screenshotCount: 1,
     howItWorks: [
@@ -128,7 +144,7 @@ const APPS = [
   },
   {
     name: "Flip Match",
-    icon: "images/icon/flip.png",
+    icon: "flip",
     screenshots: "flipmatch",
     screenshotCount: 1,
     howItWorks: [
@@ -150,7 +166,7 @@ const APPS = [
   },
   {
     name: "Number Moves",
-    icon: "images/icon/move.png",
+    icon: "move",
     screenshots: "numbermoves",
     screenshotCount: 1,
     howItWorks: [
@@ -169,7 +185,7 @@ const APPS = [
   },
   {
     name: "Puzzly Photo",
-    icon: "images/icon/puzzle.png",
+    icon: "puzzle",
     screenshots: "puzzlyphoto",
     screenshotCount: 1,
     howItWorks: [
@@ -188,7 +204,7 @@ const APPS = [
   },
   {
     name: "Peg Elimination",
-    icon: "images/icon/peg.png",
+    icon: "peg",
     screenshots: "pegelimination",
     screenshotCount: 1,
     howItWorks: [
@@ -208,7 +224,7 @@ const APPS = [
   },
   {
     name: "Color Logic",
-    icon: "images/icon/master.png",
+    icon: "master",
     screenshots: "colorlogic",
     screenshotCount: 1,
     howItWorks: [
@@ -228,7 +244,7 @@ const APPS = [
   },
   {
     name: "Number Guess",
-    icon: "images/icon/guess.png",
+    icon: "guess",
     screenshots: "numberguess",
     screenshotCount: 1,
     howItWorks: [
@@ -248,7 +264,7 @@ const APPS = [
   },
   {
     name: "Dates",
-    icon: "images/icon/date.png",
+    icon: "date",
     screenshots: "dates",
     screenshotCount: 1,
     howItWorks: [
@@ -268,7 +284,7 @@ const APPS = [
   },
   {
     name: "Statistics Formula",
-    icon: "images/icon/stat.png",
+    icon: "stat",
     screenshots: "statisticsformula",
     screenshotCount: 1,
     category: "Utility",
@@ -282,7 +298,7 @@ const APPS = [
   },
   {
     name: "Large Math",
-    icon: "images/icon/math.png",
+    icon: "math",
     screenshots: "largemath",
     screenshotCount: 1,
     howItWorks: [
@@ -302,7 +318,7 @@ const APPS = [
   },
   {
     name: "GE Plus",
-    icon: "images/icon/plus.png",
+    icon: "plus",
     screenshots: "geplus",
     screenshotCount: 1,
     category: "Finance",
@@ -318,7 +334,7 @@ const APPS = [
   },
   {
     name: "Sunlight Hours",
-    icon: "images/icon/earth.png",
+    icon: "earth",
     screenshots: "sunlighthours",
     screenshotCount: 1,
     category: "Educational",
@@ -335,7 +351,7 @@ const APPS = [
   {
     name: "FastCam",
     supportName: "Fast Camera",
-    icon: "images/icon/cam.png",
+    icon: "cam",
     screenshots: "fastcam",
     screenshotCount: 1,
     category: "Utility",
@@ -349,7 +365,7 @@ const APPS = [
   },
   {
     name: "Nova Ads",
-    icon: "images/icon/ads.png",
+    icon: "ads",
     screenshots: "novaads",
     screenshotCount: 1,
     needsInternet: true,
@@ -366,7 +382,7 @@ const APPS = [
   /* Legacy apps go LAST so they appear at the end of every list */
   {
     name: "GE Light",
-    icon: "images/icon/light.png",
+    icon: "light",
     screenshots: "gelight",
     screenshotCount: 1,
     category: "Finance",
@@ -417,7 +433,7 @@ function renderSupportPills(containerId) {
       ? `<span>${app.name}<small>No longer maintained</small></span>`
       : app.name;
     return `<a class="app-pill${app.legacy ? ' legacy' : ''}" href="contact.html?app=${contactName}">` +
-           `<img class="swatch" src="${app.icon}" alt="">${label}</a>`;
+           `<img class="swatch" src="${iconSrc(app)}" alt="">${label}</a>`;
   }).join('');
 }
 
@@ -430,7 +446,7 @@ function renderFeaturedApps(containerId) {
 
   container.innerHTML = featuredApps.map(app => `
     <div class="app-card">
-        <img class="app-icon" src="${app.icon}" alt="${app.name} icon">
+        <img class="app-icon" src="${iconSrc(app)}" alt="${app.name} icon">
         <span class="app-category">${app.category}</span>
         <div class="app-name">${app.name}</div>
         <p class="app-description">${app.homeDescription || app.description}</p>
@@ -484,7 +500,7 @@ function buildProductHtml(app) {
   return `
 <div class="product${app.legacy ? ' legacy' : ''}">
     <div class="product-image">
-        <img class="product-icon" src="${app.icon}" alt="${app.name}">
+        <img class="product-icon" src="${iconSrc(app)}" alt="${app.name}">
     </div>
     <div class="product-content">
         <span class="product-category">${categoryText}</span>
@@ -548,6 +564,93 @@ function renderProductList() {
 }
 
 
+/* Demo video: a "Watch demo" button next to the Download button,
+   opening a lightbox player. Looks for videos/<icon>.mp4. If the file does not exist the app
+   simply has no video tile. */
+const VIDEO_CSS = `
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;}
+.demo-button{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 22px;border-radius:12px;
+    border:1px solid var(--border);background:#ffffff;
+    color:var(--text);font:inherit;font-weight:600;font-size:14px;
+    cursor:pointer;transition:.2s;
+}
+.demo-button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(17,24,39,.08);}
+.demo-button .demo-play{color:var(--blue);font-size:12px;}
+.video-overlay{
+    position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.85);
+    display:flex;align-items:center;justify-content:center;padding:24px;
+}
+.video-overlay video{
+    max-width:92vw;max-height:85vh;border-radius:14px;background:#000;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.video-close{
+    position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;
+    border:0;background:rgba(255,255,255,.15);color:#fff;font-size:22px;cursor:pointer;
+}
+.video-close:hover{background:rgba(255,255,255,.3);}
+`;
+
+function openVideo(app) {
+  const overlay = document.createElement('div');
+  overlay.className = 'video-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-label', `${app.name} demo video`);
+
+  const player = document.createElement('video');
+  player.controls = true;
+  player.autoplay = true;
+  player.playsInline = true;
+  player.src = videoSrc(app);
+
+  const closeButton = document.createElement('button');
+  closeButton.type = 'button';
+  closeButton.className = 'video-close';
+  closeButton.setAttribute('aria-label', 'Close video');
+  closeButton.innerHTML = '&times;';
+
+  function close() {
+    player.pause();
+    player.removeAttribute('src');
+    player.load();                       // stops the download
+    overlay.remove();
+    document.removeEventListener('keydown', onKey);
+    document.body.style.overflow = '';
+  }
+  function onKey(event) { if (event.key === 'Escape') close(); }
+
+  overlay.addEventListener('click', event => { if (event.target === overlay) close(); });
+  closeButton.addEventListener('click', close);
+  document.addEventListener('keydown', onKey);
+
+  overlay.appendChild(player);
+  overlay.appendChild(closeButton);
+  document.body.appendChild(overlay);
+  document.body.style.overflow = 'hidden';
+  closeButton.focus();
+}
+
+function addDemoVideo(app, actions) {
+  // Invisible check: the button is added only if the video file exists.
+  const probe = document.createElement('video');
+  probe.preload = 'metadata';
+  probe.muted = true;
+  probe.addEventListener('loadedmetadata', () => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'demo-button';
+    button.innerHTML = '<span class="demo-play">\u25B6</span> Watch demo';
+    button.addEventListener('click', () => openVideo(app));
+    actions.appendChild(button);   // next to the Download button
+    probe.removeAttribute('src');
+    probe.load();
+  });
+  probe.src = videoSrc(app);       // a missing file fails silently: no button
+}
+
+
 /* app.html: one landing page for the app named in the URL (?id=aidenconnect).
    Screenshots are loaded from images/screenshots/<key>/ipad_01.jpg, ipad_02.jpg ...
    Files that do not exist are skipped, and the section hides if none load. */
@@ -575,6 +678,13 @@ function renderAppPage(containerId) {
     ? 'Needs an internet connection.'
     : `Works offline.${app.offlineNote ? ' ' + app.offlineNote : ''}`;
 
+  if (!document.getElementById('video-css')) {
+    const videoStyle = document.createElement('style');
+    videoStyle.id = 'video-css';
+    videoStyle.textContent = VIDEO_CSS;
+    document.head.appendChild(videoStyle);
+  }
+
   document.title = `${app.name} - NovaNext`;
   const descriptionMeta = document.querySelector('meta[name="description"]');
   if (descriptionMeta) {
@@ -584,13 +694,15 @@ function renderAppPage(containerId) {
   container.innerHTML = `
     <a class="back-link" href="product.html">&larr; All products</a>
     <section class="app-hero">
-        <img class="app-hero-icon" src="${app.icon}" alt="${app.name} icon">
+        <img class="app-hero-icon" src="${iconSrc(app)}" alt="${app.name} icon">
         <div>
             <span class="product-category">${app.category}</span>
             <h1>${app.name}</h1>
             ${legacyNote}
             <p class="app-hero-description">${app.description}</p>
-            <a href="${app.url}" class="download-button">Download on App Store</a>
+            <div class="hero-actions">
+                <a href="${app.url}" class="download-button">Download on App Store</a>
+            </div>
             <p class="app-offline">${offlineText}</p>
         </div>
     </section>
@@ -645,4 +757,6 @@ function renderAppPage(containerId) {
     screenshotImage.src = `${SCREENSHOTS_FOLDER}${appKey(app)}/ipad_${paddedNumber}.jpg`;
     screenshotStrip.appendChild(screenshotImage);
   }
+
+  addDemoVideo(app, container.querySelector('.hero-actions'));
 }
