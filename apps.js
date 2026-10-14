@@ -317,22 +317,6 @@ const APPS = [
     url: "https://apps.apple.com/us/app/large-math/id1628885815"
   },
   {
-    name: "GE Plus",
-    icon: "plus",
-    screenshots: "geplus",
-    screenshotCount: 1,
-    category: "Finance",
-    description: "Designed for people with shared expenses. Track who owes whom and how much with ease.",
-    features: [
-      "Full group expense tracking",
-      "Receipts can split unequally",
-      "Each receipt can have its own currency",
-      "Define your own currency",
-      "You can hide or show receipts, groups and more"
-    ],
-    url: "https://apps.apple.com/us/app/group-expenses/id1443950401"
-  },
-  {
     name: "Sunlight Hours",
     icon: "earth",
     screenshots: "sunlighthours",
@@ -377,6 +361,22 @@ const APPS = [
       "Flexible time slot purchases"
     ],
     url: "https://apps.apple.com/us/app/nova-ads/id6743174733"
+  },
+  {
+    name: "GE Plus",
+    icon: "plus",
+    screenshots: "geplus",
+    screenshotCount: 1,
+    category: "Finance",
+    description: "Designed for people with shared expenses. Track who owes whom and how much with ease.",
+    features: [
+      "Full group expense tracking",
+      "Receipts can split unequally",
+      "Each receipt can have its own currency",
+      "Define your own currency",
+      "You can hide or show receipts, groups and more"
+    ],
+    url: "https://apps.apple.com/us/app/group-expenses/id1443950401"
   },
 
   /* Legacy apps go LAST so they appear at the end of every list */
