@@ -25,7 +25,7 @@
                 Leave out to use the app name in lowercase letters and digits
                 only ("Aiden Connects" -> "aidenconnects").
    screenshotCount
-                (optional) how many ipad_01.jpg, ipad_02.jpg ... to show.
+                (optional) how many iphone_01.jpg + ipad_01.jpg, iphone_02.jpg + ipad_02.jpg ... to show.
                 Leave out to try the first 5; missing files are skipped.
    longDescription
                 (optional) Landing page only. A paragraph or two about the app
@@ -755,7 +755,8 @@ function renderAppPage(containerId) {
   const screenshotSection = container.querySelector('.screenshots-section');
   const screenshotStrip = container.querySelector('.screenshots');
   const maxScreenshots = app.screenshotCount || DEFAULT_MAX_SCREENSHOTS;
-  let screenshotsLeftToCheck = maxScreenshots;
+  const devices = ['iphone', 'ipad'];          // iPhone first, iPad next to it
+  let screenshotsLeftToCheck = maxScreenshots * devices.length;
 
   function screenshotChecked() {
     screenshotsLeftToCheck -= 1;
@@ -766,15 +767,22 @@ function renderAppPage(containerId) {
 
   for (let screenshotNumber = 1; screenshotNumber <= maxScreenshots; screenshotNumber++) {
     const paddedNumber = String(screenshotNumber).padStart(2, '0');
-    const screenshotImage = document.createElement('img');
-    screenshotImage.alt = `${app.name} screenshot ${screenshotNumber}`;
-    screenshotImage.addEventListener('load', screenshotChecked);
-    screenshotImage.addEventListener('error', () => {
-      screenshotImage.remove();
-      screenshotChecked();
+    const pair = document.createElement('div');
+    pair.className = 'shot-pair';
+    screenshotStrip.appendChild(pair);
+
+    devices.forEach(device => {
+      const screenshotImage = document.createElement('img');
+      screenshotImage.alt = `${app.name} ${device === 'iphone' ? 'iPhone' : 'iPad'} screenshot ${screenshotNumber}`;
+      screenshotImage.addEventListener('load', screenshotChecked);
+      screenshotImage.addEventListener('error', () => {
+        screenshotImage.remove();
+        if (pair.children.length === 0) pair.remove();   // no files for this number
+        screenshotChecked();
+      });
+      screenshotImage.src = `${SCREENSHOTS_FOLDER}${appKey(app)}/${device}_${paddedNumber}.jpg`;
+      pair.appendChild(screenshotImage);
     });
-    screenshotImage.src = `${SCREENSHOTS_FOLDER}${appKey(app)}/ipad_${paddedNumber}.jpg`;
-    screenshotStrip.appendChild(screenshotImage);
   }
 
   addDemoVideo(app, container.querySelector('.hero-actions'));
