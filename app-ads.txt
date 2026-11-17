@@ -845,3 +845,4 @@ triplelift.com, 14919, RESELLER, 6c33edb13117fd86
 rubiconproject.com, 27945, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 28945, RESELLER, 0bfd66d529a55807
 toponad.com, 16aec6880be2e7, RESELLER
+playdigo.com, 1965, RESELLER
