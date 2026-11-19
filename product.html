@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'G-P8B665RWVK');
-     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="images/icon/logo.png">
+<link rel="apple-touch-icon" href="images/icon/logo.png">
+<meta name="description" content="Browse every NovaNext iOS app: puzzles, strategy games, math and learning tools, and everyday utilities.">
+<link rel="canonical" href="https://www.novanext.ca/product.html">
+<meta property="og:site_name" content="NovaNext"><meta property="og:type" content="website">
+<meta property="og:title" content="Products - NovaNext"><meta property="og:description" content="Browse every NovaNext iOS app: puzzles, strategy games, math and learning tools, and everyday utilities.">
+<meta property="og:url" content="https://www.novanext.ca/product.html"><meta property="og:image" content="https://www.novanext.ca/images/icon/logo.png">
     <title>Products - NovaNext</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
+    <link rel="stylesheet" href="styles.css">
+<style>
+:root {
             --bg: #fafaf8;
             --text: #111827;
             --muted: #6b7280;
@@ -26,119 +26,56 @@
             --blue: #2563eb;
             --purple: #7c3aed;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
+body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
             -webkit-font-smoothing: antialiased;
         }
-
-        /* NAV */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255,255,255,.85);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
-        }
-        .nav-inner {
-            width: min(1120px, 92%);
-            margin: auto;
-            height: 72px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            text-decoration: none;
-        }
-        .logo img {
-            height: 34px;
-            width: auto;
-            display: block;
-        }
-        .logo span {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, var(--blue), var(--purple));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .nav-links { display: flex; align-items: center; gap: 28px; }
-        .nav-links a { text-decoration: none; color: var(--muted); font-weight: 500; }
-        .nav-links a:hover { color: var(--text); }
-        .nav-links a.active { color: var(--text); }
-        .nav-cta {
-            background: linear-gradient(135deg, var(--blue), var(--purple));
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: .2s;
-        }
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(37,99,235,.25);
-        }
-
-        /* PAGE */
-        .container {
+.container {
             width: min(1120px, 92%);
             margin: auto;
             padding: 80px 0;
         }
-        .header {
+.header {
             text-align: center;
             margin-bottom: 72px;
         }
-        .header h1 {
+.header h1 {
             font-size: clamp(36px, 5vw, 56px);
             font-weight: 800;
             letter-spacing: -0.04em;
             margin-bottom: 14px;
         }
-        .header p {
+.header p {
             color: var(--muted);
             font-size: 18px;
             line-height: 1.7;
         }
-
-        /* PRODUCTS */
-        .product {
+.product {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
-            background: white;
+            background:var(--surface);
             border: 1px solid var(--border);
             border-radius: 28px;
             padding: 48px;
             margin-bottom: 24px;
             transition: .2s;
         }
-        .product:hover {
+.product:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 40px rgba(0,0,0,.07);
         }
-        .product:nth-child(even) .product-image { order: 2; }
-        .product:nth-child(even) .product-content { order: 1; }
-
-        .product-image {
+.product:nth-child(even) .product-image { order: 2; }
+.product:nth-child(even) .product-content { order: 1; }
+.product-image {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .product-icon {
+.product-icon {
             width: 150px;
             height: 150px;
             object-fit: contain;
@@ -146,9 +83,8 @@
             box-shadow: 0 18px 40px rgba(0,0,0,.12);
             transition: transform .3s;
         }
-        .product:hover .product-icon { transform: scale(1.04); }
-
-        .product-category {
+.product:hover .product-icon { transform: scale(1.04); }
+.product-category {
             display: inline-block;
             font-size: 11px;
             font-weight: 700;
@@ -160,38 +96,38 @@
             padding: 5px 12px;
             margin-bottom: 12px;
         }
-        .product-content h2 {
+.product-content h2 {
             font-size: 28px;
             font-weight: 800;
             letter-spacing: -0.03em;
             color: var(--text);
             margin-bottom: 10px;
         }
-        .product-description {
+.product-description {
             color: var(--muted);
             font-size: 15px;
             line-height: 1.8;
             margin-bottom: 18px;
         }
-        .product-features {
+.product-features {
             list-style: none;
             margin-bottom: 26px;
         }
-        .product-features li {
+.product-features li {
             color: var(--muted);
             font-size: 14px;
             padding: 6px 0 6px 24px;
             position: relative;
             line-height: 1.5;
         }
-        .product-features li:before {
+.product-features li:before {
             content: "✓";
             position: absolute;
             left: 0;
             color: var(--blue);
             font-weight: 700;
         }
-        .download-button {
+.download-button {
             display: inline-block;
             padding: 12px 24px;
             background: linear-gradient(135deg, var(--blue), var(--purple));
@@ -203,31 +139,11 @@
             transition: .2s;
             box-shadow: none;
         }
-        .download-button:hover {
+.download-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(37,99,235,.25) !important;
         }
-
-        /* FOOTER */
-        footer {
-            border-top: 1px solid var(--border);
-            background: white;
-        }
-        .footer-inner {
-            width: min(1120px, 92%);
-            margin: auto;
-            height: 90px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .footer-links { display: flex; gap: 20px; }
-        .footer-links a { text-decoration: none; color: var(--muted); }
-        .footer-links a:hover { color: var(--text); }
-        .copyright { color: var(--muted); font-size: 14px; }
-
-        /* MOBILE */
-        @media(max-width: 768px) {
+@media(max-width: 768px) {
             .product {
                 grid-template-columns: 1fr;
                 gap: 32px;
@@ -242,32 +158,8 @@
                 gap: 14px;
             }
         }
-    
-/* ---------------- BMC BUTTON ---------------- */
-
-.bmc-link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:#FFDD00;
-    color:#000000 !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    text-decoration:none;
-    transition:.2s;
-}
-
-.bmc-link:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(255,221,0,.35);
-}
-
-/* ---------------- DEPRECATED PRODUCT ---------------- */
-
 .product.legacy{
-    background:#f9fafb;
+    background:var(--bg);
     border-style:dashed;
 }
 .product.legacy .product-icon{
@@ -280,7 +172,7 @@
     background:rgba(107,114,128,.12);
 }
 .product.legacy .download-button{
-    background:#e5e7eb;
+    background:var(--border);
     color:var(--muted) !important;
 }
 .product.legacy .download-button:hover{
@@ -298,24 +190,12 @@
 }
 .legacy-note a{ color:var(--blue); font-weight:600; text-decoration:none; }
 .legacy-note a:hover{ text-decoration:underline; }
-
 </style>
 </head>
 <body>
 
-<nav>
-    <div class="nav-inner">
-        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
-        <div class="nav-links">
-            <a href="product.html" class="active">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
-        </div>
-    </div>
-</nav>
+<script src="site.js" data-part="nav" data-active="products"></script>
+<div id="main" tabindex="-1"></div>
 <div class="container">
 
     <div class="header">
@@ -324,20 +204,7 @@
     </div>
 </div>
 
-<footer>
-    <div class="footer-inner">
-        <div class="copyright">© 2026 NovaNext</div>
-        <div class="footer-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
-        </div>
-    </div>
-</footer>
+<script src="site.js" data-part="footer"></script>
 
 <script src="apps.js"></script>
 <script>

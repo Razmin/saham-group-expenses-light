@@ -1,134 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'G-P8B665RWVK');
-     </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="images/icon/logo.png">
+<link rel="apple-touch-icon" href="images/icon/logo.png">
+<meta name="description" content="Send NovaNext a question, feedback or a bug report. Every message gets read.">
+<link rel="canonical" href="https://www.novanext.ca/contact.html">
+<meta property="og:site_name" content="NovaNext"><meta property="og:type" content="website">
+<meta property="og:title" content="Contact - NovaNext"><meta property="og:description" content="Send NovaNext a question, feedback or a bug report. Every message gets read.">
+<meta property="og:url" content="https://www.novanext.ca/contact.html"><meta property="og:image" content="https://www.novanext.ca/images/icon/logo.png">
 <title>Contact - NovaNext</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="styles.css">
 <style>
-
-:root{
-    --bg:#fafaf8;
-    --surface:#ffffff;
-    --text:#111827;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-
-    --blue:#2563eb;
-    --purple:#7c3aed;
-    --green:#10b981;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-/* ---------------- NAV ---------------- */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(12px);
-    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
-}
-
-.nav-inner{
-    height:72px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    text-decoration:none;
-}
-
-.logo img{
-    height:34px;
-    width:auto;
-    display:block;
-}
-
-.logo span{
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:-0.03em;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:var(--muted);
-    font-weight:500;
-}
-
-.nav-links a:hover{
-    color:var(--text);
-}
-
-.nav-links a.active{
-    color:var(--text);
-}
-
-.nav-cta{
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    color:white !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    transition:.2s;
-}
-
-.nav-cta:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(37,99,235,.25);
-}
-
-/* ---------------- PAGE HERO ---------------- */
-
 .page-hero{
     padding:80px 0 50px;
     text-align:center;
@@ -137,28 +27,6 @@ nav{
         radial-gradient(circle at top left, rgba(124,58,237,.10), transparent 30%),
         radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 30%);
 }
-
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:white;
-    border:1px solid var(--border);
-    padding:7px 16px;
-    border-radius:999px;
-    font-size:13px;
-    font-weight:600;
-    color:var(--muted);
-    margin-bottom:26px;
-}
-
-.eyebrow .dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-}
-
 .page-hero h1{
     font-size:clamp(36px,6vw,56px);
     font-weight:800;
@@ -167,14 +35,12 @@ nav{
     max-width:760px;
     margin:0 auto;
 }
-
 .page-hero h1 .accent{
     background:linear-gradient(135deg,var(--blue),var(--purple));
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
 }
-
 .page-hero p{
     color:var(--muted);
     font-size:18px;
@@ -182,30 +48,23 @@ nav{
     max-width:520px;
     margin:22px auto 0;
 }
-
-/* ---------------- FORM ---------------- */
-
 .content{
     padding:20px 0 90px;
 }
-
 .form-wrap{
     width:min(560px,92%);
     margin:auto;
 }
-
 .card{
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:28px;
     padding:48px;
     box-shadow:0 10px 40px rgba(0,0,0,.04);
 }
-
 .field{
     margin-bottom:22px;
 }
-
 label{
     display:block;
     font-size:13px;
@@ -213,7 +72,6 @@ label{
     margin-bottom:8px;
     color:var(--text);
 }
-
 input,
 textarea{
     width:100%;
@@ -226,24 +84,20 @@ textarea{
     background:var(--bg);
     transition:border-color .15s ease, box-shadow .15s ease;
 }
-
 input::placeholder,
 textarea::placeholder{
     color:#9ca3af;
 }
-
 input:focus,
 textarea:focus{
     outline:none;
     border-color:var(--blue);
     box-shadow:0 0 0 3px rgba(37,99,235,.12);
 }
-
 textarea{
     resize:vertical;
     min-height:140px;
 }
-
 button{
     width:100%;
     padding:14px;
@@ -257,81 +111,37 @@ button{
     background:linear-gradient(135deg,var(--blue),var(--purple));
     transition:.2s;
 }
-
 button:hover{
     transform:translateY(-1px);
     box-shadow:0 10px 24px rgba(37,99,235,.28);
 }
-
 button:active{
     transform:translateY(0);
 }
-
 button:disabled{
     opacity:.7;
     cursor:default;
     transform:none;
     box-shadow:none;
 }
-
 .status{
     margin-top:16px;
     font-size:14px;
     text-align:center;
     display:none;
 }
-
 .status.success{
     color:#15803d;
     display:block;
 }
-
 .status.error{
     color:#c0392b;
     display:block;
 }
-
-/* honeypot - hidden from real visitors, traps simple bots */
 .hp{
     position:absolute;
     left:-9999px;
 }
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-    border-top:1px solid var(--border);
-    background:white;
-}
-
-.footer-inner{
-    height:90px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.footer-links{
-    display:flex;
-    gap:20px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:var(--muted);
-}
-
-.footer-links a:hover{
-    color:var(--text);
-}
-
-.copyright{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* ---------------- MOBILE ---------------- */
-
 @media(max-width:768px){
 
     .card{
@@ -346,61 +156,21 @@ footer{
         padding:24px 0;
     }
 }
-
 @media(max-width:600px){
 
-    .nav-links a:not(.nav-cta){
-        display:none;
-    }
+    
 
     .page-hero{
         padding:56px 0 40px;
     }
 }
-
-
-/* ---------------- BMC BUTTON ---------------- */
-
-.bmc-link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:#FFDD00;
-    color:#000000 !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    text-decoration:none;
-    transition:.2s;
-}
-
-.bmc-link:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(255,221,0,.35);
-}
-
 </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="container nav-inner">
-
-        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
-
-        <div class="nav-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="contact.html" class="nav-cta active">Contact</a>
-        </div>
-
-    </div>
-</nav>
+<script src="site.js" data-part="nav" data-active="contact"></script>
+<div id="main" tabindex="-1"></div>
 
 <header class="page-hero">
 
@@ -457,25 +227,7 @@ footer{
 
 </main>
 
-<footer>
-
-    <div class="container footer-inner">
-
-        <div class="copyright">© 2026 NovaNext</div>
-
-        <div class="footer-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
-        </div>
-
-    </div>
-
-</footer>
+<script src="site.js" data-part="footer"></script>
 
 <script>
     const form = document.getElementById('contact-form');

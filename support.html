@@ -1,135 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'G-P8B665RWVK');
-     </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="images/icon/logo.png">
+<link rel="apple-touch-icon" href="images/icon/logo.png">
+<meta name="description" content="Answers to common questions about NovaNext apps, plus a quick way to contact support.">
+<link rel="canonical" href="https://www.novanext.ca/support.html">
+<meta property="og:site_name" content="NovaNext"><meta property="og:type" content="website">
+<meta property="og:title" content="Support - NovaNext"><meta property="og:description" content="Answers to common questions about NovaNext apps, plus a quick way to contact support.">
+<meta property="og:url" content="https://www.novanext.ca/support.html"><meta property="og:image" content="https://www.novanext.ca/images/icon/logo.png">
 <title>Support - NovaNext</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="styles.css">
 <style>
-
-:root{
-    --bg:#fafaf8;
-    --surface:#ffffff;
-    --text:#111827;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-
-    --blue:#2563eb;
-    --purple:#7c3aed;
-    --green:#10b981;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-/* ---------------- NAV ---------------- */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(12px);
-    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
-}
-
-.nav-inner{
-    height:72px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    text-decoration:none;
-}
-
-.logo img{
-    height:34px;
-    width:auto;
-    display:block;
-}
-
-.logo span{
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:-0.03em;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:var(--muted);
-    font-weight:500;
-}
-
-.nav-links a:hover{
-    color:var(--text);
-}
-
-.nav-links a.active{
-    color:var(--text);
-}
-
-.nav-cta{
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    color:white !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    transition:.2s;
-}
-
-.nav-cta:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(37,99,235,.25);
-}
-
-/* ---------------- PAGE HERO ---------------- */
-
 .page-hero{
     padding:80px 0 50px;
     text-align:center;
@@ -138,28 +28,6 @@ nav{
         radial-gradient(circle at top left, rgba(124,58,237,.10), transparent 30%),
         radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 30%);
 }
-
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:white;
-    border:1px solid var(--border);
-    padding:7px 16px;
-    border-radius:999px;
-    font-size:13px;
-    font-weight:600;
-    color:var(--muted);
-    margin-bottom:26px;
-}
-
-.eyebrow .dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-}
-
 .page-hero h1{
     font-size:clamp(36px,6vw,56px);
     font-weight:800;
@@ -168,14 +36,12 @@ nav{
     max-width:760px;
     margin:0 auto;
 }
-
 .page-hero h1 .accent{
     background:linear-gradient(135deg,var(--blue),var(--purple));
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
 }
-
 .page-hero p{
     color:var(--muted);
     font-size:18px;
@@ -183,55 +49,42 @@ nav{
     max-width:600px;
     margin:22px auto 0;
 }
-
-/* ---------------- SECTIONS ---------------- */
-
 .section{
     padding:56px 0;
 }
-
 .section-narrow{
     width:min(760px,92%);
     margin:auto;
 }
-
 .section-head{
     text-align:center;
     margin-bottom:40px;
 }
-
 .section h2{
     font-size:clamp(26px,4vw,32px);
     font-weight:800;
     letter-spacing:-0.03em;
     margin-bottom:10px;
 }
-
 .section-head p{
     color:var(--muted);
     font-size:16px;
 }
-
-/* ---------------- FAQ ---------------- */
-
 .faq{
     display:flex;
     flex-direction:column;
     gap:14px;
 }
-
 .faq-item{
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:18px;
     padding:6px 24px;
     transition:.2s;
 }
-
 .faq-item:hover{
     box-shadow:0 8px 24px rgba(17,24,39,.05);
 }
-
 .faq-item summary{
     list-style:none;
     cursor:pointer;
@@ -244,11 +97,9 @@ nav{
     align-items:center;
     gap:16px;
 }
-
 .faq-item summary::-webkit-details-marker{
     display:none;
 }
-
 .faq-item summary .chev{
     flex-shrink:0;
     width:20px;
@@ -256,42 +107,34 @@ nav{
     color:var(--muted);
     transition:transform .2s;
 }
-
 .faq-item[open] summary .chev{
     transform:rotate(180deg);
     color:var(--blue);
 }
-
 .faq-item p{
     color:var(--muted);
     font-size:15px;
     line-height:1.7;
     padding-bottom:20px;
 }
-
 .faq-item p a{
     color:var(--blue);
     font-weight:600;
     text-decoration:none;
 }
-
 .faq-item p a:hover{
     text-decoration:underline;
 }
-
-/* ---------------- APP GRID ---------------- */
-
 .app-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:14px;
 }
-
 .app-pill{
     display:flex;
     align-items:center;
     gap:12px;
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:16px;
     padding:14px 16px;
@@ -301,15 +144,13 @@ nav{
     font-size:14.5px;
     transition:.2s;
 }
-
 .app-pill:hover{
     transform:translateY(-2px);
     border-color:rgba(37,99,235,.3);
     box-shadow:0 10px 24px rgba(17,24,39,.06);
 }
-
 .app-pill.legacy{
-    background:#f9fafb;
+    background:var(--bg);
     border-style:dashed;
     color:var(--muted);
 }
@@ -340,11 +181,8 @@ nav{
     object-fit:cover;
     box-shadow:0 2px 6px rgba(17,24,39,.12);
 }
-
-/* ---------------- BOTTOM CTA ---------------- */
-
 .cta-card{
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:28px;
     padding:48px;
@@ -355,21 +193,18 @@ nav{
     flex-wrap:wrap;
     box-shadow:0 10px 40px rgba(0,0,0,.04);
 }
-
 .cta-card h3{
     font-size:24px;
     font-weight:800;
     letter-spacing:-0.02em;
     margin:0;
 }
-
 .cta-card p{
     color:var(--muted);
     font-size:15px;
     margin-top:6px;
     margin-bottom:0;
 }
-
 .btn-primary{
     display:inline-flex;
     align-items:center;
@@ -384,103 +219,28 @@ nav{
     transition:.2s;
     white-space:nowrap;
 }
-
 .btn-primary:hover{
     transform:translateY(-2px);
     box-shadow:0 10px 24px rgba(37,99,235,.28);
 }
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-    border-top:1px solid var(--border);
-    background:white;
-}
-
-.footer-inner{
-    height:90px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.footer-links{
-    display:flex;
-    gap:20px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:var(--muted);
-}
-
-.footer-links a:hover{
-    color:var(--text);
-}
-
-.copyright{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* ---------------- MOBILE ---------------- */
-
 @media(max-width:860px){
     .app-grid{grid-template-columns:repeat(2,1fr);}
 }
-
 @media(max-width:600px){
-    .nav-links a:not(.nav-cta){display:none;}
+    
     .app-grid{grid-template-columns:1fr;}
     .section{padding:40px 0;}
     .page-hero{padding:56px 0 40px;}
     .cta-card{padding:32px 24px;flex-direction:column;align-items:flex-start;}
     .faq-item{padding:4px 18px;}
 }
-
-
-/* ---------------- BMC BUTTON ---------------- */
-
-.bmc-link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:#FFDD00;
-    color:#000000 !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    text-decoration:none;
-    transition:.2s;
-}
-
-.bmc-link:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(255,221,0,.35);
-}
-
 </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="container nav-inner">
-
-        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
-
-        <div class="nav-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html" class="active">Support</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
-        </div>
-
-    </div>
-</nav>
+<script src="site.js" data-part="nav" data-active="support"></script>
+<div id="main" tabindex="-1"></div>
 
 <header class="page-hero">
     <div class="container">
@@ -591,23 +351,7 @@ footer{
     </div>
 </section>
 
-<footer>
-    <div class="container footer-inner">
-
-        <div class="copyright">© 2026 NovaNext</div>
-
-        <div class="footer-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
-        </div>
-
-    </div>
-</footer>
+<script src="site.js" data-part="footer"></script>
 
 <script src="apps.js"></script>
 <script>

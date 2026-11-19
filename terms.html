@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'G-P8B665RWVK');
-     </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="images/icon/logo.png">
+<link rel="apple-touch-icon" href="images/icon/logo.png">
+<meta name="description" content="Terms and conditions for placing ads through NovaNext.">
+<link rel="canonical" href="https://www.novanext.ca/terms.html">
+<meta property="og:site_name" content="NovaNext"><meta property="og:type" content="website">
+<meta property="og:title" content="Terms and Conditions - NovaNext"><meta property="og:description" content="Terms and conditions for placing ads through NovaNext.">
+<meta property="og:url" content="https://www.novanext.ca/terms.html"><meta property="og:image" content="https://www.novanext.ca/images/icon/logo.png">
 
 <title>Terms and Conditions - NovaNext</title>
 
@@ -21,8 +20,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="styles.css">
 <style>
-
 :root{
     --bg:#fafaf8;
     --surface:#ffffff;
@@ -35,13 +34,6 @@
     --green:#10b981;
     --red:#dc2626;
 }
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
     font-family:'Inter',sans-serif;
     background:var(--bg);
@@ -49,92 +41,10 @@ body{
     line-height:1.8;
     -webkit-font-smoothing:antialiased;
 }
-
 .container{
     width:min(900px,92%);
     margin:auto;
 }
-
-/* ---------------- NAV ---------------- */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(12px);
-    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
-}
-
-.nav-inner{
-    width:min(1120px,92%);
-    margin:auto;
-    height:72px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    text-decoration:none;
-}
-
-.logo img{
-    height:34px;
-    width:auto;
-    display:block;
-}
-
-.logo span{
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:-0.03em;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:var(--muted);
-    font-weight:500;
-}
-
-.nav-links a:hover{
-    color:var(--text);
-}
-
-.nav-links a.active{
-    color:var(--text);
-}
-
-.nav-cta{
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    color:white !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    transition:.2s;
-}
-
-.nav-cta:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(37,99,235,.25);
-}
-
-/* ---------------- HEADER ---------------- */
-
 .page-header{
     padding:80px 0 50px;
 
@@ -147,27 +57,21 @@ nav{
         rgba(37,99,235,.10),
         transparent 30%);
 }
-
 .page-header h1{
     font-size:clamp(42px,6vw,64px);
     line-height:1;
     letter-spacing:-0.04em;
     margin-bottom:18px;
 }
-
 .page-header p{
     color:var(--muted);
     font-size:18px;
 }
-
-/* ---------------- CONTENT ---------------- */
-
 .content{
     padding:20px 0 80px;
 }
-
 .policy-card{
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:28px;
     padding:50px;
@@ -175,53 +79,42 @@ nav{
     box-shadow:
         0 10px 40px rgba(0,0,0,.04);
 }
-
 section{
     margin-bottom:50px;
 }
-
 section:last-child{
     margin-bottom:0;
 }
-
 section:not(:last-child){
     padding-bottom:35px;
-    border-bottom:1px solid #f1f5f9;
+    border-bottom:1px solid var(--tint);
 }
-
 h2{
     font-size:26px;
     font-weight:800;
     margin-bottom:18px;
     letter-spacing:-0.02em;
 }
-
 h3{
     font-size:19px;
     font-weight:700;
     margin-top:24px;
     margin-bottom:12px;
-    color:#374151;
+    color:var(--body);
 }
-
 p{
-    color:#374151;
+    color:var(--body);
     margin-bottom:16px;
 }
-
 ul{
     margin-top:10px;
     margin-bottom:16px;
     padding-left:24px;
 }
-
 li{
     margin-bottom:12px;
-    color:#374151;
+    color:var(--body);
 }
-
-/* ---------------- INFO BOX ---------------- */
-
 .info-box{
     margin-top:24px;
 
@@ -237,13 +130,9 @@ li{
     border-radius:18px;
     padding:22px;
 }
-
 .info-box p:last-child{
     margin-bottom:0;
 }
-
-/* ---------------- WARNING BOX ---------------- */
-
 .warning-box{
     background:
         linear-gradient(
@@ -258,49 +147,10 @@ li{
     padding:22px;
     margin-top:20px;
 }
-
 .warning-box p:last-child,
 .warning-box li:last-child{
     margin-bottom:0;
 }
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-    border-top:1px solid var(--border);
-    background:white;
-}
-
-.footer-inner{
-    width:min(1120px,92%);
-    margin:auto;
-    height:90px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.footer-links{
-    display:flex;
-    gap:20px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:var(--muted);
-}
-
-.footer-links a:hover{
-    color:var(--text);
-}
-
-.copyright{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* ---------------- MOBILE ---------------- */
-
 @media(max-width:768px){
 
     .policy-card{
@@ -328,50 +178,13 @@ footer{
         font-size:17px;
     }
 }
-
-
-/* ---------------- BMC BUTTON ---------------- */
-
-.bmc-link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:#FFDD00;
-    color:#000000 !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    text-decoration:none;
-    transition:.2s;
-}
-
-.bmc-link:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(255,221,0,.35);
-}
-
 </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="nav-inner">
-
-        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
-
-        <div class="nav-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html" class="active">Terms</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
-        </div>
-
-    </div>
-</nav>
+<script src="site.js" data-part="nav" data-active="terms"></script>
+<div id="main" tabindex="-1"></div>
 
 <header class="page-header">
 
@@ -725,27 +538,7 @@ NovaNext does not accept any URL or image that offers for sale or promotes the s
 
 </main>
 
-<footer>
-
-<div class="footer-inner">
-
-<div class="copyright">
-© 2026 NovaNext
-</div>
-
-<div class="footer-links">
-<a href="product.html">Products</a>
-<a href="about.html">About</a>
-<a href="support.html">Support</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-<a href="terms.html">Terms</a>
-<a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
-</div>
-
-</div>
-
-</footer>
+<script src="site.js" data-part="footer"></script>
 
 </body>
 </html>

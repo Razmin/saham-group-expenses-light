@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="images/icon/logo.png">
+<link rel="apple-touch-icon" href="images/icon/logo.png">
+    <title>Aiden Connects - iOS app by NovaNext</title>
+    <meta name="description" content="Drop, Connect, Win.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+<style>
+:root {
+            --bg: #fafaf8;
+            --text: #111827;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --blue: #2563eb;
+            --purple: #7c3aed;
+        }
+body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+        }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.container { width: min(1120px, 92%); margin: auto; padding: 48px 0 80px; }
+.back-link { display: inline-block; margin-bottom: 32px; color: var(--muted); text-decoration: none; font-weight: 500; font-size: 14px; }
+.back-link:hover { color: var(--text); }
+.app-hero { display: flex; align-items: center; gap: 44px; margin-bottom: 56px; }
+.app-hero-icon {
+            width: 180px; height: 180px; flex: none; object-fit: contain;
+            border-radius: 40px; box-shadow: 0 18px 40px rgba(0,0,0,.12);
+        }
+.app-hero h1 { font-size: clamp(34px, 5vw, 52px); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 12px; }
+.app-hero-description { color: var(--muted); font-size: 18px; line-height: 1.7; margin-bottom: 24px; max-width: 60ch; }
+.product-category {
+            display: inline-block; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px; color: var(--blue);
+            background: rgba(37,99,235,.08); border-radius: 20px;
+            padding: 5px 12px; margin-bottom: 12px;
+        }
+.download-button {
+            display: inline-block; padding: 12px 24px;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: white !important; text-decoration: none; border-radius: 12px;
+            font-weight: 600; font-size: 14px; transition: .2s;
+        }
+.download-button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,.25); }
+.screenshots-section { margin-bottom: 56px; }
+.screenshots-section[hidden] { display: none; }
+.screenshots { display: flex; gap: 16px; overflow-x: auto; padding: 4px 2px 14px; scroll-snap-type: x proximity; }
+.shot-pair { display: flex; gap: 16px; flex: none; align-items: flex-end; scroll-snap-align: start; }
+.screenshots img {
+            height: auto; max-height: 420px; width: auto; flex: none; border-radius: 18px;
+            border: 1px solid var(--border); background:var(--surface);
+            box-shadow: 0 8px 24px rgba(0,0,0,.08);
+        }
+.app-features { margin-bottom: 48px; }
+.app-features h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; }
+.product-features { list-style: none; }
+.product-features li {
+            color: var(--muted); font-size: 16px; padding: 7px 0 7px 26px;
+            position: relative; line-height: 1.6; max-width: 70ch;
+        }
+.product-features li:before { content: "✓"; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+.app-offline { color: var(--muted); font-size: 14px; margin-top: 14px; }
+.app-about, .app-how { margin-bottom: 48px; }
+.app-about h2, .app-how h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; }
+.app-about p { color: var(--muted); font-size: 16px; line-height: 1.8; max-width: 70ch; }
+.app-how ol { padding-left: 24px; max-width: 70ch; }
+.app-how li { color: var(--muted); font-size: 16px; line-height: 1.6; padding: 6px 0 6px 6px; }
+.app-links { display: flex; flex-wrap: wrap; gap: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+.app-links a { color: var(--blue); text-decoration: none; font-weight: 600; font-size: 14px; }
+.app-links a:hover { text-decoration: underline; }
+.legacy-note {
+            font-size: 14px; color: var(--muted); background: rgba(107,114,128,.1);
+            border-radius: 10px; padding: 10px 14px; margin-bottom: 18px; line-height: 1.5;
+        }
+.legacy-note a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.app-missing { text-align: center; padding: 80px 0; }
+.app-missing h1 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+.app-missing a { color: var(--blue); font-weight: 600; text-decoration: none; }
+@media (max-width: 768px) {
+            .app-hero { flex-direction: column; align-items: flex-start; gap: 24px; }
+            .app-hero-icon { width: 120px; height: 120px; border-radius: 28px; }
+            .screenshots img { max-height: 320px; }
+            .footer-inner { flex-direction: column; height: auto; padding: 24px 0; gap: 14px; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+</style>
+<link rel="canonical" href="https://www.novanext.ca/app-aidenconnects.html">
+<meta property="og:site_name" content="NovaNext"><meta property="og:type" content="website">
+<meta property="og:title" content="Aiden Connects - iOS app by NovaNext"><meta property="og:description" content="Drop, Connect, Win.">
+<meta property="og:url" content="https://www.novanext.ca/app-aidenconnects.html"><meta property="og:image" content="https://www.novanext.ca/images/icon/aiden.png">
+<meta name="twitter:card" content="summary">
+<meta name="apple-itunes-app" content="app-id=6798768340">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Aiden Connects","description":"Drop, Connect, Win.","operatingSystem":"iOS","applicationCategory":"MobileApplication","url":"https://apps.apple.com/us/app/aiden-connects/id6798768340","image":"https://www.novanext.ca/images/icon/aiden.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"NovaNext"}}</script>
+</head>
+<body>
+
+<script src="site.js" data-part="nav" data-active="products"></script>
+<div id="main" tabindex="-1"></div>
+
+<div class="container" id="app-page">
+    <a class="back-link" href="product.html">&larr; All products</a>
+    <section class="app-hero">
+        <img class="app-hero-icon" src="images/icon/aiden.png" alt="Aiden Connects icon">
+        <div>
+            <span class="product-category">Puzzle</span>
+            <h1>Aiden Connects</h1>
+            
+            <p class="app-hero-description">Drop, Connect, Win.</p>
+            <div class="hero-actions">
+                <a href="https://apps.apple.com/us/app/aiden-connects/id6798768340" class="download-button">Download on App Store</a>
+            </div>
+            <p class="app-offline">Works offline. Online play needs an internet connection.</p>
+        </div>
+    </section>
+    <section class="screenshots-section" hidden>
+        <div class="screenshots"></div>
+    </section>
+    
+    <section class="app-features">
+        <h2>What it does</h2>
+        <ul class="product-features">
+            <li>Smart AI, Real Challenge</li>
+            <li>Kids Mode: A gentler mode designed for younger players</li>
+            <li>Two-Player Mode: Play with a friend on the same device or online</li>
+        </ul>
+    </section>
+    
+    <section class="app-how">
+        <h2>How it works</h2>
+        <ol>
+            <li>Choose a difficulty, or turn on Kids Mode for a gentler game.</li>
+            <li>Take turns dropping a piece into a column.</li>
+            <li>Connect 4 of your pieces in a row, in any direction.</li>
+            <li>Play against the AI, or with a friend on the same device or online.</li>
+        </ol>
+    </section>
+    <section class="app-links">
+        <a href="contact.html?app=Aiden%20Connects">Get support</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="product.html">More apps</a>
+    </section></div>
+
+<script src="site.js" data-part="footer"></script>
+
+<script src="apps.js"></script>
+<script>
+    renderStaticAppPage('app-page', 'aidenconnects');
+</script>
+
+</body>
+</html>

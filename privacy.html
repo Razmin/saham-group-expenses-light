@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'G-P8B665RWVK');
-     </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="images/icon/logo.png">
+<link rel="apple-touch-icon" href="images/icon/logo.png">
+<meta name="description" content="How NovaNext apps and this website handle data, advertising and analytics.">
+<link rel="canonical" href="https://www.novanext.ca/privacy.html">
+<meta property="og:site_name" content="NovaNext"><meta property="og:type" content="website">
+<meta property="og:title" content="Privacy Policy - NovaNext"><meta property="og:description" content="How NovaNext apps and this website handle data, advertising and analytics.">
+<meta property="og:url" content="https://www.novanext.ca/privacy.html"><meta property="og:image" content="https://www.novanext.ca/images/icon/logo.png">
 
 <title>Privacy Policy - NovaNext</title>
 
@@ -21,26 +20,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="styles.css">
 <style>
-
-:root{
-    --bg:#fafaf8;
-    --surface:#ffffff;
-    --text:#111827;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-
-    --blue:#2563eb;
-    --purple:#7c3aed;
-    --green:#10b981;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
     font-family:'Inter',sans-serif;
     background:var(--bg);
@@ -48,92 +29,10 @@ body{
     line-height:1.8;
     -webkit-font-smoothing:antialiased;
 }
-
 .container{
     width:min(900px,92%);
     margin:auto;
 }
-
-/* ---------------- NAV ---------------- */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(12px);
-    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
-}
-
-.nav-inner{
-    width:min(1120px,92%);
-    margin:auto;
-    height:72px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    text-decoration:none;
-}
-
-.logo img{
-    height:34px;
-    width:auto;
-    display:block;
-}
-
-.logo span{
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:-0.03em;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:var(--muted);
-    font-weight:500;
-}
-
-.nav-links a:hover{
-    color:var(--text);
-}
-
-.nav-links a.active{
-    color:var(--text);
-}
-
-.nav-cta{
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    color:white !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    transition:.2s;
-}
-
-.nav-cta:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(37,99,235,.25);
-}
-
-/* ---------------- HEADER ---------------- */
-
 .page-header{
     padding:80px 0 50px;
 
@@ -146,24 +45,21 @@ nav{
         rgba(37,99,235,.10),
         transparent 30%);
 }
-
 .page-header h1{
     font-size:clamp(42px,6vw,64px);
     line-height:1;
     letter-spacing:-0.04em;
     margin-bottom:18px;
 }
-
 .page-header p{
     color:var(--muted);
     font-size:18px;
 }
-
 .updated{
     display:inline-block;
     margin-top:22px;
 
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
 
     padding:8px 14px;
@@ -172,15 +68,11 @@ nav{
     font-size:14px;
     font-weight:600;
 }
-
-/* ---------------- CONTENT ---------------- */
-
 .content{
     padding:20px 0 80px;
 }
-
 .policy-card{
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:28px;
     padding:50px;
@@ -188,52 +80,41 @@ nav{
     box-shadow:
         0 10px 40px rgba(0,0,0,.04);
 }
-
 section{
     margin-bottom:50px;
 }
-
 section:last-child{
     margin-bottom:0;
 }
-
 section:not(:last-child){
     padding-bottom:35px;
-    border-bottom:1px solid #f1f5f9;
+    border-bottom:1px solid var(--tint);
 }
-
 h2{
     font-size:28px;
     font-weight:800;
     margin-bottom:18px;
     letter-spacing:-0.02em;
 }
-
 h3{
     font-size:20px;
     font-weight:700;
     margin-top:24px;
     margin-bottom:12px;
-    color:#374151;
+    color:var(--body);
 }
-
 p{
-    color:#374151;
+    color:var(--body);
     margin-bottom:16px;
 }
-
 ul{
     margin-top:10px;
     padding-left:24px;
 }
-
 li{
     margin-bottom:12px;
-    color:#374151;
+    color:var(--body);
 }
-
-/* ---------------- INFO BOX ---------------- */
-
 .info-box{
 
     margin-top:24px;
@@ -250,9 +131,6 @@ li{
     border-radius:18px;
     padding:22px;
 }
-
-/* ---------------- SECURITY BOX ---------------- */
-
 .security-box{
 
     background:
@@ -269,13 +147,9 @@ li{
     padding:24px;
     margin-top:20px;
 }
-
 .security-box h3{
     margin-top:0;
 }
-
-/* ---------------- CONTACT ---------------- */
-
 .contact-box{
 
     background:
@@ -290,48 +164,9 @@ li{
     border-radius:20px;
     padding:28px;
 }
-
 .contact-box p{
     margin-bottom:10px;
 }
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-    border-top:1px solid var(--border);
-    background:white;
-}
-
-.footer-inner{
-    width:min(1120px,92%);
-    margin:auto;
-    height:90px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.footer-links{
-    display:flex;
-    gap:20px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:var(--muted);
-}
-
-.footer-links a:hover{
-    color:var(--text);
-}
-
-.copyright{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* ---------------- MOBILE ---------------- */
-
 @media(max-width:768px){
 
     .policy-card{
@@ -359,50 +194,13 @@ footer{
         font-size:18px;
     }
 }
-
-
-/* ---------------- BMC BUTTON ---------------- */
-
-.bmc-link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:#FFDD00;
-    color:#000000 !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    text-decoration:none;
-    transition:.2s;
-}
-
-.bmc-link:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(255,221,0,.35);
-}
-
 </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="nav-inner">
-
-        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
-
-        <div class="nav-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="privacy.html" class="active">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
-        </div>
-
-    </div>
-</nav>
+<script src="site.js" data-part="nav" data-active="privacy"></script>
+<div id="main" tabindex="-1"></div>
 
 <header class="page-header">
 
@@ -416,7 +214,7 @@ footer{
         </p>
 
         <div class="updated">
-            Last Updated: October 5, 2026
+            Last Updated: November 19, 2026
         </div>
 
     </div>
@@ -474,6 +272,8 @@ information to help improve app performance and user experience.
 
 <h2>Information We Do Not Collect</h2>
 
+<p>Inside our apps, we do not collect:</p>
+
 <ul>
 <li>Names, email addresses, or phone numbers</li>
 <li>Passwords or account credentials</li>
@@ -511,6 +311,40 @@ The content you create is not collected by NovaNext.
 <li>Understand regional market performance.</li>
 <li>Measure the success of app updates.</li>
 </ul>
+
+</section>
+
+<section>
+
+<h2>Advertising</h2>
+
+<p>
+Some NovaNext apps are free and show ads. These ads are provided by third-party
+ad networks, such as Google AdMob and the partners listed in our
+<a href="app-ads.txt">app-ads.txt</a> file. To show and measure ads, these networks
+may collect device information such as your advertising identifier, IP address,
+and how you interact with an ad.
+</p>
+
+<ul>
+<li>Personalized advertising and cross-app tracking only happen if you allow them in Apple's App Tracking Transparency prompt. You can change your choice at any time in Settings → Privacy &amp; Security → Tracking.</li>
+<li>If you decline, you may still see ads, but they will not be personalized using your activity in other apps and websites.</li>
+<li>Where an app offers it, you can remove ads with an in-app purchase (Settings → Remove Ads).</li>
+<li>Ad networks process data under their own privacy policies.</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>Contact Form and Support Messages</h2>
+
+<p>
+If you write to us through the contact form on this website, we receive the name,
+email address, and message you enter, plus the app you selected. The form is
+processed by Formspree. We use this information only to reply to you and to fix
+issues you report.
+</p>
 
 </section>
 
@@ -589,11 +423,11 @@ Settings → Privacy & Security → Analytics & Improvements
 
 <p>
 This website uses Google Analytics to collect anonymous statistics such as
-pages visited, approximate location, device type, and how visitors found
-the site. Google Analytics uses cookies for this purpose. We do not use this
-data to identify individual visitors. You can opt out by using the
-<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>
-or by blocking cookies in your browser.
+pages visited, approximate location, device type, and how visitors found the site.
+Google Analytics only loads if you click Accept on the cookie notice; if you decline,
+no analytics cookies are set. You can change your choice at any time with the
+Cookie settings link in the footer, or opt out with the
+<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.
 </p>
 
 </section>
@@ -612,18 +446,11 @@ Last Updated date.
 
 <section>
 
-<!--<h2>Contact Us</h2>-->
-<!---->
-<!--<div class="contact-box">-->
-<!---->
-<!--<p>-->
-<!--If you have questions regarding this Privacy Policy,-->
-<!--please contact:-->
-<!--</p>-->
-<!---->
-<!--<p><strong>Website:</strong> www.novanext.ca</p>-->
-<!---->
-<!--</div>-->
+<h2>Contact Us</h2>
+
+<div class="contact-box">
+<p>Questions about this Privacy Policy? Send us a message through our <a href="contact.html">contact form</a>.</p>
+</div>
 
 </section>
 
@@ -633,27 +460,7 @@ Last Updated date.
 
 </main>
 
-<footer>
-
-<div class="footer-inner">
-
-<div class="copyright">
-© 2026 NovaNext
-</div>
-
-<div class="footer-links">
-<a href="product.html">Products</a>
-<a href="about.html">About</a>
-<a href="support.html">Support</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-<a href="terms.html">Terms</a>
-<a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
-</div>
-
-</div>
-
-</footer>
+<script src="site.js" data-part="footer"></script>
 
 </body>
 </html>

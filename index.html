@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'G-P8B665RWVK');
-     </script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="images/icon/logo.png">
+<link rel="apple-touch-icon" href="images/icon/logo.png">
+<meta name="description" content="Native iOS apps from NovaNext: puzzle games, learning tools and everyday utilities, all written in Swift.">
+<link rel="canonical" href="https://www.novanext.ca/">
+<meta property="og:site_name" content="NovaNext"><meta property="og:type" content="website">
+<meta property="og:title" content="NovaNext — Native iOS Apps"><meta property="og:description" content="Native iOS apps from NovaNext: puzzle games, learning tools and everyday utilities, all written in Swift.">
+<meta property="og:url" content="https://www.novanext.ca/"><meta property="og:image" content="https://www.novanext.ca/images/icon/logo.png">
 <meta name="google-site-verification" content="r0p49vyLf17QjqQHYoD5jFz4WPMZ0ZM4N-9rp20N3Jg" />
 <title>NovaNext — Native iOS Apps</title>
 
@@ -20,113 +19,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="styles.css">
 <style>
-
-:root{
-    --bg:#fafaf8;
-    --surface:#ffffff;
-    --text:#111827;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-
-    --blue:#2563eb;
-    --purple:#7c3aed;
-    --green:#10b981;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-/* ---------------- NAV ---------------- */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(12px);
-    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
-}
-
-.nav-inner{
-    height:72px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    text-decoration:none;
-}
-
-.logo img{
-    height:34px;
-    width:auto;
-    display:block;
-}
-
-.logo span{
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:-0.03em;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:var(--muted);
-    font-weight:500;
-}
-
-.nav-links a:hover{
-    color:var(--text);
-}
-
-.nav-cta{
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    color:white !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    transition:.2s;
-}
-
-.nav-cta:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(37,99,235,.25);
-}
-
-/* ---------------- HERO ---------------- */
-
 .hero{
     padding:90px 0 60px;
     text-align:center;
@@ -135,28 +29,6 @@ nav{
         radial-gradient(circle at top left, rgba(124,58,237,.10), transparent 30%),
         radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 30%);
 }
-
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:white;
-    border:1px solid var(--border);
-    padding:7px 16px;
-    border-radius:999px;
-    font-size:13px;
-    font-weight:600;
-    color:var(--muted);
-    margin-bottom:26px;
-}
-
-.eyebrow .dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-}
-
 .hero h1{
     font-size:clamp(38px,6vw,62px);
     font-weight:800;
@@ -165,14 +37,12 @@ nav{
     max-width:760px;
     margin:0 auto;
 }
-
 .hero h1 .accent{
     background:linear-gradient(135deg,var(--blue),var(--purple));
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
 }
-
 .hero p{
     color:var(--muted);
     font-size:18px;
@@ -180,7 +50,6 @@ nav{
     max-width:600px;
     margin:22px auto 0;
 }
-
 .hero-actions{
     display:flex;
     justify-content:center;
@@ -188,7 +57,6 @@ nav{
     margin-top:34px;
     flex-wrap:wrap;
 }
-
 .btn-primary{
     display:inline-flex;
     align-items:center;
@@ -202,17 +70,15 @@ nav{
     font-size:15px;
     transition:.2s;
 }
-
 .btn-primary:hover{
     transform:translateY(-2px);
     box-shadow:0 10px 24px rgba(37,99,235,.28);
 }
-
 .btn-secondary{
     display:inline-flex;
     align-items:center;
     gap:8px;
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     color:var(--text);
     text-decoration:none;
@@ -222,14 +88,10 @@ nav{
     font-size:15px;
     transition:.2s;
 }
-
 .btn-secondary:hover{
     border-color:#cbd5e1;
     transform:translateY(-2px);
 }
-
-/* ---------------- STATS ---------------- */
-
 .stats{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -237,15 +99,13 @@ nav{
     max-width:380px;
     margin:56px auto 0;
 }
-
 .stat{
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:18px;
     padding:20px 12px;
     text-align:center;
 }
-
 .stat-num{
     font-size:26px;
     font-weight:800;
@@ -255,7 +115,6 @@ nav{
     background-clip:text;
     color:transparent;
 }
-
 .stat-label{
     font-size:12px;
     color:var(--muted);
@@ -264,24 +123,18 @@ nav{
     text-transform:uppercase;
     letter-spacing:.03em;
 }
-
-/* ---------------- SECTIONS ---------------- */
-
 .section{
     padding:80px 0;
 }
-
 .section-header{
     text-align:center;
     margin-bottom:56px;
 }
-
 .section-header h2{
     font-size:clamp(28px,4vw,38px);
     font-weight:800;
     letter-spacing:-0.03em;
 }
-
 .section-header p{
     color:var(--muted);
     font-size:16px;
@@ -290,17 +143,13 @@ nav{
     margin-left:auto;
     margin-right:auto;
 }
-
-/* ---------------- APP GRID ---------------- */
-
 .app-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:24px;
 }
-
 .app-card{
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:24px;
     padding:28px;
@@ -309,12 +158,10 @@ nav{
     gap:16px;
     transition:.2s;
 }
-
 .app-card:hover{
     transform:translateY(-4px);
     box-shadow:0 16px 36px rgba(17,24,39,.07);
 }
-
 .app-icon{
     width:64px;
     height:64px;
@@ -322,7 +169,6 @@ nav{
     object-fit:contain;
     box-shadow:0 10px 24px rgba(0,0,0,.10);
 }
-
 .app-category{
     display:inline-block;
     font-size:11px;
@@ -335,20 +181,17 @@ nav{
     padding:5px 12px;
     width:fit-content;
 }
-
 .app-name{
     font-size:19px;
     font-weight:800;
     letter-spacing:-0.02em;
 }
-
 .app-description{
     color:var(--muted);
     font-size:14.5px;
     line-height:1.65;
     flex:1;
 }
-
 .app-link{
     font-size:14px;
     font-weight:600;
@@ -358,16 +201,11 @@ nav{
     align-items:center;
     gap:5px;
 }
-
 .app-link svg{width:13px;height:13px;}
-
 .view-all{
     text-align:center;
     margin-top:44px;
 }
-
-/* ---------------- CRAFT BAND ---------------- */
-
 .craft-band{
     background:linear-gradient(135deg,#111827,#1e1b3a);
     border-radius:28px;
@@ -377,7 +215,6 @@ nav{
     gap:48px;
     align-items:center;
 }
-
 .craft-band h2{
     color:white;
     font-size:clamp(26px,4vw,32px);
@@ -385,7 +222,6 @@ nav{
     letter-spacing:-0.03em;
     line-height:1.2;
 }
-
 .craft-band p{
     color:#9ca3af;
     font-size:15px;
@@ -393,13 +229,11 @@ nav{
     margin-top:14px;
     max-width:440px;
 }
-
 .craft-list{
     display:flex;
     flex-direction:column;
     gap:0;
 }
-
 .craft-row{
     display:flex;
     justify-content:space-between;
@@ -407,18 +241,13 @@ nav{
     border-bottom:1px solid rgba(255,255,255,.08);
     font-size:14.5px;
 }
-
 .craft-row:first-child{
     border-top:1px solid rgba(255,255,255,.08);
 }
-
 .craft-key{color:#9ca3af;}
 .craft-val{color:white;font-weight:600;}
-
-/* ---------------- BOTTOM CTA ---------------- */
-
 .cta-card{
-    background:white;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:28px;
     padding:48px;
@@ -429,61 +258,22 @@ nav{
     flex-wrap:wrap;
     box-shadow:0 10px 40px rgba(0,0,0,.04);
 }
-
 .cta-card h3{
     font-size:24px;
     font-weight:800;
     letter-spacing:-0.02em;
 }
-
 .cta-card p{
     color:var(--muted);
     font-size:15px;
     margin-top:6px;
 }
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-    border-top:1px solid var(--border);
-    background:white;
-}
-
-.footer-inner{
-    height:90px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.footer-links{
-    display:flex;
-    gap:20px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:var(--muted);
-}
-
-.footer-links a:hover{
-    color:var(--text);
-}
-
-.copyright{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* ---------------- MOBILE ---------------- */
-
 @media(max-width:860px){
     .app-grid{grid-template-columns:repeat(2,1fr);}
     .craft-band{grid-template-columns:1fr;padding:40px 28px;}
 }
-
 @media(max-width:600px){
-    .nav-links a:not(.nav-cta){display:none;}
+    
     .stats{grid-template-columns:repeat(2,1fr);}
     .app-grid{grid-template-columns:1fr;}
     .section{padding:56px 0;}
@@ -492,61 +282,34 @@ footer{
     .hero{padding:60px 0 40px;}
 }
 
-
-/* ---------------- BMC BUTTON ---------------- */
-
-.bmc-link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:#FFDD00;
-    color:#000000 !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    text-decoration:none;
-    transition:.2s;
-}
-
-.bmc-link:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(255,221,0,.35);
-}
-
+.hero-shots{display:flex;justify-content:center;align-items:flex-end;gap:clamp(10px,2vw,22px);margin-top:48px}
+.hero-shots:empty{display:none}
+.hs{height:clamp(190px,32vw,340px);width:auto;border-radius:clamp(16px,2.4vw,28px);border:1px solid var(--border);background:var(--surface);box-shadow:0 18px 40px rgba(17,24,39,.18)}
+.hs.land{height:auto;width:clamp(240px,46vw,520px)}
+.hs1{height:clamp(220px,38vw,400px)}
+.app-shot{width:100%;height:230px;object-fit:contain;object-position:center;background:var(--bg);border-radius:16px;border:1px solid var(--border)}
+.icon-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:22px 14px}
+.icon-wall a{display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-size:13px;font-weight:600;text-align:center;line-height:1.3}
+.icon-wall img{width:76px;height:76px;object-fit:contain;border-radius:18px;box-shadow:0 10px 24px rgba(0,0,0,.14);transition:transform .2s}
+.icon-wall a:hover img{transform:translateY(-4px) scale(1.04)}
+.icon-wall .old img{filter:grayscale(1);opacity:.6}
 </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="container nav-inner">
-
-        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
-
-        <div class="nav-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
-        </div>
-
-    </div>
-</nav>
+<script src="site.js" data-part="nav" data-active=""></script>
+<div id="main" tabindex="-1"></div>
 
 <header class="hero">
     <div class="container">
 
-        <div class="eyebrow"><span class="dot"></span>Native iOS development</div>
+        <div class="eyebrow"><span class="dot"></span>Indie iOS developer</div>
 
-        <h1>Apps built right, <span class="accent">natively</span>, in Swift.</h1>
+        <h1>Hi, I make iOS apps <span class="accent">by hand</span>.</h1>
 
         <p>
-            NovaNext designs and builds iOS apps end to end — puzzle games, learning tools,
-            and everyday utilities — all native, all hand-coded screen by screen.
-            No cross-platform shortcuts, no templates.
+            I'm the developer behind NovaNext. It started with a camping trip and a shared-expenses problem, and grew into puzzles, math tools and everyday utilities. Every app is native Swift, with no templates.
         </p>
 
         <div class="hero-actions">
@@ -556,6 +319,8 @@ footer{
             </a>
             <a class="btn-secondary" href="about.html">About NovaNext</a>
         </div>
+
+        <div class="hero-shots" id="hero-shots"></div>
 
         <div class="stats">
             <div class="stat">
@@ -592,6 +357,16 @@ footer{
     </div>
 </section>
 
+<section class="section" id="all-apps" style="padding-top:0">
+    <div class="container">
+        <div class="section-header">
+            <h2>Every app, at a glance</h2>
+            <p>Tap an icon for screenshots, how it works and a demo.</p>
+        </div>
+        <div class="icon-wall" id="icon-wall"></div>
+    </div>
+</section>
+
 <section class="section">
     <div class="container">
 
@@ -603,6 +378,7 @@ footer{
                     no cross-platform frameworks, no off-the-shelf templates.
                     That means real native performance, real native feel, on every screen.
                 </p>
+                <p><a href="about.html" style="color:#fff;font-weight:600">Read how it started</a></p>
             </div>
             <div class="craft-list">
                 <div class="craft-row"><span class="craft-key">Platform</span><span class="craft-val">iOS, native</span></div>
@@ -631,27 +407,32 @@ footer{
     </div>
 </section>
 
-<footer>
-    <div class="container footer-inner">
-
-        <div class="copyright">© 2026 NovaNext</div>
-
-        <div class="footer-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
-        </div>
-
-    </div>
-</footer>
+<script src="site.js" data-part="footer"></script>
 
 <script src="apps.js"></script>
 <script>
     renderFeaturedApps('featured-apps');
+    const feat = APPS.filter(a => a.featured).sort((a, b) => a.featured - b.featured);
+    // Hero strip: apps with hero: 1, 2, 3 in apps.js (left to right). If none are set, picks portrait screenshots automatically.
+    const heroSrc = a => `${SCREENSHOTS_FOLDER}${appKey(a)}/${a.heroShot || 'iphone_01'}.jpg`;
+    const showHero = list => {
+        document.getElementById('hero-shots').innerHTML = list.slice(0, 3).map((a, i) =>
+            `<img class="hs hs${i}" src="${heroSrc(a)}" alt="${a.name} screenshot" onload="if(this.naturalWidth>this.naturalHeight)this.classList.add('land')" onerror="this.remove()">`).join('');
+    };
+    const chosen = APPS.filter(a => a.hero).sort((a, b) => a.hero - b.hero);
+    if (chosen.length) {
+        showHero(chosen);
+    } else {
+        const candidates = [...feat, ...APPS.filter(a => !a.featured && !a.legacy)];
+        Promise.all(candidates.map(a => new Promise(done => {
+            const img = new Image();
+            img.onload = () => done(img.naturalHeight > img.naturalWidth * 1.5 ? a : null);
+            img.onerror = () => done(null);
+            img.src = heroSrc(a);
+        }))).then(list => showHero(list.filter(Boolean)));
+    }
+    document.getElementById('icon-wall').innerHTML = APPS.map(a =>
+        `<a href="${appPageUrl(a)}"${a.legacy ? ' class="old"' : ''}><img src="${iconSrc(a)}" alt="" loading="lazy">${a.name}</a>`).join('');
     renderAppCounts();
 </script>
 
