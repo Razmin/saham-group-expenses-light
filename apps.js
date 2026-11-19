@@ -331,7 +331,7 @@ const APPS = [
     ],
     url: "https://apps.apple.com/us/app/sun-light-hours/id6499107039",
     featured: 6,
-    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape"
+    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system"
   },
   {
     name: "FastCam",
