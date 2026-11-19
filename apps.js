@@ -1,5 +1,5 @@
 /* =====================================================================
-   NovaNext — Single Source of Truth (Apps, Shared Navigation & Renderers)
+   NovaNext — Bento / App Studio Hub JS
    ===================================================================== */
 
 const MEDIA = {
@@ -342,8 +342,6 @@ const APPS = [
     url: "https://apps.apple.com/us/app/group-expenses/id1443950401",
     showcase: true
   },
-
-  /* Legacy apps go LAST */
   {
     name: "GE Light",
     icon: "light",
@@ -362,24 +360,17 @@ const APPS = [
   }
 ];
 
-/* =====================================================================
-   Shared Layout & UI Helpers
-   ===================================================================== */
-
-const ARROW_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>';
+const SCREENSHOTS_FOLDER = 'images/screenshots/';
+const DEFAULT_MAX_SCREENSHOTS = 5;
 
 function findApp(appName) {
   return APPS.find(app => app.name === appName);
 }
 
-const SCREENSHOTS_FOLDER = 'images/screenshots/';
-const DEFAULT_MAX_SCREENSHOTS = 5;
-
 function appKey(app) {
   return app.screenshots || app.name.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
-/* Shared Navigation & Footer Injection (eliminates 8-file duplication) */
 function renderChrome(activePage = '') {
   const navTarget = document.getElementById('site-nav');
   if (navTarget) {
@@ -390,7 +381,6 @@ function renderChrome(activePage = '') {
       { href: 'privacy.html', label: 'Privacy',  id: 'privacy' },
       { href: 'terms.html',   label: 'Terms',    id: 'terms' }
     ];
-
     const linkHtml = links.map(l =>
       `<a href="${l.href}" class="${activePage === l.id ? 'active' : ''}">${l.label}</a>`
     ).join('');
@@ -454,143 +444,114 @@ function renderAppCounts() {
   });
 }
 
-/* Homepage Interactive Device Showcase */
-function renderHeroShowcase(containerId) {
+function renderBentoSpotlight(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
+  const items = APPS.filter(app => app.showcase);
+  if (!items.length) return;
+  let active = 0;
 
-  const showcaseApps = APPS.filter(app => app.showcase);
-  if (!showcaseApps.length) return;
-
-  let activeIndex = 0;
-
-  function renderPanel(index) {
-    const app = showcaseApps[index];
+  function draw() {
+    const app = items[active];
     const key = appKey(app);
-    const screenshotPath = `${SCREENSHOTS_FOLDER}${key}/iphone_01.jpg`;
-    const videoPath = videoSrc(app);
-
-    const tabsHtml = showcaseApps.map((item, i) => `
-      <button type="button" class="showcase-tab ${i === index ? 'active' : ''}" data-idx="${i}">
+    const pills = items.map((item, i) => `
+      <button type="button" class="spot-pill ${i === active ? 'active' : ''}" data-i="${i}">
         <img src="${iconSrc(item)}" alt="">
         <span>${item.name}</span>
       </button>`).join('');
 
     container.innerHTML = `
-      <div class="showcase-tabs" role="tablist">${tabsHtml}</div>
-      <div class="showcase-panel">
-        <div class="showcase-info">
-          <span class="app-category">${app.category}</span>
-          <h3>${app.name}</h3>
-          <p>${app.homeDescription || app.description}</p>
-          <ul class="showcase-bullets">
-            ${app.features.map(f => `<li>${f}</li>`).join('')}
-          </ul>
-          <div class="product-actions">
-            <a href="${app.url}" class="download-button">Download on App Store</a>
-            <a href="app.html?id=${key}" class="learn-button">Explore details</a>
+      <div>
+        <div class="spotlight-pills">${pills}</div>
+        <div class="spotlight-body">
+          <div>
+            <span class="app-category">${app.category}</span>
+            <h3>${app.name}</h3>
+            <p>${app.homeDescription || app.description}</p>
+            <div class="product-actions">
+              <a href="${app.url}" class="download-button">App Store</a>
+              <a href="app.html?id=${key}" class="learn-button">Details</a>
+            </div>
           </div>
-        </div>
-        <div class="device-frame-wrap">
-          <div class="iphone-frame">
-            <div class="iphone-notch"></div>
-            <img id="showcase-img" src="${screenshotPath}" alt="${app.name} on iPhone" onerror="this.src='${iconSrc(app)}'; this.style.objectFit='contain'; this.style.padding='24px';">
+          <div class="mini-phone">
+            <img src="${SCREENSHOTS_FOLDER}${key}/iphone_01.jpg" alt="${app.name} preview" onerror="this.src='${iconSrc(app)}'; this.style.objectFit='contain'; this.style.padding='18px';">
           </div>
         </div>
       </div>`;
 
-    // Automatically swap to muted looping preview video if videos/<icon>.mp4 exists
     const probe = document.createElement('video');
     probe.preload = 'metadata';
     probe.muted = true;
     probe.addEventListener('loadedmetadata', () => {
-      const frame = container.querySelector('.iphone-frame');
-      if (frame) {
+      const phone = container.querySelector('.mini-phone');
+      if (phone) {
         const vid = document.createElement('video');
-        vid.src = videoPath;
+        vid.src = videoSrc(app);
         vid.autoplay = true;
         vid.loop = true;
         vid.muted = true;
         vid.playsInline = true;
-        const oldImg = frame.querySelector('img');
+        const oldImg = phone.querySelector('img');
         if (oldImg) oldImg.replaceWith(vid);
       }
     });
-    probe.src = videoPath;
+    probe.src = videoSrc(app);
 
-    container.querySelectorAll('.showcase-tab').forEach(btn => {
+    container.querySelectorAll('.spot-pill').forEach(btn => {
       btn.addEventListener('click', () => {
-        activeIndex = Number(btn.dataset.idx);
-        renderPanel(activeIndex);
+        active = Number(btn.dataset.i);
+        draw();
       });
     });
   }
 
-  renderPanel(activeIndex);
+  draw();
 }
 
-/* support.html: App routing pills */
-function renderSupportPills(containerId) {
+function renderBentoFeatured(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  container.innerHTML = APPS.map(app => {
-    const contactName = encodeURIComponent(app.supportName || app.name);
-    const label = app.legacy
-      ? `<span>${app.name}<small>No longer maintained</small></span>`
-      : app.name;
-    return `<a class="app-pill${app.legacy ? ' legacy' : ''}" href="contact.html?app=${contactName}">` +
-           `<img class="swatch" src="${iconSrc(app)}" alt="">${label}</a>`;
-  }).join('');
-}
-
-/* index.html: Featured apps cards */
-function renderFeaturedApps(containerId) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  const featuredApps = APPS
-    .filter(app => app.featured)
-    .sort((a, b) => a.featured - b.featured);
-
-  container.innerHTML = featuredApps.map(app => `
-    <div class="app-card">
+  const featured = APPS.filter(a => a.featured).sort((a, b) => a.featured - b.featured);
+  container.innerHTML = featured.map(app => `
+    <div class="bento-tile bento-app-card">
       <div class="app-card-top">
         <img class="app-icon" src="${iconSrc(app)}" alt="${app.name} icon">
         <span class="app-category">${app.category}</span>
       </div>
-      <div class="app-name">${app.name}</div>
-      <p class="app-description">${app.homeDescription || app.description}</p>
+      <div>
+        <div class="app-name">${app.name}</div>
+        <p class="app-description" style="margin-top:6px;">${app.homeDescription || app.description}</p>
+      </div>
       <div class="app-card-actions">
-        <a class="app-link" href="${app.url}">App Store ${ARROW_ICON}</a>
+        <a class="app-link" href="${app.url}">Get on App Store &nearr;</a>
         <a class="app-link secondary" href="app.html?id=${appKey(app)}">Details &rarr;</a>
       </div>
     </div>`).join('');
 }
 
-/* product.html: Full searchable + category-filtered catalog */
-function buildProductHtml(app) {
+function buildCompactCatalogCard(app) {
   const replacement = app.replacedBy ? findApp(app.replacedBy) : null;
-  const categoryText = app.legacy ? `${app.category} · No longer maintained` : app.category;
+  const categoryText = app.legacy ? `${app.category} · Legacy` : app.category;
   const legacyNote = app.legacy && replacement
-    ? `<p class="legacy-note">${app.name} is no longer updated. Try <a href="${replacement.url}">${replacement.name}</a> instead.</p>`
+    ? `<p class="legacy-note">${app.name} is no longer maintained. Try <a href="${replacement.url}">${replacement.name}</a>.</p>`
     : '';
   return `
-<div class="product${app.legacy ? ' legacy' : ''}">
-  <div class="product-image">
+<div class="catalog-card${app.legacy ? ' legacy' : ''}">
+  <div class="catalog-card-header">
     <img class="product-icon" src="${iconSrc(app)}" alt="${app.name}">
-  </div>
-  <div class="product-content">
-    <span class="product-category">${categoryText}</span>
-    <h2>${app.name}</h2>
-    ${legacyNote}
-    <p class="product-description">${app.description}</p>
-    <ul class="product-features">
-      ${app.features.map(feature => `<li>${feature}</li>`).join('
-      ')}
-    </ul>
-    <div class="product-actions">
-      <a href="${app.url}" class="download-button">Download on App Store</a>
-      <a href="app.html?id=${appKey(app)}" class="learn-button">Learn more</a>
+    <div>
+      <span class="product-category">${categoryText}</span>
+      <h2>${app.name}</h2>
     </div>
+  </div>
+  ${legacyNote}
+  <p class="product-description">${app.description}</p>
+  <ul class="product-features">
+    ${app.features.map(f => `<li>${f}</li>`).join('\n    ')}
+  </ul>
+  <div class="product-actions">
+    <a href="${app.url}" class="download-button">Download on App Store</a>
+    <a href="app.html?id=${appKey(app)}" class="learn-button">Details</a>
   </div>
 </div>`;
 }
@@ -618,52 +579,41 @@ function renderProductList() {
     });
 
     if (!visibleApps.length) {
-      listContainer.innerHTML = `<div class="empty-state">No apps matched "<strong>${searchQuery}</strong>". Try another keyword or reset the category filter.</div>`;
+      listContainer.innerHTML = `<div class="empty-state">No apps matched "<strong>${searchQuery}</strong>". Try another search or category.</div>`;
       return;
     }
 
-    listContainer.innerHTML = visibleApps.map(buildProductHtml).join('');
+    listContainer.innerHTML = visibleApps.map(buildCompactCatalogCard).join('');
   }
 
   const controls = document.createElement('div');
   controls.className = 'catalog-controls';
 
-  // Search bar
   const searchBox = document.createElement('div');
   searchBox.className = 'search-box';
   searchBox.innerHTML = `
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-    <input type="search" id="app-search" placeholder="Search 18 apps by name, feature, or topic…" aria-label="Search apps">`;
+    <input type="search" id="app-search" placeholder="Filter 18 apps by name or feature…" aria-label="Search apps">`;
   controls.appendChild(searchBox);
 
-  // Segmented category control
   const control = document.createElement('div');
   control.className = 'segmented';
-  control.setAttribute('role', 'group');
-  control.setAttribute('aria-label', 'Filter apps by category');
-
   [ALL_LABEL, ...categories].forEach(label => {
     const segment = document.createElement('button');
     segment.type = 'button';
     segment.className = 'segment' + (label === ALL_LABEL ? ' active' : '');
     segment.textContent = label;
-    segment.setAttribute('aria-pressed', label === ALL_LABEL ? 'true' : 'false');
     segment.addEventListener('click', () => {
       selectedCategory = label;
-      control.querySelectorAll('.segment').forEach(other => {
-        other.classList.toggle('active', other === segment);
-        other.setAttribute('aria-pressed', other === segment ? 'true' : 'false');
-      });
+      control.querySelectorAll('.segment').forEach(s => s.classList.toggle('active', s === segment));
       showProducts();
     });
     control.appendChild(segment);
   });
-
   controls.appendChild(control);
   header.appendChild(controls);
 
-  const searchInput = searchBox.querySelector('input');
-  searchInput.addEventListener('input', e => {
+  searchBox.querySelector('input').addEventListener('input', e => {
     searchQuery = e.target.value;
     showProducts();
   });
@@ -671,76 +621,57 @@ function renderProductList() {
   showProducts();
 }
 
-/* Demo video lightbox for app.html */
+function renderSupportPills(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = APPS.map(app => {
+    const contactName = encodeURIComponent(app.supportName || app.name);
+    const label = app.legacy
+      ? `<span>${app.name}<small>Legacy</small></span>`
+      : app.name;
+    return `<a class="app-pill${app.legacy ? ' legacy' : ''}" href="contact.html?app=${contactName}">` +
+           `<img class="swatch" src="${iconSrc(app)}" alt="">${label}</a>`;
+  }).join('');
+}
+
 const VIDEO_CSS = `
 .hero-actions-left{display:flex;flex-wrap:wrap;align-items:center;gap:12px;}
-.demo-button{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:12px 22px;border-radius:12px;
-    border:1px solid var(--border);background:var(--surface);
-    color:var(--text);font:inherit;font-weight:600;font-size:14.5px;
-    cursor:pointer;transition:.2s;
-}
-.demo-button:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);}
+.demo-button{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit;font-weight:600;font-size:14px;cursor:pointer;}
 .demo-button .demo-play{color:var(--blue);font-size:12px;}
-.video-overlay{
-    position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.85);
-    display:flex;align-items:center;justify-content:center;padding:24px;
-}
-.video-overlay video{
-    max-width:92vw;max-height:85vh;border-radius:14px;background:#000;
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
-}
-.video-close{
-    position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;
-    border:0;background:rgba(255,255,255,.15);color:#fff;font-size:22px;cursor:pointer;
-}
-.video-close:hover{background:rgba(255,255,255,.3);}
+.video-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;padding:24px;}
+.video-overlay video{max-width:92vw;max-height:85vh;border-radius:14px;background:#000;}
+.video-close{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:22px;cursor:pointer;}
 `;
 
 function openVideo(app) {
   const overlay = document.createElement('div');
   overlay.className = 'video-overlay';
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-label', `${app.name} demo video`);
-
   const player = document.createElement('video');
   player.controls = true;
   player.autoplay = true;
   player.playsInline = true;
   player.src = videoSrc(app);
-
   const closeButton = document.createElement('button');
   closeButton.type = 'button';
   closeButton.className = 'video-close';
-  closeButton.setAttribute('aria-label', 'Close video');
   closeButton.innerHTML = '&times;';
-
   function close() {
     player.pause();
     player.removeAttribute('src');
-    player.load();
     overlay.remove();
-    document.removeEventListener('keydown', onKey);
     document.body.style.overflow = '';
   }
-  function onKey(event) { if (event.key === 'Escape') close(); }
-
-  overlay.addEventListener('click', event => { if (event.target === overlay) close(); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
   closeButton.addEventListener('click', close);
-  document.addEventListener('keydown', onKey);
-
   overlay.appendChild(player);
   overlay.appendChild(closeButton);
   document.body.appendChild(overlay);
   document.body.style.overflow = 'hidden';
-  closeButton.focus();
 }
 
 function addDemoVideo(app, actions) {
   const url = videoSrc(app);
   let added = false;
-
   function addButton() {
     if (added) return;
     added = true;
@@ -751,63 +682,38 @@ function addDemoVideo(app, actions) {
     button.addEventListener('click', () => openVideo(app));
     actions.appendChild(button);
   }
-
-  fetch(url, { method: 'HEAD' })
-    .then(response => {
-      const type = response.headers.get('content-type') || '';
-      if (response.ok && !type.includes('text/html')) addButton();
-    })
-    .catch(() => {});
-
+  fetch(url, { method: 'HEAD' }).then(r => {
+    if (r.ok && !(r.headers.get('content-type') || '').includes('text/html')) addButton();
+  }).catch(() => {});
   const probe = document.createElement('video');
   probe.preload = 'metadata';
   probe.muted = true;
-  probe.addEventListener('loadedmetadata', () => {
-    addButton();
-    probe.removeAttribute('src');
-    probe.load();
-  });
+  probe.addEventListener('loadedmetadata', addButton);
   probe.src = url;
 }
 
-/* app.html: App landing page */
 function renderAppPage(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
   const requestedKey = new URLSearchParams(window.location.search).get('id');
-  const app = APPS.find(candidate => appKey(candidate) === requestedKey);
-
+  const app = APPS.find(c => appKey(c) === requestedKey);
   if (!app) {
-    document.title = 'App not found - NovaNext';
-    container.innerHTML = `
-      <div class="app-missing">
-        <h1>App not found</h1>
-        <p>We could not find that app. <a href="product.html">See all products</a></p>
-      </div>`;
+    container.innerHTML = `<div class="app-missing"><h1>App not found</h1><p><a href="product.html">See all products</a></p></div>`;
     return;
   }
-
+  if (!document.getElementById('video-css')) {
+    const s = document.createElement('style');
+    s.id = 'video-css';
+    s.textContent = VIDEO_CSS;
+    document.head.appendChild(s);
+  }
+  document.title = `${app.name} - NovaNext`;
   const replacement = app.replacedBy ? findApp(app.replacedBy) : null;
   const legacyNote = app.legacy && replacement
-    ? `<p class="legacy-note">${app.name} is no longer updated. Try <a href="${replacement.url}">${replacement.name}</a> instead.</p>`
+    ? `<p class="legacy-note">${app.name} is no longer maintained. Try <a href="${replacement.url}">${replacement.name}</a>.</p>`
     : '';
   const contactName = encodeURIComponent(app.supportName || app.name);
-  const offlineText = app.needsInternet
-    ? 'Needs an internet connection.'
-    : `Works offline.${app.offlineNote ? ' ' + app.offlineNote : ''}`;
-
-  if (!document.getElementById('video-css')) {
-    const videoStyle = document.createElement('style');
-    videoStyle.id = 'video-css';
-    videoStyle.textContent = VIDEO_CSS;
-    document.head.appendChild(videoStyle);
-  }
-
-  document.title = `${app.name} - NovaNext`;
-  const descriptionMeta = document.querySelector('meta[name="description"]');
-  if (descriptionMeta) {
-    descriptionMeta.content = app.description.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-  }
+  const offlineText = app.needsInternet ? 'Needs an internet connection.' : `Works offline.${app.offlineNote ? ' ' + app.offlineNote : ''}`;
 
   container.innerHTML = `
     <a class="back-link" href="product.html">&larr; All products</a>
@@ -824,28 +730,15 @@ function renderAppPage(containerId) {
         <p class="app-offline">${offlineText}</p>
       </div>
     </section>
-    <section class="screenshots-section" hidden>
-      <div class="screenshots"></div>
-    </section>
-    ${app.longDescription ? `
-    <section class="app-about">
-      <h2>About ${app.name}</h2>
-      <p>${app.longDescription}</p>
-    </section>` : ''}
+    <section class="screenshots-section" hidden><div class="screenshots"></div></section>
     <section class="app-features">
       <h2>What it does</h2>
-      <ul class="product-features">
-        ${app.features.map(feature => `<li>${feature}</li>`).join('
-        ')}
-      </ul>
+      <ul class="product-features">${app.features.map(f => `<li>${f}</li>`).join('')}</ul>
     </section>
     ${app.howItWorks && app.howItWorks.length ? `
     <section class="app-how">
       <h2>How it works</h2>
-      <ol>
-        ${app.howItWorks.map(step => `<li>${step}</li>`).join('
-        ')}
-      </ol>
+      <ol>${app.howItWorks.map(step => `<li>${step}</li>`).join('')}</ol>
     </section>` : ''}
     <section class="app-links">
       <a href="contact.html?app=${contactName}">Get support</a>
@@ -857,34 +750,24 @@ function renderAppPage(containerId) {
   const screenshotStrip = container.querySelector('.screenshots');
   const maxScreenshots = app.screenshotCount || DEFAULT_MAX_SCREENSHOTS;
   const devices = ['iphone', 'ipad'];
-  let screenshotsLeftToCheck = maxScreenshots * devices.length;
-
-  function screenshotChecked() {
-    screenshotsLeftToCheck -= 1;
-    if (screenshotsLeftToCheck === 0 && screenshotStrip.children.length > 0) {
-      screenshotSection.hidden = false;
-    }
+  let leftToCheck = maxScreenshots * devices.length;
+  function checked() {
+    leftToCheck -= 1;
+    if (leftToCheck === 0 && screenshotStrip.children.length > 0) screenshotSection.hidden = false;
   }
-
-  for (let screenshotNumber = 1; screenshotNumber <= maxScreenshots; screenshotNumber++) {
-    const paddedNumber = String(screenshotNumber).padStart(2, '0');
+  for (let n = 1; n <= maxScreenshots; n++) {
+    const pad = String(n).padStart(2, '0');
     const pair = document.createElement('div');
     pair.className = 'shot-pair';
     screenshotStrip.appendChild(pair);
-
-    devices.forEach(device => {
-      const screenshotImage = document.createElement('img');
-      screenshotImage.alt = `${app.name} ${device === 'iphone' ? 'iPhone' : 'iPad'} screenshot ${screenshotNumber}`;
-      screenshotImage.addEventListener('load', screenshotChecked);
-      screenshotImage.addEventListener('error', () => {
-        screenshotImage.remove();
-        if (pair.children.length === 0) pair.remove();
-        screenshotChecked();
-      });
-      screenshotImage.src = `${SCREENSHOTS_FOLDER}${appKey(app)}/${device}_${paddedNumber}.jpg`;
-      pair.appendChild(screenshotImage);
+    devices.forEach(dev => {
+      const img = document.createElement('img');
+      img.alt = `${app.name} ${dev} screenshot ${n}`;
+      img.addEventListener('load', checked);
+      img.addEventListener('error', () => { img.remove(); if (!pair.children.length) pair.remove(); checked(); });
+      img.src = `${SCREENSHOTS_FOLDER}${appKey(app)}/${dev}_${pad}.jpg`;
+      pair.appendChild(img);
     });
   }
-
   addDemoVideo(app, container.querySelector('.hero-actions-left'));
 }

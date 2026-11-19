@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -11,8 +10,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="r0p49vyLf17QjqQHYoD5jFz4WPMZ0ZM4N-9rp20N3Jg" />
-    <title>NovaNext — Native iOS Apps</title>
+    <title>NovaNext — App Studio Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,97 +20,56 @@
 <body>
 <div id="site-nav"></div>
 
-<main>
-  <header class="hero">
-    <div class="container">
-      <div class="eyebrow"><span class="dot"></span>Native iOS development · Swift</div>
-      <h1>Apps built right, <span class="accent">natively</span>, in Swift.</h1>
-      <p>
-        NovaNext designs and builds iOS apps end to end — puzzle games, learning tools,
-        and everyday utilities — hand-coded screen by screen with zero cross-platform shortcuts.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn-primary" href="product.html">
-          Browse all <span data-app-count>18</span> apps
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="btn-secondary" href="about.html">Our Story</a>
-      </div>
-
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-num" data-app-count>18</div>
-          <div class="stat-label">Apps Live</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Native Swift</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">iOS</div>
-          <div class="stat-label">iPhone &amp; iPad</div>
-        </div>
-      </div>
-
-      <!-- Interactive Flagship Device Showcase -->
-      <div class="showcase-stage" id="hero-showcase"></div>
-    </div>
-  </header>
-
-  <section class="section" id="apps">
-    <div class="container">
-      <div class="section-header">
-        <h2>Featured apps</h2>
-        <p>A curated look at our favorites — explore the full catalog in one click.</p>
-      </div>
-
-      <div class="app-grid" id="featured-apps"></div>
-
-      <div class="view-all">
-        <a class="btn-secondary" href="product.html">
-          See all <span data-app-count>18</span> apps
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div class="craft-band">
+<main class="studio-header">
+  <div class="container">
+    <div class="bento-grid">
+      <div class="bento-tile bento-hero">
         <div>
-          <h2>Built natively. No compromises.</h2>
-          <p>
-            Every NovaNext app is written in Swift and built by hand —
-            no cross-platform wrappers, no off-the-shelf templates.
-            That means real native speed, fluid gestures, and offline reliability on every screen.
-          </p>
+          <div class="eyebrow"><span class="dot"></span>NovaNext App Studio · Native Swift</div>
+          <h1>A studio of <span class="accent">18 native iOS apps</span> crafted for daily life.</h1>
+          <p>From group expenses and calendar math to relaxing puzzles and film connections — every app is built in Swift for iPhone and iPad.</p>
         </div>
-        <div class="craft-list">
-          <div class="craft-row"><span class="craft-key">Architecture</span><span class="craft-val">100% Native Swift</span></div>
-          <div class="craft-row"><span class="craft-key">Privacy</span><span class="craft-val">On-device first</span></div>
-          <div class="craft-row"><span class="craft-key">Templates</span><span class="craft-val">None used</span></div>
-          <div class="craft-row"><span class="craft-key">Apps shipped</span><span class="craft-val" data-app-count>18</span></div>
+        <div class="hero-actions">
+          <a class="btn-primary" href="product.html">Explore full catalog</a>
+          <a class="btn-secondary" href="support.html">App support</a>
+          <a class="btn-secondary" href="contact.html">Say hello</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="contact" style="padding-top:0;">
-    <div class="container">
-      <div class="cta-card">
-        <div>
-          <h3>Got feedback, a bug report, or just want to say hi?</h3>
-          <p>Every message gets read and answered personally.</p>
+      <div class="bento-tile bento-stats">
+        <div class="mini-stat">
+          <span class="mini-stat-label">Shipped Apps</span>
+          <span class="mini-stat-num" data-app-count>18</span>
         </div>
-        <a class="btn-primary" href="contact.html">
-          Get in touch
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-        </a>
+        <div class="mini-stat">
+          <span class="mini-stat-label">Codebase</span>
+          <span class="mini-stat-num">Swift</span>
+        </div>
+        <div class="mini-stat">
+          <span class="mini-stat-label">Origin</span>
+          <span class="mini-stat-num">Canada</span>
+        </div>
       </div>
+
+      <div class="bento-tile bento-spotlight" id="bento-spotlight"></div>
+
+      <div class="bento-tile bento-story">
+        <div>
+          <span class="app-category" style="background:rgba(255,255,255,0.12);color:#e0e7ff;">Origin Story</span>
+          <h2 style="font-size:24px;font-weight:800;letter-spacing:-0.02em;margin-top:12px;">Named after Nova Scotia.</h2>
+          <p>It started with splitting camping and event expenses with friends — and grew into native games, math tools, and everyday utilities.</p>
+        </div>
+        <a class="story-link" href="about.html">Read the full NovaNext story &rarr;</a>
+      </div>
+
+      <div class="bento-section-title">
+        <h2>Spotlight Favorites</h2>
+        <p>Hand-picked apps across puzzles, utilities, and education.</p>
+      </div>
+
+      <div id="bento-featured-slot" style="display:contents;"></div>
     </div>
-  </section>
+  </div>
 </main>
 
 <div id="site-footer"></div>
@@ -120,8 +77,8 @@
 <script src="apps.js"></script>
 <script>
   renderChrome('home');
-  renderHeroShowcase('hero-showcase');
-  renderFeaturedApps('featured-apps');
+  renderBentoSpotlight('bento-spotlight');
+  renderBentoFeatured('bento-featured-slot');
   renderAppCounts();
 </script>
 </body>
