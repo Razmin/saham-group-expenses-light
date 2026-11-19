@@ -2,658 +2,150 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'G-P8B665RWVK');
-     </script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Privacy Policy - NovaNext</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-    --bg:#fafaf8;
-    --surface:#ffffff;
-    --text:#111827;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-
-    --blue:#2563eb;
-    --purple:#7c3aed;
-    --green:#10b981;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.8;
-    -webkit-font-smoothing:antialiased;
-}
-
-.container{
-    width:min(900px,92%);
-    margin:auto;
-}
-
-/* ---------------- NAV ---------------- */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(12px);
-    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
-}
-
-.nav-inner{
-    width:min(1120px,92%);
-    margin:auto;
-    height:72px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    text-decoration:none;
-}
-
-.logo img{
-    height:34px;
-    width:auto;
-    display:block;
-}
-
-.logo span{
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:-0.03em;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:var(--muted);
-    font-weight:500;
-}
-
-.nav-links a:hover{
-    color:var(--text);
-}
-
-.nav-links a.active{
-    color:var(--text);
-}
-
-.nav-cta{
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    color:white !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    transition:.2s;
-}
-
-.nav-cta:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(37,99,235,.25);
-}
-
-/* ---------------- HEADER ---------------- */
-
-.page-header{
-    padding:80px 0 50px;
-
-    background:
-        radial-gradient(circle at top left,
-        rgba(124,58,237,.10),
-        transparent 30%),
-
-        radial-gradient(circle at top right,
-        rgba(37,99,235,.10),
-        transparent 30%);
-}
-
-.page-header h1{
-    font-size:clamp(42px,6vw,64px);
-    line-height:1;
-    letter-spacing:-0.04em;
-    margin-bottom:18px;
-}
-
-.page-header p{
-    color:var(--muted);
-    font-size:18px;
-}
-
-.updated{
-    display:inline-block;
-    margin-top:22px;
-
-    background:white;
-    border:1px solid var(--border);
-
-    padding:8px 14px;
-    border-radius:999px;
-
-    font-size:14px;
-    font-weight:600;
-}
-
-/* ---------------- CONTENT ---------------- */
-
-.content{
-    padding:20px 0 80px;
-}
-
-.policy-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:28px;
-    padding:50px;
-
-    box-shadow:
-        0 10px 40px rgba(0,0,0,.04);
-}
-
-section{
-    margin-bottom:50px;
-}
-
-section:last-child{
-    margin-bottom:0;
-}
-
-section:not(:last-child){
-    padding-bottom:35px;
-    border-bottom:1px solid #f1f5f9;
-}
-
-h2{
-    font-size:28px;
-    font-weight:800;
-    margin-bottom:18px;
-    letter-spacing:-0.02em;
-}
-
-h3{
-    font-size:20px;
-    font-weight:700;
-    margin-top:24px;
-    margin-bottom:12px;
-    color:#374151;
-}
-
-p{
-    color:#374151;
-    margin-bottom:16px;
-}
-
-ul{
-    margin-top:10px;
-    padding-left:24px;
-}
-
-li{
-    margin-bottom:12px;
-    color:#374151;
-}
-
-/* ---------------- INFO BOX ---------------- */
-
-.info-box{
-
-    margin-top:24px;
-
-    background:
-        linear-gradient(
-        135deg,
-        #eff6ff,
-        #dbeafe
-    );
-
-    border:1px solid #bfdbfe;
-
-    border-radius:18px;
-    padding:22px;
-}
-
-/* ---------------- SECURITY BOX ---------------- */
-
-.security-box{
-
-    background:
-        linear-gradient(
-        135deg,
-        #ecfdf5,
-        #d1fae5
-    );
-
-    border:1px solid #a7f3d0;
-
-    border-radius:18px;
-
-    padding:24px;
-    margin-top:20px;
-}
-
-.security-box h3{
-    margin-top:0;
-}
-
-/* ---------------- CONTACT ---------------- */
-
-.contact-box{
-
-    background:
-        linear-gradient(
-        135deg,
-        rgba(37,99,235,.05),
-        rgba(124,58,237,.05)
-    );
-
-    border:1px solid #dbeafe;
-
-    border-radius:20px;
-    padding:28px;
-}
-
-.contact-box p{
-    margin-bottom:10px;
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-    border-top:1px solid var(--border);
-    background:white;
-}
-
-.footer-inner{
-    width:min(1120px,92%);
-    margin:auto;
-    height:90px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.footer-links{
-    display:flex;
-    gap:20px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:var(--muted);
-}
-
-.footer-links a:hover{
-    color:var(--text);
-}
-
-.copyright{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* ---------------- MOBILE ---------------- */
-
-@media(max-width:768px){
-
-    .policy-card{
-        padding:30px 24px;
-        border-radius:22px;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-        height:auto;
-        gap:12px;
-        padding:24px 0;
-    }
-
-    .nav-links{
-        gap:16px;
-        font-size:14px;
-    }
-
-    h2{
-        font-size:24px;
-    }
-
-    h3{
-        font-size:18px;
-    }
-}
-
-
-/* ---------------- BMC BUTTON ---------------- */
-
-.bmc-link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:#FFDD00;
-    color:#000000 !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    text-decoration:none;
-    transition:.2s;
-}
-
-.bmc-link:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(255,221,0,.35);
-}
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8B665RWVK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Privacy Policy - NovaNext</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+  .legal-wrap { width: min(860px, 92%); margin: 0 auto 84px; }
+  .policy-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 48px; box-shadow: var(--shadow-sm); }
+  .policy-card section { margin-bottom: 42px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+  .policy-card section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .policy-card h2 { font-size: 25px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .policy-card h3 { font-size: 18px; font-weight: 700; margin: 22px 0 10px; }
+  .policy-card p { color: var(--muted); margin-bottom: 14px; }
+  .policy-card ul { padding-left: 22px; margin: 10px 0 14px; }
+  .policy-card li { color: var(--muted); margin-bottom: 10px; }
+  .policy-card li strong, .policy-card p strong { color: var(--text); }
+  .policy-card a { color: var(--blue); font-weight: 600; text-decoration: none; }
+  .policy-card a:hover { text-decoration: underline; }
+  .callout-box { margin-top: 20px; background: rgba(37, 99, 235, 0.07); border: 1px solid rgba(37, 99, 235, 0.22); border-radius: 16px; padding: 20px; color: var(--text); }
+  .callout-box.green { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.25); }
+  .callout-box.red { background: rgba(239, 68, 68, 0.08); border-color: rgba(239, 68, 68, 0.25); }
+  .callout-box h3 { margin-top: 0; }
+  @media (max-width: 680px) { .policy-card { padding: 28px 22px; } }
 </style>
 </head>
-
 <body>
+<div id="site-nav"></div>
 
-<nav>
-    <div class="nav-inner">
-
-        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
-
-        <div class="nav-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="privacy.html" class="active">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
-        </div>
-
-    </div>
-</nav>
-
-<header class="page-header">
-
+<main>
+  <header class="page-hero">
     <div class="container">
-
-        <h1>Privacy Policy</h1>
-
-        <p>
-            Your privacy matters. This policy explains what information
-            NovaNext apps may collect and how it is used.
-        </p>
-
-        <div class="updated">
-            Last Updated: October 5, 2026
-        </div>
-
+      <div class="eyebrow"><span class="dot"></span>Last Updated: October 5, 2026</div>
+      <h1>Privacy <span class="accent">Policy</span></h1>
+      <p>Your privacy matters. This policy explains what information NovaNext apps may collect and how it is used.</p>
     </div>
-
-</header>
-
-<main class="content">
-
-<div class="container">
-
-<div class="policy-card">
-
-<section>
-
-<h2>Overview</h2>
-
-<p>
-NovaNext develops mobile applications for iPhone and iPad.
-We are committed to protecting your privacy while providing
-high-quality apps and services.
-</p>
-
-</section>
-
-<section>
-
-<h2>Information We Collect</h2>
-
-<p>
-Some NovaNext apps may collect anonymous usage and diagnostic
-information to help improve app performance and user experience.
-</p>
-
-<ul>
-<li><strong>App Usage Statistics:</strong> How often our apps are used and which features are accessed.</li>
-
-<li><strong>Device Information:</strong> Device model, operating system version, app version, language settings, and screen resolution.</li>
-
-<li><strong>Purchase Information:</strong> In-app purchase transaction details such as product identifiers, purchase dates, and transaction status.</li>
-
-<li><strong>Game Statistics:</strong> High scores, completed levels, gameplay patterns, and puzzle-solving times.</li>
-
-<li><strong>Math Calculation Statistics:</strong> Types of calculations performed in math-related apps without storing actual values.</li>
-
-<li><strong>File Processing Information:</strong> File types processed by data-related apps without storing file contents.</li>
-
-<li><strong>Camera Usage Statistics:</strong> Frequency of photo or video capture actions without storing captured media.</li>
-
-<li><strong>Location Information:</strong> GPS coordinates and location-related information when required by app functionality and permitted by the user.</li>
-</ul>
-
-</section>
-
-<section>
-
-<h2>Information We Do Not Collect</h2>
-
-<ul>
-<li>Names, email addresses, or phone numbers</li>
-<li>Passwords or account credentials</li>
-<li>Payment card or banking information</li>
-<li>Photos, videos, or documents stored on your device</li>
-<li>User-generated content created within our apps</li>
-</ul>
-
-<div class="info-box">
-Many NovaNext apps perform calculations, puzzle solving,
-photo processing, and other tasks directly on your device.
-The content you create is not collected by NovaNext.
-</div>
-
-</section>
-
-<section>
-
-<h2>How We Use Anonymous Data</h2>
-
-<h3>App Improvement</h3>
-
-<ul>
-<li>Identify and fix bugs and crashes.</li>
-<li>Optimize app performance and loading times.</li>
-<li>Understand which features are most popular.</li>
-<li>Guide development of new features and game levels.</li>
-</ul>
-
-<h3>Business Analytics</h3>
-
-<ul>
-<li>Track overall app usage trends.</li>
-<li>Analyze purchase patterns to improve our products.</li>
-<li>Understand regional market performance.</li>
-<li>Measure the success of app updates.</li>
-</ul>
-
-</section>
-
-<section>
-
-<h2>Security Measures</h2>
-
-<div class="security-box">
-
-<h3>Data Protection</h3>
-
-<ul>
-<li>All data is encrypted during transmission and storage.</li>
-<li>Secure industry-standard technologies are used where applicable.</li>
-<li>We work with trusted service providers that maintain security and privacy standards.</li>
-</ul>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Third-Party Services</h2>
-
-<p>
-We may use trusted third-party services for analytics
-and app improvement.
-</p>
-
-<h3>Analytics Services</h3>
-
-<ul>
-<li><strong>Purpose:</strong> Analyze app usage and performance.</li>
-<li><strong>Data Shared:</strong> Anonymous usage statistics and technical data.</li>
-<li><strong>Privacy:</strong> Third-party providers process data according to their own privacy policies.</li>
-</ul>
-
-<p>
-Examples include Firebase Analytics and Firebase Crashlytics.
-</p>
-
-<h3>App Store Analytics</h3>
-
-<ul>
-<li><strong>Purpose:</strong> Understand app store performance and user acquisition.</li>
-<li><strong>Data Shared:</strong> Download statistics and regional performance data.</li>
-<li><strong>Privacy:</strong> Data provided by Apple is aggregated or anonymized.</li>
-</ul>
-
-</section>
-
-<section>
-
-<h2>Your Rights and Controls</h2>
-
-<h3>Data Control</h3>
-
-<ul>
-<li>All data collection is anonymous and cannot be directly linked to you personally.</li>
-<li>You can disable analytics in your device settings.</li>
-</ul>
-
-<h3>Analytics Preferences</h3>
-
-<p>
-<strong>iOS:</strong><br>
-Settings → Privacy & Security → Analytics & Improvements
-</p>
-
-</section>
-
-<section>
-
-<h2>Website Analytics</h2>
-
-<p>
-This website uses Google Analytics to collect anonymous statistics such as
-pages visited, approximate location, device type, and how visitors found
-the site. Google Analytics uses cookies for this purpose. We do not use this
-data to identify individual visitors. You can opt out by using the
-<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>
-or by blocking cookies in your browser.
-</p>
-
-</section>
-
-<section>
-
-<h2>Changes to This Policy</h2>
-
-<p>
-We may update this Privacy Policy from time to time.
-Updates will be posted on this page with a revised
-Last Updated date.
-</p>
-
-</section>
-
-<section>
-
-<!--<h2>Contact Us</h2>-->
-<!---->
-<!--<div class="contact-box">-->
-<!---->
-<!--<p>-->
-<!--If you have questions regarding this Privacy Policy,-->
-<!--please contact:-->
-<!--</p>-->
-<!---->
-<!--<p><strong>Website:</strong> www.novanext.ca</p>-->
-<!---->
-<!--</div>-->
-
-</section>
-
-</div>
-
-</div>
-
+  </header>
+
+  <div class="legal-wrap">
+    <div class="policy-card">
+      <section>
+        <h2>Overview</h2>
+        <p>NovaNext develops mobile applications for iPhone and iPad. We are committed to protecting your privacy while providing high-quality apps and services.</p>
+      </section>
+
+      <section>
+        <h2>Information We Collect</h2>
+        <p>Some NovaNext apps may collect anonymous usage and diagnostic information to help improve app performance and user experience.</p>
+        <ul>
+          <li><strong>App Usage Statistics:</strong> How often our apps are used and which features are accessed.</li>
+          <li><strong>Device Information:</strong> Device model, operating system version, app version, language settings, and screen resolution.</li>
+          <li><strong>Purchase Information:</strong> In-app purchase transaction details such as product identifiers, purchase dates, and transaction status.</li>
+          <li><strong>Game Statistics:</strong> High scores, completed levels, gameplay patterns, and puzzle-solving times.</li>
+          <li><strong>Math Calculation Statistics:</strong> Types of calculations performed in math-related apps without storing actual values.</li>
+          <li><strong>File Processing Information:</strong> File types processed by data-related apps without storing file contents.</li>
+          <li><strong>Camera Usage Statistics:</strong> Frequency of photo or video capture actions without storing captured media.</li>
+          <li><strong>Location Information:</strong> GPS coordinates and location-related information when required by app functionality and permitted by the user.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Information We Do Not Collect</h2>
+        <ul>
+          <li>Names, email addresses, or phone numbers</li>
+          <li>Passwords or account credentials</li>
+          <li>Payment card or banking information</li>
+          <li>Photos, videos, or documents stored on your device</li>
+          <li>User-generated content created within our apps</li>
+        </ul>
+        <div class="callout-box">
+          Many NovaNext apps perform calculations, puzzle solving, photo processing, and other tasks directly on your device. The content you create is not collected by NovaNext.
+        </div>
+      </section>
+
+      <section>
+        <h2>How We Use Anonymous Data</h2>
+        <h3>App Improvement</h3>
+        <ul>
+          <li>Identify and fix bugs and crashes.</li>
+          <li>Optimize app performance and loading times.</li>
+          <li>Understand which features are most popular.</li>
+          <li>Guide development of new features and game levels.</li>
+        </ul>
+        <h3>Business Analytics</h3>
+        <ul>
+          <li>Track overall app usage trends.</li>
+          <li>Analyze purchase patterns to improve our products.</li>
+          <li>Understand regional market performance.</li>
+          <li>Measure the success of app updates.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Security Measures</h2>
+        <div class="callout-box green">
+          <h3>Data Protection</h3>
+          <ul>
+            <li>All data is encrypted during transmission and storage.</li>
+            <li>Secure industry-standard technologies are used where applicable.</li>
+            <li>We work with trusted service providers that maintain security and privacy standards.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Third-Party Services</h2>
+        <p>We may use trusted third-party services for analytics and app improvement, such as Firebase Analytics, Firebase Crashlytics, and Apple App Store Analytics. All shared data is aggregated or anonymized.</p>
+      </section>
+
+      <section>
+        <h2>Your Rights and Controls</h2>
+        <ul>
+          <li>All data collection is anonymous and cannot be directly linked to you personally.</li>
+          <li>You can disable analytics on iOS via <strong>Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements</strong>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Website Analytics</h2>
+        <p>This website uses Google Analytics to collect anonymous statistics such as pages visited, approximate location, device type, and how visitors found the site. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a> or by blocking cookies in your browser.</p>
+      </section>
+
+      <section>
+        <h2>Changes &amp; Contact</h2>
+        <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised Last Updated date. Questions? Reach us anytime via our <a href="contact.html">Contact page</a>.</p>
+      </section>
+    </div>
+  </div>
 </main>
 
-<footer>
+<div id="site-footer"></div>
 
-<div class="footer-inner">
-
-<div class="copyright">
-© 2026 NovaNext
-</div>
-
-<div class="footer-links">
-<a href="product.html">Products</a>
-<a href="about.html">About</a>
-<a href="support.html">Support</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-<a href="terms.html">Terms</a>
-<a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
-</div>
-
-</div>
-
-</footer>
-
+<script src="apps.js"></script>
+<script>
+  renderChrome('privacy');
+</script>
 </body>
 </html>

@@ -1,57 +1,16 @@
 /* =====================================================================
-   NovaNext apps - SINGLE SOURCE OF TRUTH
-   Edit apps here only. index.html, product.html, support.html and
-   about.html all read from this file.
-
-   Fields
-   ------
-   name         App name (shown everywhere)
-   icon         Icon file name only, no folder or extension ("aiden" means
-                images/icon/aiden.png). The same name is used for the demo video:
-                videos/aiden.mp4.
-                Folders and extensions are set once in MEDIA below.
-   category     Category label (product page and home page cards)
-   description  Product page description (HTML like <br> is allowed)
-   features     Bullet list on product.html
-   url          App Store link
-   supportName  (optional) Name sent to the contact form if different from name
-   featured     (optional) Position on the home page. Leave out to hide it there
-   homeDescription
-                (optional) Home page card text, if different from product page
-   legacy       (optional) true = no longer maintained, grayed out
-   replacedBy   (optional) name of the app that replaces a legacy app
-   screenshots  (optional) folder name under images/screenshots/ , e.g. "aidenconnect".
-                Also used as the landing page id: app.html?id=aidenconnect
-                Leave out to use the app name in lowercase letters and digits
-                only ("Aiden Connects" -> "aidenconnects").
-   screenshotCount
-                (optional) how many iphone_01.jpg + ipad_01.jpg, iphone_02.jpg + ipad_02.jpg ... to show.
-                Leave out to try the first 5; missing files are skipped.
-   longDescription
-                (optional) Landing page only. A paragraph or two about the app
-                (HTML like <br> is allowed). Section hides if left out.
-   howItWorks   (optional) Landing page only. Array of short steps, shown as a
-                numbered list. Section hides if left out.
-   needsInternet
-                (optional) true = landing page says it needs an internet connection.
-                Leave out and the page says "Works offline".
-   offlineNote  (optional) Extra sentence after "Works offline", e.g. for online play
-
-   Order in this list = order on product.html and support.html.
+   NovaNext — Single Source of Truth (Apps, Shared Navigation & Renderers)
    ===================================================================== */
 
-/* ---------------------------------------------------------------------
-   MEDIA - change folders / extensions here, once
-   --------------------------------------------------------------------- */
 const MEDIA = {
-  iconDir:   'images/icon/',
-  iconExt:   '.png',
-  videoDir:  'videos/',
-  videoExt:  '.mp4'
+  iconDir:  'images/icon/',
+  iconExt:  '.png',
+  videoDir: 'videos/',
+  videoExt: '.mp4'
 };
 
-const iconSrc   = app => MEDIA.iconDir  + app.icon + MEDIA.iconExt;
-const videoSrc  = app => MEDIA.videoDir + app.icon + MEDIA.videoExt;
+const iconSrc  = app => MEDIA.iconDir  + app.icon + MEDIA.iconExt;
+const videoSrc = app => MEDIA.videoDir + app.icon + MEDIA.videoExt;
 
 const APPS = [
   {
@@ -75,6 +34,7 @@ const APPS = [
     ],
     url: "https://apps.apple.com/us/app/aiden-connects/id6798768340",
     featured: 1,
+    showcase: true,
     homeDescription: "Try to connect 4 in any direction. Kids get their own Kids Mode, which makes the game a little easier. You can set the difficulty, and play with a friend on the same device or online."
   },
   {
@@ -89,7 +49,7 @@ const APPS = [
       "There are no timers, so take your time."
     ],
     category: "Puzzle",
-    description: "Slide colorful pegs into place to match the goal",
+    description: "Slide colorful pegs into place to match the goal.",
     features: [
       "Simple drag-and-slide controls, no timers or pressure",
       "A relaxing puzzle for quiet moments",
@@ -97,7 +57,8 @@ const APPS = [
     ],
     url: "https://apps.apple.com/us/app/emma-slides/id6793634660",
     featured: 4,
-    homeDescription: "Match the pattern with the goal card. Slide, Drop until the goal is reached."
+    showcase: true,
+    homeDescription: "Match the pattern with the goal card. Slide and drop colorful pegs until the goal is reached."
   },
   {
     name: "Cast Connect",
@@ -118,7 +79,8 @@ const APPS = [
       "Search by Movies: Discover shared cast and crew across productions",
       "Perfect for film buffs and trivia lovers"
     ],
-    url: "https://apps.apple.com/us/app/cast-connect/id6751820156"
+    url: "https://apps.apple.com/us/app/cast-connect/id6751820156",
+    showcase: true
   },
   {
     name: "Hanoi Towers",
@@ -254,7 +216,7 @@ const APPS = [
       "Use the equations you find to solve for the unknown letters."
     ],
     category: "Educational",
-    description: "Learn to solve systems of equations in a fun way.<br>Match numbers and letters on both sides to find<br>equations and solve for unknowns.",
+    description: "Learn to solve systems of equations in a fun way. Match numbers and letters on both sides to find equations and solve for unknowns.",
     features: [
       "Educational math game",
       "Solve systems of equations",
@@ -322,7 +284,7 @@ const APPS = [
     screenshots: "sunlighthours",
     screenshotCount: 1,
     category: "Educational",
-    description: "View daylight hours at any latitude on any given day. Learn about Earh orbit around the Sun. Learn about Moon orbit around Earth. Explore information about planets in our solar system.",
+    description: "View daylight hours at any latitude on any given day. Learn about Earth's orbit around the Sun, the Moon's orbit around Earth, and explore information about planets in our solar system.",
     features: [
       "Daylight calculation for any location",
       "Sun and Moon orbits",
@@ -331,7 +293,7 @@ const APPS = [
     ],
     url: "https://apps.apple.com/us/app/sun-light-hours/id6499107039",
     featured: 6,
-    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape"
+    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape."
   },
   {
     name: "FastCam",
@@ -355,7 +317,7 @@ const APPS = [
     screenshotCount: 1,
     needsInternet: true,
     category: "Marketing",
-    description: "Advertise your business across all NovaNext apps in one place.<br>Upload your banner, add your website, and purchase a time slot.",
+    description: "Advertise your business across all NovaNext apps in one place. Upload your banner, add your website, and purchase a time slot.",
     features: [
       "Reach users across multiple apps",
       "Easy banner upload",
@@ -377,17 +339,18 @@ const APPS = [
       "Define your own currency",
       "You can hide or show receipts, groups and more"
     ],
-    url: "https://apps.apple.com/us/app/group-expenses/id1443950401"
+    url: "https://apps.apple.com/us/app/group-expenses/id1443950401",
+    showcase: true
   },
 
-  /* Legacy apps go LAST so they appear at the end of every list */
+  /* Legacy apps go LAST */
   {
     name: "GE Light",
     icon: "light",
     screenshots: "gelight",
     screenshotCount: 1,
     category: "Finance",
-    description: "Designed for people with shared expenses. Track who owes whom<br>and how much with ease.",
+    description: "Designed for people with shared expenses. Track who owes whom and how much with ease.",
     features: [
       "Manage group expenses",
       "Clear debt tracking",
@@ -399,9 +362,8 @@ const APPS = [
   }
 ];
 
-
 /* =====================================================================
-   Render helpers - you normally never need to edit below this line
+   Shared Layout & UI Helpers
    ===================================================================== */
 
 const ARROW_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>';
@@ -413,21 +375,164 @@ function findApp(appName) {
 const SCREENSHOTS_FOLDER = 'images/screenshots/';
 const DEFAULT_MAX_SCREENSHOTS = 5;
 
-/* Folder name for screenshots, also used as the landing page id */
 function appKey(app) {
   return app.screenshots || app.name.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
-/* Fills any <span data-app-count></span> with the number of apps */
+/* Shared Navigation & Footer Injection (eliminates 8-file duplication) */
+function renderChrome(activePage = '') {
+  const navTarget = document.getElementById('site-nav');
+  if (navTarget) {
+    const links = [
+      { href: 'product.html', label: 'Products', id: 'products' },
+      { href: 'about.html',   label: 'About',    id: 'about' },
+      { href: 'support.html', label: 'Support',  id: 'support' },
+      { href: 'privacy.html', label: 'Privacy',  id: 'privacy' },
+      { href: 'terms.html',   label: 'Terms',    id: 'terms' }
+    ];
+
+    const linkHtml = links.map(l =>
+      `<a href="${l.href}" class="${activePage === l.id ? 'active' : ''}">${l.label}</a>`
+    ).join('');
+
+    navTarget.innerHTML = `
+      <nav>
+        <div class="nav-inner">
+          <a href="index.html" class="logo">
+            <img src="images/icon/logo.png" alt="NovaNext logo">
+            <span>NovaNext</span>
+          </a>
+          <div class="nav-links">
+            ${linkHtml}
+            <a href="contact.html" class="nav-cta ${activePage === 'contact' ? 'active' : ''}">Contact</a>
+          </div>
+          <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <path d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+          </button>
+        </div>
+        <div class="mobile-drawer" id="mobile-drawer">
+          ${linkHtml}
+          <a href="contact.html" class="nav-cta">Contact</a>
+        </div>
+      </nav>`;
+
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    if (menuBtn && drawer) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = drawer.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+  }
+
+  const footerTarget = document.getElementById('site-footer');
+  if (footerTarget) {
+    footerTarget.innerHTML = `
+      <footer>
+        <div class="footer-inner">
+          <div class="copyright">© 2026 NovaNext · Crafted in Canada</div>
+          <div class="footer-links">
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="support.html">Support</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
+          </div>
+        </div>
+      </footer>`;
+  }
+}
+
 function renderAppCounts() {
-  document.querySelectorAll('[data-app-count]').forEach(element => {
-    element.textContent = APPS.length;
+  document.querySelectorAll('[data-app-count]').forEach(el => {
+    el.textContent = APPS.length;
   });
 }
 
-/* support.html: the "Need help with a specific app?" pills */
+/* Homepage Interactive Device Showcase */
+function renderHeroShowcase(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  const showcaseApps = APPS.filter(app => app.showcase);
+  if (!showcaseApps.length) return;
+
+  let activeIndex = 0;
+
+  function renderPanel(index) {
+    const app = showcaseApps[index];
+    const key = appKey(app);
+    const screenshotPath = `${SCREENSHOTS_FOLDER}${key}/iphone_01.jpg`;
+    const videoPath = videoSrc(app);
+
+    const tabsHtml = showcaseApps.map((item, i) => `
+      <button type="button" class="showcase-tab ${i === index ? 'active' : ''}" data-idx="${i}">
+        <img src="${iconSrc(item)}" alt="">
+        <span>${item.name}</span>
+      </button>`).join('');
+
+    container.innerHTML = `
+      <div class="showcase-tabs" role="tablist">${tabsHtml}</div>
+      <div class="showcase-panel">
+        <div class="showcase-info">
+          <span class="app-category">${app.category}</span>
+          <h3>${app.name}</h3>
+          <p>${app.homeDescription || app.description}</p>
+          <ul class="showcase-bullets">
+            ${app.features.map(f => `<li>${f}</li>`).join('')}
+          </ul>
+          <div class="product-actions">
+            <a href="${app.url}" class="download-button">Download on App Store</a>
+            <a href="app.html?id=${key}" class="learn-button">Explore details</a>
+          </div>
+        </div>
+        <div class="device-frame-wrap">
+          <div class="iphone-frame">
+            <div class="iphone-notch"></div>
+            <img id="showcase-img" src="${screenshotPath}" alt="${app.name} on iPhone" onerror="this.src='${iconSrc(app)}'; this.style.objectFit='contain'; this.style.padding='24px';">
+          </div>
+        </div>
+      </div>`;
+
+    // Automatically swap to muted looping preview video if videos/<icon>.mp4 exists
+    const probe = document.createElement('video');
+    probe.preload = 'metadata';
+    probe.muted = true;
+    probe.addEventListener('loadedmetadata', () => {
+      const frame = container.querySelector('.iphone-frame');
+      if (frame) {
+        const vid = document.createElement('video');
+        vid.src = videoPath;
+        vid.autoplay = true;
+        vid.loop = true;
+        vid.muted = true;
+        vid.playsInline = true;
+        const oldImg = frame.querySelector('img');
+        if (oldImg) oldImg.replaceWith(vid);
+      }
+    });
+    probe.src = videoPath;
+
+    container.querySelectorAll('.showcase-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeIndex = Number(btn.dataset.idx);
+        renderPanel(activeIndex);
+      });
+    });
+  }
+
+  renderPanel(activeIndex);
+}
+
+/* support.html: App routing pills */
 function renderSupportPills(containerId) {
   const container = document.getElementById(containerId);
+  if (!container) return;
   container.innerHTML = APPS.map(app => {
     const contactName = encodeURIComponent(app.supportName || app.name);
     const label = app.legacy
@@ -438,60 +543,30 @@ function renderSupportPills(containerId) {
   }).join('');
 }
 
-/* index.html: the "Featured apps" cards */
+/* index.html: Featured apps cards */
 function renderFeaturedApps(containerId) {
   const container = document.getElementById(containerId);
+  if (!container) return;
   const featuredApps = APPS
     .filter(app => app.featured)
-    .sort((first, second) => first.featured - second.featured);
+    .sort((a, b) => a.featured - b.featured);
 
   container.innerHTML = featuredApps.map(app => `
     <div class="app-card">
+      <div class="app-card-top">
         <img class="app-icon" src="${iconSrc(app)}" alt="${app.name} icon">
         <span class="app-category">${app.category}</span>
-        <div class="app-name">${app.name}</div>
-        <p class="app-description">${app.homeDescription || app.description}</p>
-        <a class="app-link" href="${app.url}">
-            View on App Store
-            ${ARROW_ICON}
-        </a>
+      </div>
+      <div class="app-name">${app.name}</div>
+      <p class="app-description">${app.homeDescription || app.description}</p>
+      <div class="app-card-actions">
+        <a class="app-link" href="${app.url}">App Store ${ARROW_ICON}</a>
+        <a class="app-link secondary" href="app.html?id=${appKey(app)}">Details &rarr;</a>
+      </div>
     </div>`).join('');
 }
 
-/* product.html: the full alternating product list, with an iOS-style
-   segmented control (All + one segment per category) inside the .header block.
-   Products are removed and re-inserted right after .header on every change,
-   so the page's even/odd layout styling keeps working exactly as before.
-   The control brings its own CSS, so product.html needs no changes. */
-
-const SEGMENTED_CONTROL_CSS = `
-.segmented-wrap{display:flex;justify-content:center;margin-top:28px;}
-.segmented{
-    display:inline-flex;gap:2px;padding:3px;max-width:100%;
-    background:rgba(118,118,128,.12);border-radius:10px;
-    overflow-x:auto;scrollbar-width:none;
-}
-.segmented::-webkit-scrollbar{display:none;}
-.segment{
-    appearance:none;-webkit-appearance:none;border:0;background:transparent;
-    font:inherit;font-size:13px;font-weight:500;color:#111827;
-    padding:7px 16px;border-radius:8px;cursor:pointer;white-space:nowrap;
-    transition:background .2s ease, box-shadow .2s ease;
-}
-.segment.active{
-    background:#ffffff;font-weight:600;
-    box-shadow:0 3px 8px rgba(0,0,0,.12), 0 3px 1px rgba(0,0,0,.04);
-}
-.product-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;}
-.learn-button{
-    display:inline-block;padding:11px 22px;border-radius:12px;
-    border:1px solid var(--border);background:#ffffff;
-    color:var(--text) !important;text-decoration:none;
-    font-weight:600;font-size:14px;transition:.2s;
-}
-.learn-button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(17,24,39,.08);}
-`;
-
+/* product.html: Full searchable + category-filtered catalog */
 function buildProductHtml(app) {
   const replacement = app.replacedBy ? findApp(app.replacedBy) : null;
   const categoryText = app.legacy ? `${app.category} · No longer maintained` : app.category;
@@ -500,44 +575,68 @@ function buildProductHtml(app) {
     : '';
   return `
 <div class="product${app.legacy ? ' legacy' : ''}">
-    <div class="product-image">
-        <img class="product-icon" src="${iconSrc(app)}" alt="${app.name}">
+  <div class="product-image">
+    <img class="product-icon" src="${iconSrc(app)}" alt="${app.name}">
+  </div>
+  <div class="product-content">
+    <span class="product-category">${categoryText}</span>
+    <h2>${app.name}</h2>
+    ${legacyNote}
+    <p class="product-description">${app.description}</p>
+    <ul class="product-features">
+      ${app.features.map(feature => `<li>${feature}</li>`).join('
+      ')}
+    </ul>
+    <div class="product-actions">
+      <a href="${app.url}" class="download-button">Download on App Store</a>
+      <a href="app.html?id=${appKey(app)}" class="learn-button">Learn more</a>
     </div>
-    <div class="product-content">
-        <span class="product-category">${categoryText}</span>
-        <h2>${app.name}</h2>
-        ${legacyNote}
-        <p class="product-description">${app.description}</p>
-        <ul class="product-features">
-            ${app.features.map(feature => `<li>${feature}</li>`).join('\n            ')}
-        </ul>
-        <div class="product-actions">
-            <a href="${app.url}" class="download-button">Download on App Store</a>
-            <a href="app.html?id=${appKey(app)}" class="learn-button">Learn more</a>
-        </div>
-    </div>
+  </div>
 </div>`;
 }
 
 function renderProductList() {
   const header = document.querySelector('.header');
+  const listContainer = document.getElementById('product-list');
+  if (!header || !listContainer) return;
+
   const ALL_LABEL = 'All';
   const categories = [...new Set(APPS.map(app => app.category))];
+  let selectedCategory = ALL_LABEL;
+  let searchQuery = '';
 
-  const styleElement = document.createElement('style');
-  styleElement.textContent = SEGMENTED_CONTROL_CSS;
-  document.head.appendChild(styleElement);
+  function showProducts() {
+    const q = searchQuery.trim().toLowerCase();
+    const visibleApps = APPS.filter(app => {
+      const matchesCat = selectedCategory === ALL_LABEL || app.category === selectedCategory;
+      const matchesQuery = !q ||
+        app.name.toLowerCase().includes(q) ||
+        app.category.toLowerCase().includes(q) ||
+        app.description.toLowerCase().includes(q) ||
+        app.features.some(f => f.toLowerCase().includes(q));
+      return matchesCat && matchesQuery;
+    });
 
-  function showProducts(selectedCategory) {
-    document.querySelectorAll('.product').forEach(productElement => productElement.remove());
-    const visibleApps = selectedCategory === ALL_LABEL
-      ? APPS
-      : APPS.filter(app => app.category === selectedCategory);
-    header.insertAdjacentHTML('afterend', visibleApps.map(buildProductHtml).join(''));
+    if (!visibleApps.length) {
+      listContainer.innerHTML = `<div class="empty-state">No apps matched "<strong>${searchQuery}</strong>". Try another keyword or reset the category filter.</div>`;
+      return;
+    }
+
+    listContainer.innerHTML = visibleApps.map(buildProductHtml).join('');
   }
 
-  const wrapper = document.createElement('div');
-  wrapper.className = 'segmented-wrap';
+  const controls = document.createElement('div');
+  controls.className = 'catalog-controls';
+
+  // Search bar
+  const searchBox = document.createElement('div');
+  searchBox.className = 'search-box';
+  searchBox.innerHTML = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="search" id="app-search" placeholder="Search 18 apps by name, feature, or topic…" aria-label="Search apps">`;
+  controls.appendChild(searchBox);
+
+  // Segmented category control
   const control = document.createElement('div');
   control.className = 'segmented';
   control.setAttribute('role', 'group');
@@ -550,34 +649,39 @@ function renderProductList() {
     segment.textContent = label;
     segment.setAttribute('aria-pressed', label === ALL_LABEL ? 'true' : 'false');
     segment.addEventListener('click', () => {
+      selectedCategory = label;
       control.querySelectorAll('.segment').forEach(other => {
         other.classList.toggle('active', other === segment);
         other.setAttribute('aria-pressed', other === segment ? 'true' : 'false');
       });
-      showProducts(label);
+      showProducts();
     });
     control.appendChild(segment);
   });
 
-  wrapper.appendChild(control);
-  header.appendChild(wrapper);
-  showProducts(ALL_LABEL);
+  controls.appendChild(control);
+  header.appendChild(controls);
+
+  const searchInput = searchBox.querySelector('input');
+  searchInput.addEventListener('input', e => {
+    searchQuery = e.target.value;
+    showProducts();
+  });
+
+  showProducts();
 }
 
-
-/* Demo video: a "Watch demo" button next to the Download button,
-   opening a lightbox player. Looks for videos/<icon>.mp4. If the file does not exist the app
-   simply has no video tile. */
+/* Demo video lightbox for app.html */
 const VIDEO_CSS = `
-.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;}
+.hero-actions-left{display:flex;flex-wrap:wrap;align-items:center;gap:12px;}
 .demo-button{
     display:inline-flex;align-items:center;gap:8px;
-    padding:11px 22px;border-radius:12px;
-    border:1px solid var(--border);background:#ffffff;
-    color:var(--text);font:inherit;font-weight:600;font-size:14px;
+    padding:12px 22px;border-radius:12px;
+    border:1px solid var(--border);background:var(--surface);
+    color:var(--text);font:inherit;font-weight:600;font-size:14.5px;
     cursor:pointer;transition:.2s;
 }
-.demo-button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(17,24,39,.08);}
+.demo-button:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);}
 .demo-button .demo-play{color:var(--blue);font-size:12px;}
 .video-overlay{
     position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.85);
@@ -615,7 +719,7 @@ function openVideo(app) {
   function close() {
     player.pause();
     player.removeAttribute('src');
-    player.load();                       // stops the download
+    player.load();
     overlay.remove();
     document.removeEventListener('keydown', onKey);
     document.body.style.overflow = '';
@@ -643,13 +747,11 @@ function addDemoVideo(app, actions) {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'demo-button';
-    button.innerHTML = '<span class="demo-play">\u25B6</span> Watch demo';
+    button.innerHTML = '<span class="demo-play">&#9654;</span> Watch demo';
     button.addEventListener('click', () => openVideo(app));
-    actions.appendChild(button);   // next to the Download button
+    actions.appendChild(button);
   }
 
-  // The button is added only if the video file exists.
-  // 1) Ask the server (works everywhere, including iPhone Safari).
   fetch(url, { method: 'HEAD' })
     .then(response => {
       const type = response.headers.get('content-type') || '';
@@ -657,8 +759,6 @@ function addDemoVideo(app, actions) {
     })
     .catch(() => {});
 
-  // 2) Fallback: let the browser try to read the video (e.g. when testing
-  //    from a local file where fetch is blocked).
   const probe = document.createElement('video');
   probe.preload = 'metadata';
   probe.muted = true;
@@ -670,12 +770,10 @@ function addDemoVideo(app, actions) {
   probe.src = url;
 }
 
-
-/* app.html: one landing page for the app named in the URL (?id=aidenconnect).
-   Screenshots are loaded from images/screenshots/<key>/ipad_01.jpg, ipad_02.jpg ...
-   Files that do not exist are skipped, and the section hides if none load. */
+/* app.html: App landing page */
 function renderAppPage(containerId) {
   const container = document.getElementById(containerId);
+  if (!container) return;
   const requestedKey = new URLSearchParams(window.location.search).get('id');
   const app = APPS.find(candidate => appKey(candidate) === requestedKey);
 
@@ -683,8 +781,8 @@ function renderAppPage(containerId) {
     document.title = 'App not found - NovaNext';
     container.innerHTML = `
       <div class="app-missing">
-          <h1>App not found</h1>
-          <p>We could not find that app. <a href="product.html">See all products</a></p>
+        <h1>App not found</h1>
+        <p>We could not find that app. <a href="product.html">See all products</a></p>
       </div>`;
     return;
   }
@@ -714,49 +812,51 @@ function renderAppPage(containerId) {
   container.innerHTML = `
     <a class="back-link" href="product.html">&larr; All products</a>
     <section class="app-hero">
-        <img class="app-hero-icon" src="${iconSrc(app)}" alt="${app.name} icon">
-        <div>
-            <span class="product-category">${app.category}</span>
-            <h1>${app.name}</h1>
-            ${legacyNote}
-            <p class="app-hero-description">${app.description}</p>
-            <div class="hero-actions">
-                <a href="${app.url}" class="download-button">Download on App Store</a>
-            </div>
-            <p class="app-offline">${offlineText}</p>
+      <img class="app-hero-icon" src="${iconSrc(app)}" alt="${app.name} icon">
+      <div>
+        <span class="product-category">${app.category}</span>
+        <h1>${app.name}</h1>
+        ${legacyNote}
+        <p class="app-hero-description">${app.description}</p>
+        <div class="hero-actions-left">
+          <a href="${app.url}" class="download-button">Download on App Store</a>
         </div>
+        <p class="app-offline">${offlineText}</p>
+      </div>
     </section>
     <section class="screenshots-section" hidden>
-        <div class="screenshots"></div>
+      <div class="screenshots"></div>
     </section>
     ${app.longDescription ? `
     <section class="app-about">
-        <h2>About ${app.name}</h2>
-        <p>${app.longDescription}</p>
+      <h2>About ${app.name}</h2>
+      <p>${app.longDescription}</p>
     </section>` : ''}
     <section class="app-features">
-        <h2>What it does</h2>
-        <ul class="product-features">
-            ${app.features.map(feature => `<li>${feature}</li>`).join('\n            ')}
-        </ul>
+      <h2>What it does</h2>
+      <ul class="product-features">
+        ${app.features.map(feature => `<li>${feature}</li>`).join('
+        ')}
+      </ul>
     </section>
     ${app.howItWorks && app.howItWorks.length ? `
     <section class="app-how">
-        <h2>How it works</h2>
-        <ol>
-            ${app.howItWorks.map(step => `<li>${step}</li>`).join('\n            ')}
-        </ol>
+      <h2>How it works</h2>
+      <ol>
+        ${app.howItWorks.map(step => `<li>${step}</li>`).join('
+        ')}
+      </ol>
     </section>` : ''}
     <section class="app-links">
-        <a href="contact.html?app=${contactName}">Get support</a>
-        <a href="privacy.html">Privacy policy</a>
-        <a href="product.html">More apps</a>
+      <a href="contact.html?app=${contactName}">Get support</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="product.html">More apps</a>
     </section>`;
 
   const screenshotSection = container.querySelector('.screenshots-section');
   const screenshotStrip = container.querySelector('.screenshots');
   const maxScreenshots = app.screenshotCount || DEFAULT_MAX_SCREENSHOTS;
-  const devices = ['iphone', 'ipad'];          // iPhone first, iPad next to it
+  const devices = ['iphone', 'ipad'];
   let screenshotsLeftToCheck = maxScreenshots * devices.length;
 
   function screenshotChecked() {
@@ -778,7 +878,7 @@ function renderAppPage(containerId) {
       screenshotImage.addEventListener('load', screenshotChecked);
       screenshotImage.addEventListener('error', () => {
         screenshotImage.remove();
-        if (pair.children.length === 0) pair.remove();   // no files for this number
+        if (pair.children.length === 0) pair.remove();
         screenshotChecked();
       });
       screenshotImage.src = `${SCREENSHOTS_FOLDER}${appKey(app)}/${device}_${paddedNumber}.jpg`;
@@ -786,5 +886,5 @@ function renderAppPage(containerId) {
     });
   }
 
-  addDemoVideo(app, container.querySelector('.hero-actions'));
+  addDemoVideo(app, container.querySelector('.hero-actions-left'));
 }

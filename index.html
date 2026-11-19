@@ -2,658 +2,127 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'G-P8B665RWVK');
-     </script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="r0p49vyLf17QjqQHYoD5jFz4WPMZ0ZM4N-9rp20N3Jg" />
-<title>NovaNext — Native iOS Apps</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-    --bg:#fafaf8;
-    --surface:#ffffff;
-    --text:#111827;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-
-    --blue:#2563eb;
-    --purple:#7c3aed;
-    --green:#10b981;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-/* ---------------- NAV ---------------- */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(12px);
-    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
-}
-
-.nav-inner{
-    height:72px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    text-decoration:none;
-}
-
-.logo img{
-    height:34px;
-    width:auto;
-    display:block;
-}
-
-.logo span{
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:-0.03em;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:var(--muted);
-    font-weight:500;
-}
-
-.nav-links a:hover{
-    color:var(--text);
-}
-
-.nav-cta{
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    color:white !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    transition:.2s;
-}
-
-.nav-cta:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(37,99,235,.25);
-}
-
-/* ---------------- HERO ---------------- */
-
-.hero{
-    padding:90px 0 60px;
-    text-align:center;
-
-    background:
-        radial-gradient(circle at top left, rgba(124,58,237,.10), transparent 30%),
-        radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 30%);
-}
-
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:white;
-    border:1px solid var(--border);
-    padding:7px 16px;
-    border-radius:999px;
-    font-size:13px;
-    font-weight:600;
-    color:var(--muted);
-    margin-bottom:26px;
-}
-
-.eyebrow .dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-}
-
-.hero h1{
-    font-size:clamp(38px,6vw,62px);
-    font-weight:800;
-    line-height:1.07;
-    letter-spacing:-0.04em;
-    max-width:760px;
-    margin:0 auto;
-}
-
-.hero h1 .accent{
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.hero p{
-    color:var(--muted);
-    font-size:18px;
-    line-height:1.7;
-    max-width:600px;
-    margin:22px auto 0;
-}
-
-.hero-actions{
-    display:flex;
-    justify-content:center;
-    gap:14px;
-    margin-top:34px;
-    flex-wrap:wrap;
-}
-
-.btn-primary{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    color:white;
-    text-decoration:none;
-    padding:13px 26px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:15px;
-    transition:.2s;
-}
-
-.btn-primary:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 24px rgba(37,99,235,.28);
-}
-
-.btn-secondary{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:white;
-    border:1px solid var(--border);
-    color:var(--text);
-    text-decoration:none;
-    padding:13px 26px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:15px;
-    transition:.2s;
-}
-
-.btn-secondary:hover{
-    border-color:#cbd5e1;
-    transform:translateY(-2px);
-}
-
-/* ---------------- STATS ---------------- */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-    max-width:380px;
-    margin:56px auto 0;
-}
-
-.stat{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:20px 12px;
-    text-align:center;
-}
-
-.stat-num{
-    font-size:26px;
-    font-weight:800;
-    letter-spacing:-0.02em;
-    background:linear-gradient(135deg,var(--blue),var(--purple));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.stat-label{
-    font-size:12px;
-    color:var(--muted);
-    font-weight:600;
-    margin-top:4px;
-    text-transform:uppercase;
-    letter-spacing:.03em;
-}
-
-/* ---------------- SECTIONS ---------------- */
-
-.section{
-    padding:80px 0;
-}
-
-.section-header{
-    text-align:center;
-    margin-bottom:56px;
-}
-
-.section-header h2{
-    font-size:clamp(28px,4vw,38px);
-    font-weight:800;
-    letter-spacing:-0.03em;
-}
-
-.section-header p{
-    color:var(--muted);
-    font-size:16px;
-    margin-top:12px;
-    max-width:480px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-/* ---------------- APP GRID ---------------- */
-
-.app-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-}
-
-.app-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:24px;
-    padding:28px;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-    transition:.2s;
-}
-
-.app-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 16px 36px rgba(17,24,39,.07);
-}
-
-.app-icon{
-    width:64px;
-    height:64px;
-    border-radius:16px;
-    object-fit:contain;
-    box-shadow:0 10px 24px rgba(0,0,0,.10);
-}
-
-.app-category{
-    display:inline-block;
-    font-size:11px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    color:var(--blue);
-    background:rgba(37,99,235,.08);
-    border-radius:20px;
-    padding:5px 12px;
-    width:fit-content;
-}
-
-.app-name{
-    font-size:19px;
-    font-weight:800;
-    letter-spacing:-0.02em;
-}
-
-.app-description{
-    color:var(--muted);
-    font-size:14.5px;
-    line-height:1.65;
-    flex:1;
-}
-
-.app-link{
-    font-size:14px;
-    font-weight:600;
-    color:var(--blue);
-    text-decoration:none;
-    display:inline-flex;
-    align-items:center;
-    gap:5px;
-}
-
-.app-link svg{width:13px;height:13px;}
-
-.view-all{
-    text-align:center;
-    margin-top:44px;
-}
-
-/* ---------------- CRAFT BAND ---------------- */
-
-.craft-band{
-    background:linear-gradient(135deg,#111827,#1e1b3a);
-    border-radius:28px;
-    padding:56px;
-    display:grid;
-    grid-template-columns:1.1fr 1fr;
-    gap:48px;
-    align-items:center;
-}
-
-.craft-band h2{
-    color:white;
-    font-size:clamp(26px,4vw,32px);
-    font-weight:800;
-    letter-spacing:-0.03em;
-    line-height:1.2;
-}
-
-.craft-band p{
-    color:#9ca3af;
-    font-size:15px;
-    line-height:1.7;
-    margin-top:14px;
-    max-width:440px;
-}
-
-.craft-list{
-    display:flex;
-    flex-direction:column;
-    gap:0;
-}
-
-.craft-row{
-    display:flex;
-    justify-content:space-between;
-    padding:16px 0;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    font-size:14.5px;
-}
-
-.craft-row:first-child{
-    border-top:1px solid rgba(255,255,255,.08);
-}
-
-.craft-key{color:#9ca3af;}
-.craft-val{color:white;font-weight:600;}
-
-/* ---------------- BOTTOM CTA ---------------- */
-
-.cta-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:28px;
-    padding:48px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:32px;
-    flex-wrap:wrap;
-    box-shadow:0 10px 40px rgba(0,0,0,.04);
-}
-
-.cta-card h3{
-    font-size:24px;
-    font-weight:800;
-    letter-spacing:-0.02em;
-}
-
-.cta-card p{
-    color:var(--muted);
-    font-size:15px;
-    margin-top:6px;
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-    border-top:1px solid var(--border);
-    background:white;
-}
-
-.footer-inner{
-    height:90px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.footer-links{
-    display:flex;
-    gap:20px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:var(--muted);
-}
-
-.footer-links a:hover{
-    color:var(--text);
-}
-
-.copyright{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* ---------------- MOBILE ---------------- */
-
-@media(max-width:860px){
-    .app-grid{grid-template-columns:repeat(2,1fr);}
-    .craft-band{grid-template-columns:1fr;padding:40px 28px;}
-}
-
-@media(max-width:600px){
-    .nav-links a:not(.nav-cta){display:none;}
-    .stats{grid-template-columns:repeat(2,1fr);}
-    .app-grid{grid-template-columns:1fr;}
-    .section{padding:56px 0;}
-    .cta-card{padding:32px 24px;flex-direction:column;align-items:flex-start;}
-    .craft-band{padding:32px 22px;}
-    .hero{padding:60px 0 40px;}
-}
-
-
-/* ---------------- BMC BUTTON ---------------- */
-
-.bmc-link{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:#FFDD00;
-    color:#000000 !important;
-    padding:10px 20px;
-    border-radius:12px;
-    font-weight:600;
-    font-size:14px;
-    text-decoration:none;
-    transition:.2s;
-}
-
-.bmc-link:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(255,221,0,.35);
-}
-
-</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P8B665RWVK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="r0p49vyLf17QjqQHYoD5jFz4WPMZ0ZM4N-9rp20N3Jg" />
+    <title>NovaNext — Native iOS Apps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
-
 <body>
+<div id="site-nav"></div>
 
-<nav>
-    <div class="container nav-inner">
-
-        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
-
-        <div class="nav-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="contact.html" class="nav-cta">Contact</a>
-        </div>
-
-    </div>
-</nav>
-
-<header class="hero">
+<main>
+  <header class="hero">
     <div class="container">
+      <div class="eyebrow"><span class="dot"></span>Native iOS development · Swift</div>
+      <h1>Apps built right, <span class="accent">natively</span>, in Swift.</h1>
+      <p>
+        NovaNext designs and builds iOS apps end to end — puzzle games, learning tools,
+        and everyday utilities — hand-coded screen by screen with zero cross-platform shortcuts.
+      </p>
 
-        <div class="eyebrow"><span class="dot"></span>Native iOS development</div>
+      <div class="hero-actions">
+        <a class="btn-primary" href="product.html">
+          Browse all <span data-app-count>18</span> apps
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn-secondary" href="about.html">Our Story</a>
+      </div>
 
-        <h1>Apps built right, <span class="accent">natively</span>, in Swift.</h1>
-
-        <p>
-            NovaNext designs and builds iOS apps end to end — puzzle games, learning tools,
-            and everyday utilities — all native, all hand-coded screen by screen.
-            No cross-platform shortcuts, no templates.
-        </p>
-
-        <div class="hero-actions">
-            <a class="btn-primary" href="product.html">
-                Browse the apps
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn-secondary" href="about.html">About NovaNext</a>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num" data-app-count>18</div>
+          <div class="stat-label">Apps Live</div>
         </div>
-
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-num" data-app-count>18</div>
-                <div class="stat-label">Apps Live</div>
-            </div>
-            <div class="stat">
-                <div class="stat-num">iOS</div>
-                <div class="stat-label">Native Only</div>
-            </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Native Swift</div>
         </div>
+        <div class="stat">
+          <div class="stat-num">iOS</div>
+          <div class="stat-label">iPhone &amp; iPad</div>
+        </div>
+      </div>
 
+      <!-- Interactive Flagship Device Showcase -->
+      <div class="showcase-stage" id="hero-showcase"></div>
     </div>
-</header>
+  </header>
 
-<section class="section" id="apps">
+  <section class="section" id="apps">
     <div class="container">
+      <div class="section-header">
+        <h2>Featured apps</h2>
+        <p>A curated look at our favorites — explore the full catalog in one click.</p>
+      </div>
 
-        <div class="section-header">
-            <h2>Featured apps</h2>
-            <p>A few favorites to start with — the rest are one click away.</p>
-        </div>
+      <div class="app-grid" id="featured-apps"></div>
 
-        <div class="app-grid" id="featured-apps">
-        </div>
-
-        <div class="view-all">
-            <a class="btn-secondary" href="product.html">
-                See all <span data-app-count>18</span> apps
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-        </div>
-
+      <div class="view-all">
+        <a class="btn-secondary" href="product.html">
+          See all <span data-app-count>18</span> apps
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="section">
+  <section class="section" style="padding-top:0;">
     <div class="container">
-
-        <div class="craft-band">
-            <div>
-                <h2>Built natively. No compromises.</h2>
-                <p>
-                    Every NovaNext app is written in Swift and built by hand —
-                    no cross-platform frameworks, no off-the-shelf templates.
-                    That means real native performance, real native feel, on every screen.
-                </p>
-            </div>
-            <div class="craft-list">
-                <div class="craft-row"><span class="craft-key">Platform</span><span class="craft-val">iOS, native</span></div>
-                <div class="craft-row"><span class="craft-key">Templates</span><span class="craft-val">None used</span></div>
-                <div class="craft-row"><span class="craft-key">Apps shipped</span><span class="craft-val" data-app-count>18</span></div>
-            </div>
+      <div class="craft-band">
+        <div>
+          <h2>Built natively. No compromises.</h2>
+          <p>
+            Every NovaNext app is written in Swift and built by hand —
+            no cross-platform wrappers, no off-the-shelf templates.
+            That means real native speed, fluid gestures, and offline reliability on every screen.
+          </p>
         </div>
-
+        <div class="craft-list">
+          <div class="craft-row"><span class="craft-key">Architecture</span><span class="craft-val">100% Native Swift</span></div>
+          <div class="craft-row"><span class="craft-key">Privacy</span><span class="craft-val">On-device first</span></div>
+          <div class="craft-row"><span class="craft-key">Templates</span><span class="craft-val">None used</span></div>
+          <div class="craft-row"><span class="craft-key">Apps shipped</span><span class="craft-val" data-app-count>18</span></div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="section" id="contact">
+  <section class="section" id="contact" style="padding-top:0;">
     <div class="container">
-
-        <div class="cta-card">
-            <div>
-                <h3>Got feedback, a bug report, or just want to say hi?</h3>
-                <p>Every message gets read and answered.</p>
-            </div>
-            <a class="btn-primary" href="contact.html">
-                Get in touch
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-            </a>
+      <div class="cta-card">
+        <div>
+          <h3>Got feedback, a bug report, or just want to say hi?</h3>
+          <p>Every message gets read and answered personally.</p>
         </div>
-
+        <a class="btn-primary" href="contact.html">
+          Get in touch
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+        </a>
+      </div>
     </div>
-</section>
+  </section>
+</main>
 
-<footer>
-    <div class="container footer-inner">
-
-        <div class="copyright">© 2026 NovaNext</div>
-
-        <div class="footer-links">
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="support.html">Support</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
-        </div>
-
-    </div>
-</footer>
+<div id="site-footer"></div>
 
 <script src="apps.js"></script>
 <script>
-    renderFeaturedApps('featured-apps');
-    renderAppCounts();
+  renderChrome('home');
+  renderHeroShowcase('hero-showcase');
+  renderFeaturedApps('featured-apps');
+  renderAppCounts();
 </script>
-
 </body>
 </html>
