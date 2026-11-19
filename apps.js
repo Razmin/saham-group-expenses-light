@@ -317,12 +317,12 @@ const APPS = [
     url: "https://apps.apple.com/us/app/large-math/id1628885815"
   },
   {
-    name: "Sunlight Hours",
+    name: "TerraSol",
     icon: "earth",
     screenshots: "sunlighthours",
     screenshotCount: 1,
     category: "Educational",
-    description: "View daylight hours at any latitude on any given day. Explore information about planets in our solar system.",
+    description: "View daylight hours at any latitude on any given day. Learn about Earh orbit around the Sun. Learb about Moon orbit around Earth. Explore information about planets in our solar system.",
     features: [
       "Daylight calculation for any location",
       "Solar system planet information",
@@ -330,7 +330,7 @@ const APPS = [
     ],
     url: "https://apps.apple.com/us/app/sun-light-hours/id6499107039",
     featured: 6,
-    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape on iPad."
+    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape"
   },
   {
     name: "FastCam",
