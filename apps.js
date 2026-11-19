@@ -322,9 +322,10 @@ const APPS = [
     screenshots: "sunlighthours",
     screenshotCount: 1,
     category: "Educational",
-    description: "View daylight hours at any latitude on any given day. Learn about Earh orbit around the Sun. Learb about Moon orbit around Earth. Explore information about planets in our solar system.",
+    description: "View daylight hours at any latitude on any given day. Learn about Earh orbit around the Sun. Learn about Moon orbit around Earth. Explore information about planets in our solar system.",
     features: [
       "Daylight calculation for any location",
+      "Sun and Moon orbits",
       "Solar system planet information",
       "Educational and practical"
     ],
