@@ -253,6 +253,26 @@ const APPS = [
     url: "https://apps.apple.com/us/app/color-logic/id6471006415"
   },
   {
+    name: "TerraSol",
+    hero: 2,
+    heroShot: "ipad_01",
+    icon: "earth",
+    screenshots: "sunlighthours",
+    screenshotCount: 1,
+    featuredShot: "ipad_01",
+    category: "Educational",
+    description: "View daylight hours at any latitude on any given day. Learn about Earh orbit around the Sun. Learn about Moon orbit around Earth. Explore information about planets in our solar system.",
+    features: [
+      "Daylight calculation for any location",
+      "Sun and Moon orbits",
+      "Solar system planet information",
+      "Educational and practical"
+    ],
+    url: "https://apps.apple.com/us/app/sun-light-hours/id6499107039",
+    featured: 1,
+    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape"
+  },
+  {
     name: "Number Guess",
     icon: "guess",
     screenshots: "numberguess",
@@ -325,26 +345,6 @@ const APPS = [
       "Multiple mathematical operations"
     ],
     url: "https://apps.apple.com/us/app/large-math/id1628885815"
-  },
-  {
-    name: "TerraSol",
-    hero: 2,
-    heroShot: "ipad_01",
-    icon: "earth",
-    screenshots: "sunlighthours",
-    screenshotCount: 1,
-    featuredShot: "ipad_01",
-    category: "Educational",
-    description: "View daylight hours at any latitude on any given day. Learn about Earh orbit around the Sun. Learn about Moon orbit around Earth. Explore information about planets in our solar system.",
-    features: [
-      "Daylight calculation for any location",
-      "Sun and Moon orbits",
-      "Solar system planet information",
-      "Educational and practical"
-    ],
-    url: "https://apps.apple.com/us/app/sun-light-hours/id6499107039",
-    featured: 1,
-    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape"
   },
   {
     name: "FastCam",

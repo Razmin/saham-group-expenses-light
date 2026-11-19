@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- BEFORE PUBLISHING: every claim on this page must be true of the shipped app.
+     Check especially: "no ads", "no tracking prompt", and the analytics wording in the FAQ. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="images/icon/logo.png">
+<link rel="apple-touch-icon" href="images/icon/logo.png">
+<meta name="description" content="TerraSol for schools: an ad-free, tracking-free astronomy and daylight app for iPad and iPhone. Setup guide for school IT using managed app configuration.">
+<link rel="canonical" href="https://www.novanext.ca/schools.html">
+<meta property="og:site_name" content="NovaNext"><meta property="og:type" content="website">
+<meta property="og:title" content="TerraSol for Schools - NovaNext"><meta property="og:description" content="An ad-free, tracking-free astronomy and daylight app for classrooms, with a short setup guide for school IT.">
+<meta property="og:url" content="https://www.novanext.ca/schools.html"><meta property="og:image" content="https://www.novanext.ca/images/icon/earth.png">
+<title>TerraSol for Schools - NovaNext</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<style>
+.page-hero{
+    padding:80px 0 56px;
+    background:
+        radial-gradient(circle at top left, rgba(124,58,237,.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 30%);
+}
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:48px;
+    align-items:center;
+}
+.page-hero h1{
+    font-size:clamp(34px,5.4vw,54px);
+    font-weight:800;
+    line-height:1.08;
+    letter-spacing:-0.04em;
+}
+.page-hero h1 .accent{
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+.page-hero .lead{
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.7;
+    max-width:520px;
+    margin-top:22px;
+}
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+.btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    text-decoration:none;
+    padding:13px 26px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:15px;
+    transition:.2s;
+    white-space:nowrap;
+}
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(37,99,235,.28);
+}
+.btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--surface);
+    color:var(--text);
+    border:1px solid var(--border);
+    text-decoration:none;
+    padding:13px 26px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:15px;
+    transition:.2s;
+    white-space:nowrap;
+}
+.btn-secondary:hover{
+    border-color:rgba(37,99,235,.35);
+    transform:translateY(-2px);
+}
+.hero-shot{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:12px;
+    box-shadow:0 20px 50px rgba(17,24,39,.10);
+}
+.hero-shot img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:14px;
+}
+.hero-shot .app-id{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 8px 4px;
+    font-weight:700;
+}
+.hero-shot .app-id img{
+    width:40px;
+    height:40px;
+    border-radius:10px;
+}
+.hero-shot .app-id small{
+    display:block;
+    font-weight:500;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.section{ padding:56px 0; }
+.section-narrow{ width:min(820px,92%); margin:auto; }
+.section-head{ text-align:center; margin-bottom:36px; }
+.section h2{
+    font-size:clamp(26px,4vw,32px);
+    font-weight:800;
+    letter-spacing:-0.03em;
+    margin-bottom:10px;
+}
+.section-head p{ color:var(--muted); font-size:16px; max-width:600px; margin:0 auto; }
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+.card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:26px;
+}
+.card .ico{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--tint);
+    color:var(--blue);
+    margin-bottom:16px;
+}
+.card .ico svg{ width:22px; height:22px; }
+.card h3{ font-size:17px; font-weight:700; letter-spacing:-0.01em; margin-bottom:6px; }
+.card p{ color:var(--muted); font-size:15px; line-height:1.65; }
+
+.topics{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px 28px;
+    list-style:none;
+}
+.topics li{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    color:var(--body);
+    font-size:15.5px;
+    line-height:1.6;
+}
+.topics li svg{ flex-shrink:0; width:20px; height:20px; margin-top:3px; color:var(--green); }
+
+.steps{ display:flex; flex-direction:column; gap:18px; counter-reset:step; }
+.step{
+    position:relative;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:26px 28px 26px 76px;
+    counter-increment:step;
+}
+.step::before{
+    content:counter(step);
+    position:absolute;
+    left:24px;
+    top:24px;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:15px;
+    color:#fff;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+}
+.step h3{ font-size:18px; font-weight:700; letter-spacing:-0.01em; margin-bottom:6px; }
+.step p{ color:var(--muted); font-size:15px; line-height:1.7; }
+.step p + p{ margin-top:10px; }
+.step code, .faq-item code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.9em;
+    background:var(--tint);
+    padding:2px 6px;
+    border-radius:6px;
+    color:var(--text);
+}
+
+table.config{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:16px;
+    font-size:15px;
+}
+table.config th, table.config td{
+    text-align:left;
+    padding:11px 14px;
+    border-bottom:1px solid var(--border);
+}
+table.config th{
+    font-size:13px;
+    color:var(--muted);
+    font-weight:600;
+    background:var(--tint);
+}
+table.config th:first-child{ border-top-left-radius:10px; }
+table.config th:last-child{ border-top-right-radius:10px; }
+.table-wrap{ overflow-x:auto; }
+
+.code-block{
+    position:relative;
+    margin-top:16px;
+    background:#0d1117;
+    color:#e6edf3;
+    border:1px solid #2a313c;
+    border-radius:14px;
+    padding:18px 20px;
+    overflow-x:auto;
+}
+.code-block pre{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13.5px;
+    line-height:1.7;
+    white-space:pre;
+}
+.copy-btn{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:auto;
+    background:#21262d;
+    color:#e6edf3;
+    border:1px solid #30363d;
+    border-radius:8px;
+    padding:6px 12px;
+    font:inherit;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+}
+.copy-btn:hover{ background:#30363d; }
+
+.note{
+    margin-top:16px;
+    background:var(--tint);
+    border-radius:12px;
+    padding:14px 16px;
+    font-size:14.5px;
+    color:var(--body);
+    line-height:1.65;
+}
+
+.faq{ display:flex; flex-direction:column; gap:14px; }
+.faq-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:6px 24px;
+}
+.faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    padding:18px 0;
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:-0.01em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary .chev{ flex-shrink:0; width:20px; height:20px; color:var(--muted); transition:transform .2s; }
+.faq-item[open] summary .chev{ transform:rotate(180deg); color:var(--blue); }
+.faq-item p{ color:var(--muted); font-size:15px; line-height:1.7; padding-bottom:20px; }
+.faq-item p a{ color:var(--blue); font-weight:600; text-decoration:none; }
+.faq-item p a:hover{ text-decoration:underline; }
+
+.cta-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:48px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:32px;
+    flex-wrap:wrap;
+    box-shadow:0 10px 40px rgba(0,0,0,.04);
+}
+.cta-card h3{ font-size:24px; font-weight:800; letter-spacing:-0.02em; margin:0; }
+.cta-card p{ color:var(--muted); font-size:15px; margin-top:6px; }
+
+@media(max-width:860px){
+    .hero-grid{ grid-template-columns:1fr; gap:36px; }
+    .cards{ grid-template-columns:1fr; }
+    .topics{ grid-template-columns:1fr; }
+}
+@media(max-width:600px){
+    .section{ padding:40px 0; }
+    .page-hero{ padding:56px 0 40px; }
+    .step{ padding:22px 20px 22px 20px; }
+    .step::before{ position:static; margin-bottom:12px; }
+    .cta-card{ padding:32px 24px; flex-direction:column; align-items:flex-start; }
+    .faq-item{ padding:4px 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<script src="site.js" data-part="nav" data-active="schools"></script>
+<div id="main" tabindex="-1"></div>
+
+<header class="page-hero">
+    <div class="container hero-grid">
+
+        <div>
+            <div class="eyebrow"><span class="dot"></span>For schools and districts</div>
+
+            <h1>TerraSol in the classroom, <span class="accent">with no ads and no tracking.</span></h1>
+
+            <p class="lead">
+                TerraSol helps students see how daylight changes with latitude and season, how the Earth and Moon orbit,
+                and what makes each planet different. Switch on School Mode from your MDM and the app runs
+                without ads or tracking.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn-primary" href="#setup">
+                    IT setup guide
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                </a>
+                <a class="btn-secondary" href="https://apps.apple.com/us/app/sun-light-hours/id6499107039" target="_blank" rel="noopener">View on the App Store</a>
+            </div>
+        </div>
+
+        <div class="hero-shot">
+            <img src="images/screenshots/sunlighthours/ipad_01.jpg" alt="TerraSol running on an iPad" onerror="this.style.display='none'">
+            <div class="app-id">
+                <img src="images/icon/earth.png" alt="" onerror="this.style.display='none'">
+                <div>TerraSol<small>iPad and iPhone</small></div>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-head">
+            <h2>What School Mode changes</h2>
+            <p>One setting, set once by your IT team. Students and teachers don't have to do anything.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
+                <h3>No advertising</h3>
+                <p>Ads never load, so nothing in the app pulls students away from the lesson or sends them to outside sites.</p>
+            </div>
+            <div class="card">
+                <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                <h3>No tracking</h3>
+                <p>No advertising identifier is used and no tracking permission prompt is shown to students.</p>
+            </div>
+            <div class="card">
+                <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+                <h3>No accounts</h3>
+                <p>There is nothing to sign in to. Students open the app and start exploring, and their work stays on the device.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" style="padding-top:8px;">
+    <div class="container section-narrow">
+
+        <div class="section-head">
+            <h2>What students can explore</h2>
+            <p>Useful in earth science, geography and general science lessons.</p>
+        </div>
+
+        <ul class="topics">
+            <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+                <span><strong>Daylight hours</strong> at any latitude on any date, to see why seasons and polar days happen.</span>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+                <span><strong>Earth's orbit</strong> around the Sun, and how the tilt of the Earth shapes the year.</span>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+                <span><strong>The Moon's orbit</strong> around the Earth.</span>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+                <span><strong>The solar system</strong>, with information about each planet.</span>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+<section class="section" id="setup">
+    <div class="container section-narrow">
+
+        <div class="section-head">
+            <h2>Setup guide for school IT</h2>
+            <p>About five minutes, using the Apple School Manager and MDM you already have.</p>
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <h3>Add TerraSol to your devices</h3>
+                <p>In Apple School Manager, open <strong>Apps and Books</strong>, search for <strong>TerraSol</strong> and get the app for your location. Then assign it to your devices through your MDM, the same way you deploy any other app.</p>
+                <p>Please deploy it as a <strong>managed app</strong>. iOS only delivers app configuration to managed apps.</p>
+            </div>
+
+            <div class="step">
+                <h3>Add the app configuration</h3>
+                <p>In your MDM, open the settings for TerraSol and find the section called <strong>App Configuration</strong>, <strong>Managed App Configuration</strong> or similar. Add this one key:</p>
+
+                <div class="table-wrap">
+                    <table class="config">
+                        <thead><tr><th>Key</th><th>Type</th><th>Value</th></tr></thead>
+                        <tbody><tr><td><code>schoolMode</code></td><td>Boolean</td><td><code>true</code></td></tr></tbody>
+                    </table>
+                </div>
+
+                <p style="margin-top:16px;">If your MDM asks for XML instead of a form, paste this:</p>
+
+                <div class="code-block">
+                    <button class="copy-btn" type="button" id="copy-config">Copy</button>
+<pre id="config-xml">&lt;dict&gt;
+    &lt;key&gt;schoolMode&lt;/key&gt;
+    &lt;true/&gt;
+&lt;/dict&gt;</pre>
+                </div>
+
+                <div class="note">
+                    Key names are case-sensitive: use <code>schoolMode</code> exactly. If your MDM only supports text values, entering <code>true</code> as a string also works.
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Check it on a test device</h3>
+                <p>Push the configuration to one iPad first. Open TerraSol: you should see no ads and no tracking permission prompt. Then roll it out to the rest of your fleet.</p>
+                <p>The setting takes effect when the app next launches, so ask staff to fully close and reopen TerraSol if it was already open.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container section-narrow">
+
+        <div class="section-head">
+            <h2>Questions from IT teams</h2>
+        </div>
+
+        <div class="faq">
+
+            <details class="faq-item">
+                <summary>
+                    What happens if the configuration isn't set?
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>TerraSol behaves like the regular App Store version, which includes ads. School Mode is only on when <code>schoolMode</code> is set to true, so if you see ads on a school device, the configuration hasn't reached the app. Check that the app is deployed as a managed app and that the key is spelled exactly as above.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    Does TerraSol collect student data?
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>TerraSol has no accounts, and what students do in the app stays on the device. In School Mode, advertising and cross-app tracking are turned off. Our <a href="privacy.html">Privacy Policy</a> describes everything the app can collect, and we're happy to answer your district's privacy questions directly.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    Does it need an internet connection?
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>No. TerraSol runs on the device, so it works on school networks with restricted access.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    Which devices does it run on?
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>iPad and iPhone. The App Store listing shows the minimum iOS version. TerraSol is designed to work especially well on iPad in landscape.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    What does the school pay?
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>TerraSol is free on the App Store, and School Mode doesn't change that. If you'd like to discuss a bulk or custom arrangement, <a href="contact.html?app=TerraSol%20for%20Schools">get in touch</a>.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    My MDM doesn't show an app configuration option
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>Most MDMs (Jamf, Mosyle, Intune, Meraki and others) support managed app configuration, but the menu name varies. Search your MDM's help for "managed app configuration" or "app config". If you get stuck, send us the name of your MDM and we'll help you find the right place.</p>
+            </details>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="cta-card">
+            <div>
+                <h3>Questions about rolling this out?</h3>
+                <p>Tell us your MDM and we'll walk you through it.</p>
+            </div>
+            <a class="btn-primary" href="contact.html?app=TerraSol%20for%20Schools">
+                Contact us
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<script src="site.js" data-part="footer"></script>
+
+<script>
+(function () {
+    var btn = document.getElementById('copy-config');
+    var src = document.getElementById('config-xml');
+    if (!btn || !src) return;
+    btn.addEventListener('click', function () {
+        var text = src.textContent;
+        function done() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1800); }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, function () { btn.textContent = 'Press Ctrl+C'; });
+        } else {
+            var r = document.createRange(); r.selectNodeContents(src);
+            var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+            btn.textContent = 'Press Ctrl+C';
+        }
+    });
+})();
+</script>
+
+</body>
+</html>
