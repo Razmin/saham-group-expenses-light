@@ -2,131 +2,617 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-P8B665RWVK');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Support - NovaNext</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-  .faq { display: flex; flex-direction: column; gap: 14px; width: min(760px, 92%); margin: auto; }
-  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 6px 24px; box-shadow: var(--shadow-sm); }
-  .faq-item summary { list-style: none; cursor: pointer; padding: 18px 0; font-weight: 700; font-size: 16px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary .chev { flex-shrink: 0; width: 20px; height: 20px; color: var(--muted); transition: transform .2s ease; }
-  .faq-item[open] summary .chev { transform: rotate(180deg); color: var(--blue); }
-  .faq-item p { color: var(--muted); font-size: 15px; line-height: 1.7; padding-bottom: 20px; }
-  .faq-item p a { color: var(--blue); font-weight: 600; text-decoration: none; }
-  .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .app-pill { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; text-decoration: none; color: var(--text); font-weight: 600; font-size: 14.5px; box-shadow: var(--shadow-sm); transition: transform .2s ease, border-color .2s ease; }
-  .app-pill:hover { transform: translateY(-2px); border-color: var(--blue); }
-  .app-pill.legacy { background: var(--surface-subtle); border-style: dashed; color: var(--muted); }
-  .app-pill.legacy span { flex: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: 8px; }
-  .app-pill.legacy .swatch { filter: grayscale(1); opacity: .6; }
-  .app-pill.legacy small { font-size: 12px; font-weight: 500; color: var(--muted); }
-  .app-pill .swatch { flex-shrink: 0; width: 34px; height: 34px; border-radius: 10px; object-fit: cover; }
-  @media (max-width: 860px) { .support-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .support-grid { grid-template-columns: 1fr; } }
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8B665RWVK"></script>
+     <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'G-P8B665RWVK');
+     </script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support - NovaNext</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#fafaf8;
+    --surface:#ffffff;
+    --text:#111827;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+
+    --blue:#2563eb;
+    --purple:#7c3aed;
+    --green:#10b981;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+/* ---------------- NAV ---------------- */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(12px);
+    box-shadow:0 1px 0 var(--border), 0 4px 16px rgba(17,24,39,.04);
+}
+
+.nav-inner{
+    height:72px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    text-decoration:none;
+}
+
+.logo img{
+    height:34px;
+    width:auto;
+    display:block;
+}
+
+.logo span{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:-0.03em;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--muted);
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:var(--text);
+}
+
+.nav-links a.active{
+    color:var(--text);
+}
+
+.nav-cta{
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:white !important;
+    padding:10px 20px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:14px;
+    transition:.2s;
+}
+
+.nav-cta:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+}
+
+/* ---------------- PAGE HERO ---------------- */
+
+.page-hero{
+    padding:80px 0 50px;
+    text-align:center;
+
+    background:
+        radial-gradient(circle at top left, rgba(124,58,237,.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 30%);
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:white;
+    border:1px solid var(--border);
+    padding:7px 16px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    margin-bottom:26px;
+}
+
+.eyebrow .dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+}
+
+.page-hero h1{
+    font-size:clamp(36px,6vw,56px);
+    font-weight:800;
+    line-height:1.07;
+    letter-spacing:-0.04em;
+    max-width:760px;
+    margin:0 auto;
+}
+
+.page-hero h1 .accent{
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.page-hero p{
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.7;
+    max-width:600px;
+    margin:22px auto 0;
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+.section{
+    padding:56px 0;
+}
+
+.section-narrow{
+    width:min(760px,92%);
+    margin:auto;
+}
+
+.section-head{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section h2{
+    font-size:clamp(26px,4vw,32px);
+    font-weight:800;
+    letter-spacing:-0.03em;
+    margin-bottom:10px;
+}
+
+.section-head p{
+    color:var(--muted);
+    font-size:16px;
+}
+
+/* ---------------- FAQ ---------------- */
+
+.faq{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.faq-item{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:6px 24px;
+    transition:.2s;
+}
+
+.faq-item:hover{
+    box-shadow:0 8px 24px rgba(17,24,39,.05);
+}
+
+.faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    padding:18px 0;
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:-0.01em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+}
+
+.faq-item summary::-webkit-details-marker{
+    display:none;
+}
+
+.faq-item summary .chev{
+    flex-shrink:0;
+    width:20px;
+    height:20px;
+    color:var(--muted);
+    transition:transform .2s;
+}
+
+.faq-item[open] summary .chev{
+    transform:rotate(180deg);
+    color:var(--blue);
+}
+
+.faq-item p{
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.7;
+    padding-bottom:20px;
+}
+
+.faq-item p a{
+    color:var(--blue);
+    font-weight:600;
+    text-decoration:none;
+}
+
+.faq-item p a:hover{
+    text-decoration:underline;
+}
+
+/* ---------------- APP GRID ---------------- */
+
+.app-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.app-pill{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:14px 16px;
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+    font-size:14.5px;
+    transition:.2s;
+}
+
+.app-pill:hover{
+    transform:translateY(-2px);
+    border-color:rgba(37,99,235,.3);
+    box-shadow:0 10px 24px rgba(17,24,39,.06);
+}
+
+.app-pill.legacy{
+    background:#f9fafb;
+    border-style:dashed;
+    color:var(--muted);
+}
+.app-pill.legacy span{
+    flex:1;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    column-gap:8px;
+}
+.app-pill.legacy .swatch{
+    filter:grayscale(1);
+    opacity:.6;
+    box-shadow:none;
+}
+.app-pill.legacy small{
+    font-size:12px;
+    font-weight:500;
+    color:var(--muted);
+    white-space:nowrap;
+}
+.app-pill .swatch{
+    flex-shrink:0;
+    width:34px;
+    height:34px;
+    border-radius:10px;
+    object-fit:cover;
+    box-shadow:0 2px 6px rgba(17,24,39,.12);
+}
+
+/* ---------------- BOTTOM CTA ---------------- */
+
+.cta-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:48px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:32px;
+    flex-wrap:wrap;
+    box-shadow:0 10px 40px rgba(0,0,0,.04);
+}
+
+.cta-card h3{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    margin:0;
+}
+
+.cta-card p{
+    color:var(--muted);
+    font-size:15px;
+    margin-top:6px;
+    margin-bottom:0;
+}
+
+.btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:white;
+    text-decoration:none;
+    padding:13px 26px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:15px;
+    transition:.2s;
+    white-space:nowrap;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(37,99,235,.28);
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+    border-top:1px solid var(--border);
+    background:white;
+}
+
+.footer-inner{
+    height:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:var(--muted);
+}
+
+.footer-links a:hover{
+    color:var(--text);
+}
+
+.copyright{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:860px){
+    .app-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:600px){
+    .nav-links a:not(.nav-cta){display:none;}
+    .app-grid{grid-template-columns:1fr;}
+    .section{padding:40px 0;}
+    .page-hero{padding:56px 0 40px;}
+    .cta-card{padding:32px 24px;flex-direction:column;align-items:flex-start;}
+    .faq-item{padding:4px 18px;}
+}
+
+
+/* ---------------- BMC BUTTON ---------------- */
+
+.bmc-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:#FFDD00;
+    color:#000000 !important;
+    padding:10px 20px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:14px;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.bmc-link:hover{
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px rgba(255,221,0,.35);
+}
+
 </style>
 </head>
+
 <body>
-<div id="site-nav"></div>
 
-<main>
-  <header class="page-hero">
-    <div class="container">
-      <div class="eyebrow"><span class="dot"></span>We're here to help</div>
-      <h1>How can we <span class="accent">help</span>?</h1>
-      <p>Answers to common questions, plus a fast way to reach us about any NovaNext app.</p>
-    </div>
-  </header>
+<nav>
+    <div class="container nav-inner">
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Frequently Asked Questions</h2>
-        <p>The most common things people write in about.</p>
-      </div>
+        <a href="index.html" class="logo"><img src="images/icon/logo.png" alt="NovaNext logo"><span>NovaNext</span></a>
 
-      <div class="faq">
-        <details class="faq-item">
-          <summary>How do I restore a purchase or remove ads I already paid for?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>Open the app and look for a "Restore Purchases" option inside Settings &rarr; Remove Ads. This re-applies any purchase tied to your Apple ID at no extra charge. Make sure you're signed in with the same Apple ID used for the original purchase.</p>
-        </details>
-        <details class="faq-item">
-          <summary>An app crashed or isn't working right
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>First, make sure the app and your iOS version are fully up to date. If it still happens, try restarting your device. Still stuck? Pick your app below and send us your device model and what you were doing when it happened.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How do I delete my data?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>NovaNext apps store your content (lists, scores, files, etc.) directly on your device, not on our servers. Deleting the app from your device removes that data permanently. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do NovaNext apps work offline?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>Yes — almost everything runs locally on your device, so most apps work fully without an internet connection. A connection is only needed for online multiplayer, live film databases, or ads.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Which devices and iOS versions are supported?
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>Our apps are built natively for iPhone and iPad. Each app's App Store listing shows its minimum iOS version — we recommend keeping your device updated to the latest iOS release.</p>
-        </details>
-        <details class="faq-item">
-          <summary>I have a feature idea or found a bug
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p>We'd love to hear it. Most of our updates come directly from user suggestions. Pick the app below and send a quick note — every message gets read.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div class="section-header">
-        <h2>Need help with a specific app?</h2>
-        <p>Pick your app and we'll route your message automatically.</p>
-      </div>
-      <div class="support-grid" id="support-apps"></div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div class="cta-card">
-        <div>
-          <h3>Still can't find an answer?</h3>
-          <p>Send us a message and we'll get back to you directly.</p>
+        <div class="nav-links">
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="support.html" class="active">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html" class="nav-cta">Contact</a>
         </div>
-        <a class="btn-primary" href="contact.html">Contact us</a>
-      </div>
-    </div>
-  </section>
-</main>
 
-<div id="site-footer"></div>
+    </div>
+</nav>
+
+<header class="page-hero">
+    <div class="container">
+
+        <div class="eyebrow"><span class="dot"></span>We're here to help</div>
+
+        <h1>How can we <span class="accent">help</span>?</h1>
+
+        <p>
+            Answers to common questions, plus a fast way to reach us
+            about any NovaNext app.
+        </p>
+
+    </div>
+</header>
+
+<section class="section">
+    <div class="container section-narrow">
+
+        <div class="section-head">
+            <h2>Frequently Asked Questions</h2>
+            <p>The most common things people write in about.</p>
+        </div>
+
+        <div class="faq">
+
+            <details class="faq-item">
+                <summary>
+                    How do I restore a purchase or remove ads I already paid for?
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>Open the app and look for a "Restore Purchases" option, inside Settings->Remove Ads. This re-applies any purchase tied to your Apple ID at no extra charge. If it doesn't appear after restoring, make sure you're signed in with the same Apple ID used for the original purchase.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    An app crashed or isn't working right
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>First, make sure the app and your iOS version are fully up to date — most issues are fixed in the latest release. If it still happens, try restarting your device. Still stuck? Send us a message below with the app name, your device model, and what you were doing when it happened — that helps us fix it fast.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    How do I delete my data?
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>NovaNext apps store your content (lists, scores, files, etc.) directly on your device, not on our servers. Deleting the app from your device removes that data permanently. See our <a href="privacy.html">Privacy Policy</a> for full details on what's collected.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    Do NovaNext apps work offline?
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>Yes — almost everything runs locally on your device, so most apps work fully without an internet connection. A connection is only needed for things like ads or App Store features.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    Which devices and iOS versions are supported?
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>Our apps are built natively for iPhone and iPad. Each app's App Store listing shows its minimum iOS version — we recommend keeping your device updated to the latest iOS release for the best experience.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    I have a feature idea or found a bug
+                    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </summary>
+                <p>We'd love to hear it. Most of our updates come directly from user suggestions. Use the contact form below and mention which app you mean — every message gets read.</p>
+            </details>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+    <div class="container">
+
+        <div class="section-head">
+            <h2>Need help with a specific app?</h2>
+            <p>Pick your app and we'll route your message correctly.</p>
+        </div>
+
+        <div class="app-grid" id="support-apps">
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="cta-card">
+            <div>
+                <h3>Still can't find an answer?</h3>
+                <p>Send us a message and we'll get back to you directly.</p>
+            </div>
+            <a class="btn-primary" href="contact.html">
+                Contact us
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-inner">
+
+        <div class="copyright">© 2026 NovaNext</div>
+
+        <div class="footer-links">
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="support.html">Support</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>
+        </div>
+
+    </div>
+</footer>
 
 <script src="apps.js"></script>
 <script>
-  renderChrome('support');
-  renderSupportPills('support-apps');
+    renderSupportPills('support-apps');
 </script>
+
 </body>
 </html>
