@@ -39,7 +39,7 @@ for (const app of APPS) {
   fs.writeFileSync(file, html);
 }
 
-const pages = ['', 'product.html', 'about.html', 'support.html', /* SCHOOLS_HIDDEN: 'schools.html', */ 'contact.html', 'privacy.html', 'terms.html', ...APPS.map(appPageUrl)];
+const pages = ['', 'product.html', 'about.html', 'support.html', /* SCHOOLS: add back when live 'schools.html', */ 'contact.html', 'privacy.html', 'terms.html', ...APPS.map(appPageUrl)];
 fs.writeFileSync('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   pages.map(p => `  <url><loc>${SITE}/${p}</loc></url>`).join('\n') + '\n</urlset>\n');
 fs.writeFileSync('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
