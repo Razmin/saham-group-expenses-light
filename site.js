@@ -2,7 +2,7 @@
 (function () {
   var GA_ID = 'G-P8B665RWVK', KEY = 'novanext-analytics';
   var LINKS = [['product.html', 'Products', 'products'], ['about.html', 'About', 'about'],
-               ['support.html', 'Support', 'support'], ['schools.html', 'Schools', 'schools'], ['privacy.html', 'Privacy', 'privacy'],
+               ['support.html', 'Support', 'support'], /* SCHOOLS_HIDDEN: ['schools.html', 'Schools', 'schools'], */ ['privacy.html', 'Privacy', 'privacy'],
                ['terms.html', 'Terms', 'terms']];
   var me = document.currentScript, part = me && me.dataset.part;
   function store(v) { try { if (v === undefined) return localStorage.getItem(KEY); if (v === null) localStorage.removeItem(KEY); else localStorage.setItem(KEY, v); } catch (e) {} }
@@ -30,7 +30,7 @@
     if (part === 'footer') me.insertAdjacentHTML('beforebegin',
       '<footer><div class="footer-inner"><div class="copyright">© ' + new Date().getFullYear() + ' NovaNext</div>' +
       '<div class="footer-links">' + LINKS.slice(0, 2).map(function (l) { return '<a href="' + l[0] + '">' + l[1] + '</a>'; }).join('') +
-      '<a href="support.html">Support</a><a href="schools.html">Schools</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>' +
+      '<a href="support.html">Support</a>' + /* SCHOOLS_HIDDEN: '<a href="schools.html">Schools</a>' + */ '<a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>' +
       '<a role="button" tabindex="0" id="cookie-settings">Cookie settings</a>' +
       '<a href="https://buymeacoffee.com/novanext" target="_blank" rel="noopener" class="bmc-link">☕ Buy me a coffee</a>' +
       '</div></div></footer>');
