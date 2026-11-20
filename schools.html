@@ -354,7 +354,7 @@ table.config th:last-child{ border-top-right-radius:10px; }
 
             <p class="lead">
                 TerraSol helps students see how daylight changes with latitude and season, how the Earth and Moon orbit,
-                and what makes each planet different. Switch on School Mode from your MDM and the app runs
+                and what makes each planet different. Add your school's access token in your MDM and the app runs
                 without ads or tracking.
             </p>
 
@@ -495,13 +495,19 @@ table.config th:last-child{ border-top-right-radius:10px; }
             </div>
 
             <div class="step">
+                <h3>Get your school token</h3>
+                <p>Each school gets its own access token. <a href="contact.html?app=TerraSol%20for%20Schools">Contact us</a> with your school or district name, your time zone and the date you want access to run until. We will send you a token, usually within a few days.</p>
+                <p>The token is a single line of text. It is for your school only, so please don't share it outside your organization.</p>
+            </div>
+
+            <div class="step">
                 <h3>Add the app configuration</h3>
                 <p>In your MDM, open the settings for TerraSol and find the section called <strong>App Configuration</strong>, <strong>Managed App Configuration</strong> or similar. Add this one key:</p>
 
                 <div class="table-wrap">
                     <table class="config">
                         <thead><tr><th>Key</th><th>Type</th><th>Value</th></tr></thead>
-                        <tbody><tr><td><code>schoolMode</code></td><td>Boolean</td><td><code>true</code></td></tr></tbody>
+                        <tbody><tr><td><code>schoolToken</code></td><td>String</td><td>Your school token</td></tr></tbody>
                     </table>
                 </div>
 
@@ -510,19 +516,20 @@ table.config th:last-child{ border-top-right-radius:10px; }
                 <div class="code-block">
                     <button class="copy-btn" type="button" id="copy-config">Copy</button>
 <pre id="config-xml">&lt;dict&gt;
-    &lt;key&gt;schoolMode&lt;/key&gt;
-    &lt;true/&gt;
+    &lt;key&gt;schoolToken&lt;/key&gt;
+    &lt;string&gt;PASTE-YOUR-TOKEN-HERE&lt;/string&gt;
 &lt;/dict&gt;</pre>
                 </div>
 
                 <div class="note">
-                    Key names are case-sensitive: use <code>schoolMode</code> exactly. If your MDM only supports text values, entering <code>true</code> as a string also works.
+                    Key names are case-sensitive: use <code>schoolToken</code> exactly. Paste the token exactly as we sent it, on one line, with no extra spaces or line breaks. If your MDM offers a type menu, choose <strong>String</strong>.
                 </div>
             </div>
 
             <div class="step">
                 <h3>Check it on a test device</h3>
                 <p>Push the configuration to one iPad first. Open TerraSol: you should see no ads and no tracking permission prompt. Then roll it out to the rest of your fleet.</p>
+                <p><strong>Tokens expire.</strong> Your token works until the date we agreed with you. After that, TerraSol goes back to the regular App Store version, with ads. Contact us before the date and we'll send a new token to update in your MDM.</p>
                 <p><strong>Restart the app after any change.</strong> School Mode is read when TerraSol starts. If you turn it on or off while the app is open, have staff force-close TerraSol (swipe it away in the app switcher) and open it again. Until then, the app may still show ads or behave as before.</p>
             </div>
 
@@ -542,10 +549,10 @@ table.config th:last-child{ border-top-right-radius:10px; }
 
             <details class="faq-item">
                 <summary>
-                    What happens if the configuration isn't set?
+                    What happens if the token is missing, wrong or expired?
                     <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                 </summary>
-                <p>TerraSol behaves like the regular App Store version, which includes ads. School Mode is only on when <code>schoolMode</code> is set to true, so if you see ads on a school device, the configuration hasn't reached the app. Check that the app is deployed as a managed app, that the key is spelled exactly as above, and that TerraSol was force-closed and reopened after the configuration was pushed.</p>
+                <p>TerraSol behaves like the regular App Store version, which includes ads. School Mode is only on when <code>schoolToken</code> holds a valid token that hasn't expired, so if you see ads on a school device, check that the app is deployed as a managed app, that the key is spelled exactly as above, that the token was pasted completely with no extra spaces, and that TerraSol was force-closed and reopened after the configuration was pushed. If it still doesn't work, or your token has expired, contact us.</p>
             </details>
 
             <details class="faq-item">
