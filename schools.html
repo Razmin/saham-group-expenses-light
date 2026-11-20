@@ -481,7 +481,7 @@ table.config th:last-child{ border-top-right-radius:10px; }
             <div class="step">
                 <h3>Check it on a test device</h3>
                 <p>Push the configuration to one iPad first. Open TerraSol: you should see no ads and no tracking permission prompt. Then roll it out to the rest of your fleet.</p>
-                <p>The setting takes effect when the app next launches, so ask staff to fully close and reopen TerraSol if it was already open.</p>
+                <p><strong>Restart the app after any change.</strong> School Mode is read when TerraSol starts. If you turn it on or off while the app is open, have staff force-close TerraSol (swipe it away in the app switcher) and open it again. Until then, the app may still show ads or behave as before.</p>
             </div>
 
         </div>
@@ -503,7 +503,7 @@ table.config th:last-child{ border-top-right-radius:10px; }
                     What happens if the configuration isn't set?
                     <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                 </summary>
-                <p>TerraSol behaves like the regular App Store version, which includes ads. School Mode is only on when <code>schoolMode</code> is set to true, so if you see ads on a school device, the configuration hasn't reached the app. Check that the app is deployed as a managed app and that the key is spelled exactly as above.</p>
+                <p>TerraSol behaves like the regular App Store version, which includes ads. School Mode is only on when <code>schoolMode</code> is set to true, so if you see ads on a school device, the configuration hasn't reached the app. Check that the app is deployed as a managed app, that the key is spelled exactly as above, and that TerraSol was force-closed and reopened after the configuration was pushed.</p>
             </details>
 
             <details class="faq-item">
@@ -511,7 +511,7 @@ table.config th:last-child{ border-top-right-radius:10px; }
                     Does TerraSol collect student data?
                     <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                 </summary>
-                <p>TerraSol has no accounts, and what students do in the app stays on the device. In School Mode, advertising and cross-app tracking are turned off. Our <a href="privacy.html">Privacy Policy</a> describes everything the app can collect, and we're happy to answer your district's privacy questions directly.</p>
+                <p>TerraSol has no accounts, and what students do in the app stays on the device. In School Mode, advertising and cross-app tracking are turned off. Our <a href="privacy.html#school-mode">Privacy Policy</a> describes School Mode, and the rest of the policy describes everything the app can collect, and we're happy to answer your district's privacy questions directly.</p>
             </details>
 
             <details class="faq-item">
