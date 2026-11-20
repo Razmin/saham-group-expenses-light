@@ -61,6 +61,45 @@ const videoSrc  = app => MEDIA.videoDir + app.icon + MEDIA.videoExt;
 
 const APPS = [
   {
+    name: "TerraSol",
+    hero: 2,
+    heroShot: "ipad_01",
+    icon: "earth",
+    screenshots: "sunlighthours",
+    screenshotCount: 1,
+    featuredShot: "ipad_01",
+    category: "Educational",
+    description: "View daylight hours at any latitude on any given day. Learn about Earh orbit around the Sun. Learn about Moon orbit around Earth. Explore information about planets in our solar system.",
+    features: [
+      "Daylight calculation for any location",
+      "Sun and Moon orbits",
+      "Solar system planet information",
+      "Educational and practical"
+    ],
+    url: "https://apps.apple.com/us/app/sun-light-hours/id6499107039",
+    featured: 1,
+    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape"
+  },
+  {
+    name: "Dates",
+    icon: "date",
+    screenshots: "dates",
+    screenshotCount: 1,
+    howItWorks: [
+      "Convert dates between the supported calendars.",
+      "Find the difference between two dates in any supported calendar.",
+      "Choose how the difference is shown: days, months, years, or any combination of these."
+    ],
+    category: "Utility",
+    description: "Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.",
+    features: [
+      "Supports Gregorian, Persian, Islamic, Hebrew, Japanese, and Indian calendars",
+      "Calculate date differences",
+      "Simple and intuitive interface"
+    ],
+    url: "https://apps.apple.com/us/app/dates-convert/id6459511463",
+    featured: 6
+  },  {
     name: "Aiden Connects",
     hero: 1,
     icon: "aiden",
@@ -106,46 +145,6 @@ const APPS = [
     url: "https://apps.apple.com/us/app/emma-slides/id6793634660",
     featured: 3,
     homeDescription: "Match the pattern with the goal card. Slide, Drop until the goal is reached."
-  },
-  {
-    name: "TerraSol",
-    hero: 2,
-    heroShot: "ipad_01",
-    icon: "earth",
-    screenshots: "sunlighthours",
-    screenshotCount: 1,
-    featuredShot: "ipad_01",
-    category: "Educational",
-    description: "View daylight hours at any latitude on any given day. Learn about Earh orbit around the Sun. Learn about Moon orbit around Earth. Explore information about planets in our solar system.",
-    features: [
-      "Daylight calculation for any location",
-      "Sun and Moon orbits",
-      "Solar system planet information",
-      "Educational and practical"
-    ],
-    url: "https://apps.apple.com/us/app/sun-light-hours/id6499107039",
-    featured: 1,
-    homeDescription: "View daylight hours at any latitude on any given day, and explore the planets of our solar system — built for landscape"
-  },
-  {
-    name: "Dates",
-    icon: "date",
-    screenshots: "dates",
-    screenshotCount: 1,
-    howItWorks: [
-      "Convert dates between the supported calendars.",
-      "Find the difference between two dates in any supported calendar.",
-      "Choose how the difference is shown: days, months, years, or any combination of these."
-    ],
-    category: "Utility",
-    description: "Convert dates between calendars effortlessly and calculate differences between dates in any calendar system.",
-    features: [
-      "Supports Gregorian, Persian, Islamic, Hebrew, Japanese, and Indian calendars",
-      "Calculate date differences",
-      "Simple and intuitive interface"
-    ],
-    url: "https://apps.apple.com/us/app/dates-convert/id6459511463",
-    featured: 6
   },
   {
     name: "Color Logic",
